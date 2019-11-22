@@ -18,7 +18,7 @@ Route::get('/login', function () {
     return view('login');
 });
 Route::get('/offres', function () {
-    return view('mailbox');
+    return view('offres');
 });
 Route::get('/inscrire', function () {
     return view('register');
