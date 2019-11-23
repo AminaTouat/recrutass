@@ -713,3 +713,20 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   margin-top: -24px !important;
   margin-left: -78px;
   }
+  .card{
+    background-color: rgb(245, 243, 243);
+    margin-top: 12%;
+  }
+   #btnregistre {
+    background-color: #67a125;
+    border-color: #67a125;
+    width: 100%;
+    padding: inherit;
+  }
+  a.color-b, a.color-b:hover {
+    color: #67a125!important;
+    text-decoration: none;
+}
+.span12{
+  font-size: 13px;
+}
