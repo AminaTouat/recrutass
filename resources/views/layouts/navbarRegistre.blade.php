@@ -25,28 +25,11 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="../index.php"> <img src="img/logo.png" alt=""></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{url('offres')}}"><b>offres d'emploi</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"> <button class="btn btn-primary">S'INSCRIRE</button></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Se connecter</a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand js-scroll-trigger" href="../index.php"> <img src="img/logo.png" alt=""></a>
     </div>
   </nav>
 
-    @yield('content4')
+    @yield('content')
     <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

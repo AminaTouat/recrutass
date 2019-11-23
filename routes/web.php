@@ -14,14 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/login', function () {
-    return view('login');
-});
 Route::get('/offres', function () {
     return view('offres');
-});
-Route::get('/inscrire', function () {
-    return view('register');
 });
 Route::get('/profile', function () {
     return view('profile');
@@ -29,3 +23,7 @@ Route::get('/profile', function () {
 Route::get('/read', function () {
     return view('read-mail');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
