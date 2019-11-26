@@ -1,8 +1,8 @@
 @extends('layouts.sidebar')
-@extends('layouts.navbarprofile')
+@extends('layouts.navbarprofile') 
 
 @section('content1')
-@section('content')
+ @section('content')
 
 
 
@@ -45,7 +45,7 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Amina Touat</h3>
+                <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
                 <p class="text-muted text-center">Software Engineer</p>
 				

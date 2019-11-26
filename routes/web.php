@@ -17,9 +17,6 @@ Route::get('/', function () {
 Route::get('/offres', function () {
     return view('offres');
 });
-Route::get('/profile', function () {
-    return view('profile');
-});
 Route::get('/read', function () {
     return view('read-mail');
 });
