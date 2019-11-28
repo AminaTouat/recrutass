@@ -11544,10 +11544,10 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .sidebar {
   height: calc(100% - 4rem);
-  overflow-y: auto;
+  overflow-y: visible;
   padding-bottom: 0;
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-right: 0rem;
   padding-top: 0;
 }
 
@@ -28505,4 +28505,12 @@ a.text-muted:hover {
 }
 .fa-circle nav-icon{
   color: black;
+}
+
+.col-lg-8 col-md-8 col-sm-12 main-cont
+{
+  float: left;
+}
+.ed_contact_form ins{
+  padding: 20px 20px 60px 20px !important;
 }

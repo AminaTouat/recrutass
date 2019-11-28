@@ -23,7 +23,18 @@ Route::get('/profile', function () {
 Route::get('/read', function () {
     return view('read-mail');
 });
-
+Route::get('/profilerecru', function () {
+    return view('profilerecru');
+});
+Route::get('/publier_offres', function () {
+    return view('publieroffre');
+});
+Route::get('/post-jobs', function () {
+    return view('post-jobs');
+});
+Route::get('/acceuil-recrutass', function () {
+    return view('acceuil-jobya');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
