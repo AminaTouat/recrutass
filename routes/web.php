@@ -23,4 +23,4 @@ Route::get('/read', function () {
 
 Auth::routes();
 
-Route::get('/profile', 'HomeController@index')->name('profile');
+Route::get('/home', 'HomeController@index')->name('home');
