@@ -32,8 +32,9 @@ Route::get('/publier_offres', function () {
 Route::get('/post-jobs', function () {
     return view('post-jobs');
 });
-Route::get('/acceuil-recrutass', function () {
-    return view('acceuil-jobya');
+
+Route::get('/profilerecruteur', function () {
+    return view('user-dash-recru');
 });
 Auth::routes();
 

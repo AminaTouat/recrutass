@@ -1,7 +1,37 @@
-@extends('layouts.nav-bar-recruteur')
-
-@section('content10')
-
+@extends('layouts.navbarindex')
+@extends('layouts.headerindex')
+@section('content4')
+@section('content5')
+<div class="jobsearch-main-content">
+            <div class="jobsearch-plugin-default-container">
+                <div class="user-dashboard-loader" style="display: none;"></div>
+                <div class="jobsearch-row">
+                    <aside class="jobsearch-column-3 jobsearch-typo-wrap">
+                        <div class="jobsearch-typo-wrap">
+                            <div class="jobsearch-employer-dashboard-nav">
+                                <figure> <a href="javascript:void(0);" class="user-dashthumb-remove jobsearch-tooltipcon" title="Supprimer" data-uid="182340" style="display: none;"><i class="fa fa-times"></i></a> <a id="com-img-holder" href="https://marocemploi.net/user-dashboard/"
+                                        class="employer-dashboard-thumb"> <img src="https://secure.gravatar.com/avatar/d01d152e78a12c57fe8190f26087fb8f?s=132&d=mm&r=g" alt="" style="max-width: 132px;"> </a>
+                                    <figcaption> <span class="fileUpLoader"></span>
+                                        <div class="jobsearch-fileUpload"> <span><i class="jobsearch-icon jobsearch-add"></i> Télécharger la photo</span> <input type="file" id="user_avatar" name="user_avatar" class="jobsearch-upload"></div>
+                                        <h2><a href="/profilerecruteur">recruteur.technalab</a></h2> <span class="jobsearch-dashboard-subtitle"></span></figcaption>
+                                </figure>
+                                <ul>
+                                    
+                                    <li class="active"> <a href="/profilerecruteur"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil(modifier) </a></li>
+                                    
+                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
+                                    <li> <a href="/post-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>postuler une offres</a></li>
+    
+                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-heart"></i> Favorite condidats </a></li>
+                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
+                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-alarm"></i> les condidats postulées leur cv à une offre </a></li>
+                  
+                                    <li class="profile-del-btnlink">
+                                    <a class="jobsearch-userdel-profilebtn"><i class="fa fa-trash-o"></i>Déconnexion </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
 
     <!-- POST A JOB START -->
     <section class="section">
@@ -95,7 +125,7 @@
                                             <label class="text-muted">niveau d'éducation</label>
                                             <div class="form-button">
                                                 <select class="nice-select rounded">
-                                                    <option data-display="Level">Level</option>
+                                                    <option data-display="Level">niveau</option>
                                                     <option value="1">niveau-1</option>
                                                     <option value="2">niveau-2</option>
                                                     <option value="3">niveau-3</option>
@@ -189,7 +219,7 @@
                                                 <div class="input-group mt-2 mb-2">
                                                     <div class="custom-file">
                                                         <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                                        <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Upload Files</label>
+                                                        <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Télécharger des fichiers</label>
                                                     </div>
                                                 </div>
                                             </li>
@@ -216,5 +246,6 @@
     <!-- POST A JOB END -->
 
 
-   
+</div>
+    @endsection
     @endsection

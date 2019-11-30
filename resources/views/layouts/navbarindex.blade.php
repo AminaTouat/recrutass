@@ -35,6 +35,13 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="{{url('offres')}}"><b>offres d'emploi</b></a>
           </li>
+          
+        
+  <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/post-jobs">
+            Espace recruteur        </a>
+    </li>
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"> <button class="btn btn-primary">S'INSCRIRE</button></a>
           </li>
@@ -59,5 +66,23 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/isotope.pkgd.js"></script>
+    <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/owl.carousel.js"></script>
+
+    <!--
+		Google map api
+	-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz2w7HUaWudHwd7AWQpCL48Qs050WOn9s"></script>
+
+    <!--
+		Main Scripts
+	-->
+    <script src="js/scripts.js"></script>
+
 </body>
 </html>
