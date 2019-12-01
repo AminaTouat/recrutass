@@ -42,7 +42,7 @@
                         <div class="custom-form">
                             <div id="message3"></div>
                             <form method="post" action="php/contact.php" name="contact-form" id="contact-form3">
-                                <h4 class="text-dark mb-3">Publier un nouvel emploi :</h4>
+                                <h4 class="text-dark mb-3">Publier une offres :</h4>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group app-label mt-2">
