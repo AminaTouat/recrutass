@@ -33,6 +33,9 @@ Route::get('/post-jobs', function () {
 Route::get('/profilerecruteur', function () {
     return view('user-dash-recru');
 });
+Route::get('/cv', function () {
+    return view('cv');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

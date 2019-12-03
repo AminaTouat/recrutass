@@ -1,0 +1,575 @@
+#mainNav{min-height:56px;background-color:white}
+ #mainNav .navbar-toggler{font-size:80%;padding:.75rem;color:#64a19d;border:1px solid #67a125}
+ #mainNav .navbar-toggler:focus{outline:0}
+ #mainNav img {
+    height: 48px !important ;
+    margin-top: -24px !important;
+    margin-left: -78px;
+    }
+    #mainNav.navbar-shrink img {
+        height: 48px  !important ;
+    margin-top: 0px !important;
+    margin-left: -78px;
+    }
+
+ #mainNav .navbar-brand{color:#161616;font-weight:700;padding:.9rem 0}
+ #mainNav .navbar-nav .nav-item:hover{color:fade(white,80%);outline:0;background-color:transparent}
+ #mainNav .navbar-nav .nav-item:active,#mainNav .navbar-nav .nav-item:focus{outline:0;background-color:transparent}
+ @media (min-width:992px){#mainNav{padding-top:24px;padding-bottom:0;border-bottom:none;background-color:transparent;-webkit-transition:background-color .3s ease-in-out;transition:background-color .3s ease-in-out}
+ #mainNav .navbar-brand{padding:.5rem 0;color:rgba(255,255,255,.5)}
+ #mainNav .nav-link{-webkit-transition:none;transition:none;padding:0rem 1.5rem;color:#b2de81 }
+ #mainNav .nav-link:hover{color:#67a125}
+ #mainNav .nav-link:active{color:#fff}
+ #mainNav.navbar-shrink{height: 78px !important;}
+ #mainNav.navbar-shrink{background-color:#fff}
+ #mainNav.navbar-shrink .navbar-brand{color:#161616}
+ #mainNav.navbar-shrink .nav-link{color:#161616;padding:0rem 1.5rem 1.25rem;border-bottom:.25rem solid transparent}
+ #mainNav.navbar-shrink .nav-link:hover{color:#b2de81}
+ #mainNav.navbar-shrink .nav-link:active{color:#67a125}
+ #mainNav.navbar-shrink .nav-link.active{color:#67a125;outline:0;border-bottom:.25rem solid #67a125}
+ .masthead{position:relative;width:100%;height:auto;min-height:35rem;padding:15rem 0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.3)),color-stop(75%,rgba(22,22,22,.7)),to(#161616)),url(../img/charge-de-recherche-en-recrutement.jpg);background:linear-gradient(to bottom,rgba(22,22,22,.3) 0,rgba(22,22,22,.7) 75%,#161616 100%),url(../img/charge-de-recherche-en-recrutement.jpg);background-position:center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover}
+ .masthead h1{     padding-top: 35%; font-family:'Varela Round';font-size:2.5rem;line-height:2.5rem;letter-spacing:.8rem;background:-webkit-linear-gradient(rgba(247, 238, 238, 0.9),rgba(255,255,255,0));-webkit-text-fill-color:transparent;-webkit-background-clip:text}
+ .masthead h2{max-width:20rem;font-size:1rem}
+ @media (min-width:768px){.masthead h1{font-size:4rem;line-height:4rem}}
+ @media (min-width:992px){.masthead{height:100vh;padding:0}
+ .masthead h1{font-size:3.5rem;line-height:6.5rem;letter-spacing:.8rem}
+ .masthead h2{max-width:30rem;font-size:1.25rem}}
+ .btn{-webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;font-family:'Varela Round';font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
+ .btn-primary{background-color:#b2de81}
+ .btn-primary:hover{background-color:#67a125}
+ .btn-primary:focus{background-color:#b2de81;color:#fff}
+ .btn-primary:active{background-color:#67a125!important}
+ .about-section{padding-top:10rem;background:-webkit-gradient(linear,left top,left bottom,from(#161616),color-stop(75%,rgba(22,22,22,.9)),to(rgba(22,22,22,.8)));background:linear-gradient(to bottom,#161616 0,rgba(22,22,22,.9) 75%,rgba(22,22,22,.8) 100%)}
+ .about-section p{margin-bottom:5rem}
+ .projects-section{padding:10rem 0}
+ .projects-section .featured-text{padding:2rem}
+ @media (min-width:992px){.projects-section .featured-text{padding:0 0 0 2rem;border-left:.5rem solid rgba(55,92,149,1)}}
+ .projects-section .project-text{padding:3rem;font-size:90%}
+ @media (min-width:992px){.projects-section .project-text{padding:5rem}.projects-section .project-text hr{border-color:#67a125;border-width:.25rem;width:30%}}
+ .signup-section{padding:10rem 0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.3)),color-stop(75%,rgba(22,22,22,.7)),to(#161616)),url(../img/charge-de-recherche-en-recrutement.jpg);background:linear-gradient(to bottom,rgba(22,22,22,.3) 0,rgba(22,22,22,.7) 75%,#161616 100%),url(../img/charge-de-recherche-en-recrutement.jpg);background-position:center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover}
+ .signup-section .form-inline input{-webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;height:auto;font-family:'Varela Round';font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
+ .signup-section {color: beige}
+ .contact-section{padding:5rem 0 0}
+ .contact-section .card{border:0;border-bottom:.25rem solid rgba(55,92,149,1)}
+ .contact-section .card h4{font-size:.8rem;font-family:'Varela Round';text-transform:uppercase;letter-spacing:.15rem}
+ .contact-section .card hr{border-color:rgba(231,166,52,1);border-width:.25rem;width:3rem}
+ .contact-section .social{margin-top:5rem}
+ .contact-section .social a{text-align:center;height:3rem;width:3rem;background:rgb(250, 182, 64);border-radius:100%;line-height:3rem;color:rgba(255,255,255,.3)}
+ .contact-section .social a:hover{color:rgba(231,166,52,1)}
+ .contact-section .social a:active{color:#fff}
+ body{font-family:Nunito;letter-spacing:.0625em}
+ #seconnecter{color:beige; border-bottom: .25rem solid rgba(55,92,149,1) }
+
+ 
+ a:focus,a:hover{text-decoration:none;color:#67a125}
+ .bg-black{background-color:#161616!important}
+ .bg-primary{background-color:rgba(231,166,52,1)!important}
+ .text-primary{color:rgba(231,166,52,1)!important}
+ footer{padding:5rem 0}}
+ .dropdown-menu{
+     background-color:white;
+ }
+ .dropdown-item{
+     color: #67a125;
+ }
+ .dropdown-item:focus,.dropdown-item:hover{
+    color: #67a125; 
+ }
+ 
+ a{
+     color: black;
+ }
+ .header-job-search  #input1 {
+    width: 489px;
+    height: 50px;
+  
+  }
+  
+  .header-job-search  #input2 {
+    width: 505px;
+    height: 50px;
+    
+  }
+  .header-job-search #chercher {
+    height: 50px;
+    width: 170px;
+    margin-left:10% ;
+  }
+  *:placeholder{color: #a09599!important;}
+ 
+  .page-section {
+    padding: 100px 0;
+  }
+  
+  .page-section h2.section-heading {
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 51px;
+  }
+  
+  .page-section h3.section-subheading {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+  @media (min-width: 768px) {
+    section {
+      padding: 90px 0;
+    }
+  }
+  .jobsearch-row, .jobsearch-typo-wrap .jobsearch-row {
+    margin: 0 -15px;
+}
+@media (max-width: 1150px) and (min-width: 990px){
+.jobsearch-plugin-default-container {
+    width: 990px;
+}
+}
+.careerfy-main-content, .careerfy-main-section, .jobsearch-main-content, .careerfy-main-section {
+  float: left;
+  width: 100%;
+}
+.jobsearch-column-3 {
+  width: 25%;
+}
+.jobsearch-typo-wrap~.jobsearch-row, .jobsearch-typo-wrap * {
+  box-sizing: border-box;
+}
+.jobsearch-employer-dashboard-nav figure {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0 6px;
+  position: relative;
+}
+.jobsearch-typo-wrap a {
+  text-decoration: none;
+}
+.jobsearch-employer-dashboard-nav .employer-dashboard-thumb {
+  border: none;
+}
+.employer-dashboard-thumb img {
+  border-radius: 100%;
+}
+.jobsearch-fileUpload input.jobsearch-upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.jobsearch-employer-dashboard-nav figcaption h2 {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+.jobsearch-column-1, .jobsearch-column-2, .jobsearch-column-3, .jobsearch-column-4, .jobsearch-column-5, .jobsearch-column-6, .jobsearch-column-7, .jobsearch-column-8, .jobsearch-column-9, .jobsearch-column-10, .jobsearch-column-11, .jobsearch-column-12, .jobsearch-typo-wrap .jobsearch-column-1, .jobsearch-typo-wrap .jobsearch-column-2, .jobsearch-typo-wrap .jobsearch-column-3, .jobsearch-typo-wrap .jobsearch-column-4, .jobsearch-typo-wrap .jobsearch-column-5, .jobsearch-typo-wrap .jobsearch-column-6, .jobsearch-typo-wrap .jobsearch-column-7, .jobsearch-typo-wrap .jobsearch-column-8, .jobsearch-typo-wrap .jobsearch-column-9, .jobsearch-typo-wrap .jobsearch-column-10, .jobsearch-typo-wrap .jobsearch-column-11, .jobsearch-typo-wrap .jobsearch-column-12 {
+  float: left;
+  padding: 0 15px;
+  padding-top: 7%;
+}
+.careerfy-main-content .widget,
+.careerfy-main-content .jobsearch_side_box {
+    float: left;
+    width: 100%;
+    margin-bottom: 26px
+}
+.careerfy-main-content .jobsearch_side_box ul li,
+.careerfy-main-content .widget ul li {
+    list-style: none
+}.jobsearch-typo-wrap a.careerfy-employer-slider-btn:focus {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .1)
+}
+.jobsearch-mobile-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 19px 14px;
+  border: 1px solid #e2e4e5;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+  background-color: #fff;
+  color: #666;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px
+}
+.jobsearch-mobile-btn i {
+  float: right;
+  margin: 4px 0 0;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
+}
+
+.jobsearch-mobile-btn.open i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+
+.careerfy-headernine-main .jobsearch-navigation {
+  display: inline-block;
+  vertical-align: middle
+}
+.jobsearch-top-strip {
+    float: left;
+    width: 100%;
+    background-color: #264676;
+    padding: 8px 40px 0
+}
+
+.jobsearch-strip-info {
+    float: left
+}
+
+.jobsearch-strip-info li {
+    float: left;
+    list-style: none;
+    font-size: 12px;
+    color: #fff;
+    margin: 0 25px 8px 0
+}
+.jobsearch-employer-dashboard-nav ul li a {
+  padding: 16px 24px;
+  line-height: 1;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  position: relative;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.jobsearch-employer {
+  float: left;
+  width: 100%
+}
+
+.jobsearch-employer ul li {
+  list-style: none
+}
+
+.jobsearch-employer>ul>li {
+  margin-bottom: 20px
+}
+
+.jobsearch-employer-list .jobsearch-table-cell {
+  vertical-align: middle
+}
+
+.jobsearch-employer-list .jobsearch-table-cell:first-child {
+  width: 100px
+}
+.jobsearch-employer-list figure a,
+.jobsearch-employer-list figure img {
+    float: left;
+    width: 100%
+}
+
+.jobsearch-employer-list figure {
+    float: left;
+    width: 80px;
+    margin-bottom: 0
+}
+
+.jobsearch-employer-list small {
+    font-size: 12px
+}
+
+.jobsearch-employer-list h2 {
+    margin-bottom: 0;
+    line-height: 1;
+    font-size: 18px
+}
+
+.jobsearch-employer-list span {
+  font-size: 12px;
+  color: #999
+}
+
+.jobsearch-employer-list span i {
+  margin-right: 4px
+}
+
+.jobsearch-employer-thumblist {
+  float: left;
+  margin: 0
+}
+
+.jobsearch-employer-thumblist li {
+  float: left;
+  width: 33px;
+  list-style: none;
+}
+.jobsearch-employer-thumblist li a,
+.jobsearch-employer-thumblist li img {
+    float: left;
+    width: 100%;
+    height: 33px
+}
+
+.jobsearch-employer-thumblist li img {
+    border-radius: 100%;
+    border: 2px solid #fff
+}
+
+.jobsearch-employer-thumblist-size {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+.jobsearch-employer-list-btn {
+    float: right;
+    padding: 9px 16px;
+    border: 1px solid;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 4px;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out
+}
+.jobsearch-employer-list-btn:hover {
+  color: #fff
+}
+
+.jobsearch-employer-list .jobsearch-table-layer {
+  padding: 20px;
+  border: 1px solid #ececec;
+  background-color: #fff;
+  position: relative
+}
+.jobsearch-employerdetail-btn {
+  float: left;
+  font-weight: 500;
+  padding: 9px 11px 8px;
+  line-height: 1;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-right: 9px;
+  margin-top: 5px;
+  font-size: 14px;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
+}
+.jobsearch-employerdetail-btn:hover {
+  color: #fff
+}
+
+.jobsearch-employerdetail-btn i {
+  font-size: 12px;
+  margin-right: 4px
+}
+
+.jobsearch-add-space {
+  margin-top: 6px
+}
+
+.jobsearch-employerdetail-content {
+  padding: 30px 30px 0;
+  margin-bottom: 0;
+  background-color: #fff
+}
+.jobsearch-employer-wrap-section {
+  float: left;
+  width: 100%;
+  border: 1px solid #efefef;
+  border-top: none;
+  padding: 27px 29px 15px;
+  background-color: #fff
+}
+.jobsearch-employer-dashboard-nav,
+.jobsearch-employer-dashboard-nav figure,
+.jobsearch-employer-dashboard-nav ul li a,
+.jobsearch-employer-dashboard-nav ul,
+.jobsearch-employer-dashboard-nav ul li {
+    float: left;
+    width: 100%
+}
+
+.jobsearch-employer-dashboard-nav {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .08);
+    padding: 30px 0 0;
+    margin-bottom: 50px
+}
+
+.jobsearch-employer-dashboard-nav figure {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0 6px;
+    position: relative
+}
+.jobsearch-employer-dashboard-nav figcaption h2 {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.2;
+  word-wrap: break-word
+}
+
+.jobsearch-employer-dashboard-nav ul li {
+  list-style: none;
+  border-top: 1px solid #eceeef
+}
+
+.jobsearch-employer-dashboard-nav ul li a {
+  padding: 16px 24px;
+  line-height: 1;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  position: relative;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
+}
+.jobsearch-employer-dashboard-nav .fa-lock {
+  position: absolute;
+  background-color: #fb353f;
+  color: #fff;
+  padding: 12px 0 0;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px
+}
+.jobsearch-employer-dashboard-nav li:hover a .fa-lock {
+  color: #fff
+}
+
+.jobsearch-employer-dashboard-nav ul li.profile-del-btnlink a {
+  background-color: #fb353f;
+  color: #fff
+}
+
+.jobsearch-employer-dashboard-nav ul li.profile-del-btnlink:hover a {
+  background-color: #fb353f;
+  opacity: .8;
+  color: #fff !important
+}
+
+.jobsearch-employer-dashboard-nav ul li.profile-del-btnlink i {
+  color: #fff !important
+}
+
+.jobsearch-employer-dashboard-nav ul li i {
+    color: #aaa;
+    display: inline-block;
+    margin: 0 14px 0 0;
+    font-size: 20px;
+    vertical-align: text-top;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out
+}
+
+.jobsearch-employer-dashboard-nav ul li:hover a,
+.jobsearch-employer-dashboard-nav ul li.active a {
+    background-color: #f7f7f7
+}
+.jobsearch-employer-dashboard-nav ul li:last-child a {
+  border: none
+}
+
+.jobsearch-employer-box-section {
+  float: left;
+  width: 100%;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .08);
+  padding: 30px 30px 18px;
+  margin-bottom: 30px
+}
+
+
+
+.jobsearch-employer-profile-form li{
+  list-style: none;
+      margin-bottom: 18px;
+      line-height: 28px}
+  
+  
+  
+  
+  .jobsearch-employer-profile-form [class*=jobsearch-column-] {
+      padding: 0 10px;
+      float: none;
+      display: inline-block;
+      margin-right: -4px;
+      vertical-align: top;
+  }
+  .jobsearch-employer-profile-form li {
+       list-style: none; 
+      margin-bottom: 18px; 
+      line-height: 28px; 
+  }
+  
+  
+  .jobsearch-column-6 {
+     width: 50%; 
+  }
+  . @media (min-width: 992px)
+  body {
+      font-family: Nunito;
+      letter-spacing: .0625em;
+  }
+  
+.jobsearch-employer-profile-form label {
+  font-size: 14px;
+  margin-bottom: 13px;
+  font-weight: 500;
+  color: #333;
+  float: left;
+  width: 100%;
+  line-height: 1;
+  
+}  
+
+.jobsearch-three-column-row {
+  margin: 0 -5px;
+}
+.jobsearch-three-column {
+  float: left;
+  width: 33.333%;
+  padding: 0 5px;
+}
+.jobsearch-employer-box-section {
+  float: left;
+  width: 100%;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .08);
+  /* padding: 30px 30px 18px; */
+  margin-bottom: 30px;
+}
+.jobsearch-employer-box-section {
+  float: left;
+  width: 100%;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,.08);
+  padding: 30px 30px 18px;
+  margin-bottom: 30px;
+}

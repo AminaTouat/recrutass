@@ -1,7 +1,7 @@
-@extends('layouts.navbarindex')
-@extends('layouts.headerindex')
+@extends('layouts.navbarRecruteur')
+
 @section('content4')
-@section('content5')
+
 <div class="jobsearch-main-content">
             <div class="jobsearch-plugin-default-container">
                 <div class="user-dashboard-loader" style="display: none;"></div>
@@ -248,4 +248,4 @@
 
 </div>
     @endsection
-    @endsection
+

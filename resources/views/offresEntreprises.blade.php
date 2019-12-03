@@ -3,6 +3,6 @@
 @extends('layouts.headerindex')
 @section('content5')
 
-<div></div>
+
 @endsection
 @endsection

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="shortcut icon" href="img/logo.png">
-  <title>Emploi</title>
+  <title>Profile recruteur</title>
   <!-- Bootstrap core CSS -->
   <link href="vendor/jquery/jquery.js" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,8 +19,6 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/Recrutass.css" rel="stylesheet">
-  
- 
 </head>
 <!-- 
 <body id="page-top">
@@ -28,29 +26,15 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a  class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo Autoscuola"></a>
-      
-      
     
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="dropdown nav-item active">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">offres d'emploi</a>
-            <div class="dropdown-menu">
-             <a class="dropdown-item" href="/Liste des offres">Liste des offres</a>
-             <a class="dropdown-item" href="/Liste des entreprises">Liste des entreprises</a>
-             <a class="dropdown-item" href="/Les offres dune entreprises">Les offres d'une entreprises</a>
-             <a class="dropdown-item" href="/Information sur lentreprise">Information sur l'entreprise</a>
-          </li>
-          <ul class="navbar-nav m-auto">
-      <li class="dropdown nav-item active">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">S'INSCRIRE</a>
-          <div class="dropdown-menu">
-             <a class="dropdown-item" href="{{ route('register') }}">Espace Candidat</a>
-             <a class="dropdown-item" href="/post-jobs">Espace recruteur</a>
-        </il>
-    </ul>
     
-          <li><a  class="nav-link js-scroll-trigger"  href="{{ route('login') }}" id="seconnecter"><span class="glyphicon glyphicon-seconnecter" ></span>Se connecter</a></li>
+          <li><a  class="nav-link js-scroll-trigger"  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" id="seconnecter"><span class="glyphicon glyphicon-seconnecter" ></span>Déconnection</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+        </li>
         </ul>
       </div>
     </div>

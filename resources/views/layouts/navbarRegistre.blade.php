@@ -15,15 +15,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
-    <!--Material Icon -->
-    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
-
-    <link rel="stylesheet" type="text/css" href="css/selectize.css" />
-
-    <link rel="stylesheet" type="text/css" href="css/nice-select.css" />
-
     <!-- Custom  Css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/Recrutass.css" />
 
 </head>
 

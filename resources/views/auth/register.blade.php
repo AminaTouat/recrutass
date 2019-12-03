@@ -4,26 +4,15 @@
 <head>
 <title>Signup</title>
 </head>
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Loader -->
-
-    
 
     <!-- Hero Start -->
+    <header class="masthead">
     <section class="vh-100" >
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-6">
+                        <div class="col-lg-4 col-md-6" id="register">
                             <div class="login_page bg-white shadow rounded p-4">
                                 <div class="text-center">
                                     <h4 class="mb-4">Sign Up</h4>
@@ -96,6 +85,8 @@
             </div>
         </div>
     </section>
+</header>
+
     <!--end section-->
     <!-- Hero End -->
 

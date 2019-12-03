@@ -1,7 +1,5 @@
-@extends('layouts.navbarindex')
-@extends('layouts.headerindex')
+@extends('layouts.navbarRecruteur')
 @section('content4')
-@section('content5')
 <div class="jobsearch-main-content">
             <div class="jobsearch-plugin-default-container">
                 <div class="user-dashboard-loader" style="display: none;"></div>
@@ -13,30 +11,28 @@
                                         class="employer-dashboard-thumb"> <img src="https://secure.gravatar.com/avatar/d01d152e78a12c57fe8190f26087fb8f?s=132&d=mm&r=g" alt="" style="max-width: 132px;"> </a>
                                     <figcaption> <span class="fileUpLoader"></span>
                                         <div class="jobsearch-fileUpload"> <span><i class="jobsearch-icon jobsearch-add"></i> Télécharger la photo</span> <input type="file" id="user_avatar" name="user_avatar" class="jobsearch-upload"></div>
-                                        <h2><a href="/profilerecruteur">recruteur.technalab</a></h2> <span class="jobsearch-dashboard-subtitle"></span></figcaption>
+                                        <h2><a href="/profilerecruteur">mansri.sihem</a></h2> <span class="jobsearch-dashboard-subtitle"></span></figcaption>
                                 </figure>
                                 <ul>
                                     
                                     <li class="active"> <a href="/profilerecruteur"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil(modifier) </a></li>
                                     
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
+                                    <li> <a href="/offres_publier"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
                                     <li> <a href="/post-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>postuler une offres</a></li>
     
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-heart"></i> Favorite condidats </a></li>
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-alarm"></i> les condidats postulées leur cv à une offre </a></li>
+                                    <li> <a href="/favorite_condidat"> <i class="jobsearch-icon jobsearch-heart"></i> Candidats Sélectionnés </a></li>
+                                    <li> <a href="/modifier_motdepass"> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
+                                    <li> <a href="/condidats post leur cv"> <i class="jobsearch-icon jobsearch-alarm"></i> Condidats qui ont postulé pour une offre </a></li>
                   
-                                    <li class="profile-del-btnlink">
-                                    <a class="jobsearch-userdel-profilebtn"><i class="fa fa-trash-o"></i>Déconnexion </a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                     </aside>
-                    <div class="jobsearch-column-9 jobsearch-typo-wrap">
-                        <div id="dashboard-tab-settings" class="main-tab-section">
-                            <div class="jobsearch-typo-wrap">
-                                <form id="candidate-profilesetings-form" class="jobsearch-employer-dasboard" method="post" action="https://marocemploi.net/user-dashboard/?tab=dashboard-settings" enctype="multipart/form-data">
-                                    <div class="jobsearch-employer-box-section">
+                    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
                                         <div class="jobsearch-profile-title">
                                             <h2>Informations de base</h2>
                                         </div>
@@ -45,8 +41,7 @@
                                                 <div class="img-cont-sec" style="display: none;"> <a href="javascript:void(0);" class="candidate-remove-coverimg"><i class="fa fa-times"></i> Supprimer la couverture</a> <a id="com-cvrimg-holder" class="employer-dashboard-cvr"> <span style="background:url() no-repeat center/cover;"></span> </a></div>
                                                 <figcaption>
                                                 <span class="file-loader"></span>
-                                                    <div class="jobsearch-fileUpload"> <span><i class="jobsearch-icon jobsearch-add"></i> Télécharger une photo de couverture</span> <input type="file" id="user_cvr_photo_cand" name="user_cvr_photo_cand" class="jobsearch-upload"></div>
-                                                </figcaption>
+                                                   </figcaption>
                                             </figure>
                                         </div>
                                         <ul class="jobsearch-row jobsearch-employer-profile-form">
@@ -101,13 +96,12 @@
                                 <li class="jobsearch-column-6"> <label>Pays*</label>
                                     <div id="jobsearch-gdapilocs-contrycon" data-val="" class="jobsearch-profile-select"> <select name="jobsearch_field_location_location1" class="countries" id="countryId"><option value="">Sélectionnez un pays</option> </select></div>
                                 </li>
-                                   <div id="jobsearch-gdapilocs-statecon" data-val="" class="jobsearch-profile-select"> <select name="jobsearch_field_location_location2" class="states" id="stateId"><option value="">Sélectionnez un département</option> </select></div>
-                                </li>   <li class="jobsearch-column-6"> <label>État*</label>
+                                  
                               
                                 <li class="jobsearch-column-6"> <label>Ville*</label>
                                     <div id="jobsearch-gdapilocs-citycon" data-val="" class="jobsearch-profile-select"> <select name="jobsearch_field_location_location3" class="cities order-alpha" id="cityId"><option value="">Sélectionnez une ville</option> </select></div>
                                 </li>
-                                <li class="jobsearch-column-12"> <label>Adresse complète de l'entreprise</label> <input type="text" id="jobsearch_location_address_41574973" name="jobsearch_field_location_address" class="" placeholder="Enter a location" value=""> <input id="check_loc_addr_41574973" type="hidden"
+                                <li class="jobsearch-column-12"> <label>Adresse complète de l'entreprise</label> <input type="text" id="jobsearch_location_address_41574973" name="jobsearch_field_location_address" class="" placeholder="Entrer la localisation" value=""> <input id="check_loc_addr_41574973" type="hidden"
                                         value=""></li>
                                 <li class="jobsearch-column-2" style="display: none;"> <button id="jobsearch-findmap-41574973" class="jobsearch-findmap-btn">Trouver sur la carte</button></li>
                                 <li class="jobsearch-column-4 dash-maploc-latfield" style="display: none;"> <label>Latitude</label> <input type="text" id="jobsearch_location_lat_41574973" name="jobsearch_field_location_lat" value="37.090240" /></li>
@@ -122,7 +116,7 @@
                         </div>
                      
                         <div class="terms-priv-chek-con">
-                            <p><input type="checkbox" name="terms_cond_check" checked>Vous acceptez nos conditions d'utilisation et notre politique de confidentialité</p>
+                            <p><input type="checkbox" name="terms_cond_check" checked>J'accepte les conditions d'utilisation et la politique de confidentialité</p>
                         </div>
                         <input type="hidden" name="user_settings_form" value="1"> <input type="submit" class="jobsearch-employer-profile-submit" value="Enregistrer les paramètres"></form>
                     </div>
@@ -131,4 +125,3 @@
             </div>
         </div>
         @endsection
-@endsection

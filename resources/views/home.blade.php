@@ -1,7 +1,7 @@
 @extends('layouts.navbarCandidat')
-@extends('layouts.headerCandidat')
 @section('content4')
-@section('content5')
+
+
 <div class="jobsearch-main-content">
             <div class="jobsearch-plugin-default-container">
                 <div class="user-dashboard-loader" style="display: none;"></div>
@@ -17,18 +17,15 @@
                                 </figure>
                                 <ul>
                                     
-                                    <li class="active"> <a href="/home"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil(modifier) </a></li>
-                                    
+                                 <li class="active"> <a href="/home"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil </a></li>
+                                        <li> <a href="cv"> <i class="jobsearch-icon jobsearch-resume"></i> Mon CV </a></li>
+                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=applied-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i> Offres postulées </a></li>
+                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=cv-manager"> <i class="jobsearch-icon jobsearch-id-card"></i> Manager de CV </a></li>
+                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=favourite-jobs"> <i class="jobsearch-icon jobsearch-heart"></i> Favorite Jobs </a></li>
+                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=change-password"> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
+                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=job-alerts"> <i class="jobsearch-icon jobsearch-alarm"></i> Alertes emploi </a></li>
                                     <li> <a href=""> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
                                 
-                                <li class="profile-del-btnlink">
-                                    <a  href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();"> <i class="fa fa-trash-o"></i>Déconnexion</li>
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
                                
                             </ul>
                             </div>
@@ -63,7 +60,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Surname<span class="text-danger">*</span> :</label>
+                                    <label class="text-muted">Surname<span class="text-danger">*</span> :</label>
                                         <input id="surname-name" type="text" class="form-control resume" placeholder="Surname :">
                                     </div>
                                 </div>
@@ -83,7 +80,7 @@
                                                 <option data-display="sex">Sex</option>
                                                 <option value="1">Male</option>
                                                 <option value="2">Female</option>
-                                                <option value="3">Other</option>
+
                                             </select>
                                         </div>
                                     </div>
@@ -197,181 +194,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5 class="text-dark mt-5">Education Details :</h5>
-                </div>
-
-                <div class="col-12 mt-3">
-                    <div class="custom-form p-4 border rounded">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Graduation</label>
-                                        <input id="graduation" type="text" class="form-control resume" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">University/College</label>
-                                        <input id="university/college" type="text" class="form-control resume" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Degree/Certification</label>
-                                        <input id="degree/certification" type="text" class="form-control resume" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group app-label">
-                                                <label class="text-muted">Level</label>
-                                                <div class="form-button">
-                                                    <select class="nice-select rounded">
-                                                        <option data-display="Select">Select</option>
-                                                        <option value="1">Level-1</option>
-                                                        <option value="2">Level-2</option>
-                                                        <option value="3">Level-3</option>
-                                                        <option value="4">Level-4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group app-label">
-                                                <label class="text-muted">Course Title</label>
-                                                <input id="course-title" type="text" class="form-control resume" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group app-label">
-                                        <label>Additional Information :</label>
-                                        <textarea id="addition-information" rows="4" class="form-control resume" placeholder=""></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 mt-5">
-                    <h5 class="text-dark">Work Experience :</h5>
-                </div>
-
-                <div class="col-12 mt-3">
-                    <div class="custom-form p-4 border rounded">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Company Name</label>
-                                        <input id="company-name" type="text" class="form-control resume" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Job Position</label>
-                                        <input id="job-position" type="text" class="form-control resume" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Location</label>
-                                        <div class="form-button">
-                                            <select class="nice-select rounded">
-                                                <option data-display="Search">Search</option>
-                                                <option value="1">New York</option>
-                                                <option value="2">Los Angeles</option>
-                                                <option value="3">Chicago</option>
-                                                <option value="4">Houston</option>
-                                                <option value="5">Indiana</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group app-label">
-                                                <label class="text-muted">Date From</label>
-                                                <input id="date-from" type="text" class="form-control resume" placeholder="01-Jan-2018">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group app-label">
-                                                <label class="text-muted">Date To</label>
-                                                <input id="date-to" type="text" class="form-control resume" placeholder="31-March-2019">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group app-label">
-                                        <label>Additional Information :</label>
-                                        <textarea id="addition-information-1" rows="4" class="form-control resume" placeholder=""></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-12 mt-5">
-                    <h5 class="text-dark">Skills :</h5>
-                </div>
-
-                <div class="col-12 mt-3">
-                    <div class="custom-form p-4 border rounded">
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Skills</label>
-                                        <input id="skills" type="text" class="form-control resume" placeholder="HTML, CSS, PHP, javascript, ...">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Skill proficiency</label>
-                                        <input id="skill_proficiency" type="text" class="form-control resume" placeholder="75%">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Télécharger des fichiers</label>
-                </div>
-
-                <div class="col-12 mt-4">
-                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Submit Resume">
-                </div>
-            </div>
-        </div>
-
+           
 
     </section>
     
@@ -405,6 +228,5 @@
 
     </section>
 </div>
-    @endsection
     @endsection
 
