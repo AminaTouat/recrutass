@@ -750,22 +750,6 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * Get a lazy collection for the given query.
-     *
-     * @return \Illuminate\Support\LazyCollection
-     */
-    public function cursor()
-    {
-        $this->query->addSelect($this->shouldSelect());
-
-        return $this->query->cursor()->map(function ($model) {
-            $this->hydratePivotRelation([$model]);
-
-            return $model;
-        });
-    }
-
-    /**
      * Hydrate the pivot table relationship on the models.
      *
      * @param  array  $models
