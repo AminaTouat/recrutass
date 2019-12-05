@@ -33,8 +33,34 @@ Route::get('/post-jobs', function () {
 Route::get('/profilerecruteur', function () {
     return view('user-dash-recru');
 });
+Route::get('/modifier_motdepass', function () {
+    return view('changer_pswd');
+});
 Route::get('/cv', function () {
     return view('cv');
+});
+Route::get('/offres_publier', function () {
+    return view('offres_pub');
+});
+Route::get('/favorite_condidat', function () {
+    return view('favorite-cond');
+});
+Route::get('/condidats post leur cv', function () {
+    return view('condidat_post');
+});
+Route::get('/Liste des offres', function () {
+    return view('offres');
+});
+
+
+Route::get('/Liste des entreprises', function () {
+    return view('listeDesEntreprises');
+});
+Route::get('/Les offres dune entreprises', function () {
+    return view('offresEntreprises');
+});
+Route::get('/Information sur lentreprise', function () {
+    return view('informationSurlEntreprise');
 });
 Auth::routes();
 
