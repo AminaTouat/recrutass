@@ -46,6 +46,17 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'recruteur' => [
+            'driver' => 'session',
+            'provider' => 'recruteurs',
+        ],
+
+        'recruteur=api' => [
+            'driver' => 'token',
+            'provider' => 'recruteurs',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -70,6 +81,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'recruteurs' => [
+            'driver' => 'eloquent',
+            'model' => App\Recruteur::class,
+        ],
+        
 
         // 'users' => [
         //     'driver' => 'database',
@@ -95,6 +111,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'recruteurs' => [
+            'provider' => 'recruteurs',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

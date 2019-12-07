@@ -46,7 +46,7 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">S'INSCRIRE</a>
           <div class="dropdown-menu">
              <a class="dropdown-item" href="{{ route('register') }}">Espace Candidat</a>
-             <a class="dropdown-item" href="/post-jobs">Espace recruteur</a>
+             <a class="dropdown-item" href="{{ route('register') }}">Espace recruteur</a>
         </il>
     </ul>
     

@@ -65,3 +65,10 @@ Route::get('/Information sur lentreprise', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('recruteur')->group(function(){
+ 
+    Route::get('/login', 'Auth\RecruteurLoginController@showLoginFrom')->name('recruteur.login');
+    Route::post('/login', 'Auth\RecruteurLoginController@login')->name('recruteur.login.submit');
+    Route::get('/', 'RecruteurController@index')->name('user-dash-recru');
+});
