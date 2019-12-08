@@ -23,8 +23,8 @@
                                     <li> <a href="/post-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>postuler une offres</a></li>
     
                                     <li> <a href="/favorite_condidat"> <i class="jobsearch-icon jobsearch-heart"></i> Favorite condidats </a></li>
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-alarm"></i> Condidats qui ont postulé pour une offre  </a></li>
+                                    <li> <a href="/modifier_motdepass"> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
+                                    <li> <a href="/condidats post leur cv"> <i class="jobsearch-icon jobsearch-alarm"></i> Condidats qui ont postulé pour une offre  </a></li>
                   
                                      </ul>
                             </div>

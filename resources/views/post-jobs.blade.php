@@ -19,7 +19,7 @@
                                     
                                     <li class="active"> <a href="/profilerecruteur"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil(modifier) </a></li>
                                     
-                                    <li> <a href=""> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
+                                    <li> <a href="offres_publier"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a></li>
                                     <li> <a href="/post-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i>postuler une offres</a></li>
     
                                     <li> <a href=""> <i class="jobsearch-icon jobsearch-heart"></i> Favorite condidats </a></li>
