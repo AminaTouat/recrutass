@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.navbarRegistre')
 
 @section('content')
+<header class="masthead">
+    <section class="vh-100" >
+        <div class="home-center">
+            <div class="home-desc-center">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,4 +29,8 @@
         </div>
     </div>
 </div>
+</div>
+        </div>
+    </section>
+</header>
 @endsection

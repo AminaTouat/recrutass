@@ -1,6 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.navpass')
 
 @section('content')
+<head>
+<title>email</title>
+</head>
+<header class="masthead">
+<section class="vh-100">
+    <div class="home-center">
+        <div class="home-desc-center">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -44,4 +51,19 @@
         </div>
     </div>
 </div>
+</div>
+    </div>
+</section>
+</header>
+<script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
+
+    <!-- selectize js -->
+    <script src="../js/selectize.min.js"></script>
+
+    <script src="../js/jquery.nice-select.min.js"></script>
+
+    <script src="../js/app.js"></script>
 @endsection

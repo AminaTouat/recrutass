@@ -19,12 +19,11 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/Recrutass.css" rel="stylesheet">
-  
  
 </head>
-<!-- 
+
 <body id="page-top">
-  Navigation -->
+
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a  class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo Autoscuola"></a>
@@ -46,12 +45,20 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">S'INSCRIRE</a>
           <div class="dropdown-menu">
              <a class="dropdown-item" href="{{ route('register') }}">Espace Candidat</a>
-             <a class="dropdown-item" href="/post-jobs">Espace recruteur</a>
+             <a class="dropdown-item" href="{{ url('register/recruteur') }}">Espace recruteur</a>
+        </il>
+    </ul>
+          <ul class="navbar-nav m-auto">
+      <li class="dropdown nav-item active">
+          <a href="#" class="nav-link js-scroll-trigger"data-toggle="dropdown"id="seconnecter">Se connecter</a>
+          <div class="dropdown-menu">
+             <a class="dropdown-item" href="{{ route('login') }}">Espace Candidat</a>
+             <a class="dropdown-item" href="{{ url('login/recruteur') }}">Espace recruteur</a>
         </il>
     </ul>
     
-          <li><a  class="nav-link js-scroll-trigger"  href="{{ route('login') }}" id="seconnecter"><span class="glyphicon glyphicon-seconnecter" ></span>Se connecter</a></li>
-        </ul>
+          <!-- <li><a  class="nav-link js-scroll-trigger"  href="{{ route('login') }}" id="seconnecter"><span class="glyphicon glyphicon-seconnecter" ></span>Se connecter</a></li>
+        </ul> -->
       </div>
     </div>
   </nav>

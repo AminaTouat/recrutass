@@ -65,3 +65,9 @@ Route::get('/Information sur lentreprise', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login/recruteur', 'Auth\LoginController@showRecruteurLoginForm');
+Route::get('/register/recruteur', 'Auth\RegisterController@showRecruteurRegisterForm');
+Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
+Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
+// Route::view('/home', 'home')->middleware('auth');
+Route::view('/recruteur', 'recruteur');

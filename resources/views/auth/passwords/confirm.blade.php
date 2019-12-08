@@ -1,17 +1,10 @@
-@extends('layouts.navbarRegistre')
+@extends('layouts.navpass')
 
 @section('content')
 <head>
 <title>Confirm</title>
 </head>
-<div id="preloader">
-    <div id="status">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-    </div>
-</div>
+<header class="masthead">
 <section class="vh-100">
     <div class="home-center">
         <div class="home-desc-center">
@@ -68,4 +61,16 @@
     </div>
     </div>
 </section>
+</header>
+<script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
+
+    <!-- selectize js -->
+    <script src="../js/selectize.min.js"></script>
+
+    <script src="../js/jquery.nice-select.min.js"></script>
+
+    <script src="../js/app.js"></script>
 @endsection

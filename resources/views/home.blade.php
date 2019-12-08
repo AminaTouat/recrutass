@@ -9,10 +9,8 @@
                     <aside class="jobsearch-column-3 jobsearch-typo-wrap">
                         <div class="jobsearch-typo-wrap">
                             <div class="jobsearch-employer-dashboard-nav">
-                                <figure> <a href="javascript:void(0);" class="user-dashthumb-remove jobsearch-tooltipcon" title="Supprimer" data-uid="182340" style="display: none;"><i class="fa fa-times"></i></a> <a id="com-img-holder" href="https://marocemploi.net/user-dashboard/"
-                                        class="employer-dashboard-thumb"> <img src="https://secure.gravatar.com/avatar/d01d152e78a12c57fe8190f26087fb8f?s=132&d=mm&r=g" alt="" style="max-width: 132px;"> </a>
-                                    <figcaption> <span class="fileUpLoader"></span>
-                                        <div class="jobsearch-fileUpload"> <span><i class="jobsearch-icon jobsearch-add"></i> Télécharger la photo</span> <input type="file" id="user_avatar" name="user_avatar" class="jobsearch-upload"></div>
+                                    <Label class = "contrôle-label"> Sélectionnez la photo 
+             <Input id = "uploader" name = "image" type = "file" classe multiple = "file-chargement"></Label>
                                         <h2><a href="/home">{{ Auth::user()->name }}</a></h2> <span class="jobsearch-dashboard-subtitle"></span></figcaption>
                                 </figure>
                                 <ul>
@@ -20,7 +18,6 @@
                                  <li class="active"> <a href="/home"> <i class="jobsearch-icon jobsearch-user"></i> Mon profil </a></li>
                                         <li> <a href="cv"> <i class="jobsearch-icon jobsearch-resume"></i> Mon CV </a></li>
                                         <li> <a href="https://marocemploi.net/user-dashboard/?tab=applied-jobs"> <i class="jobsearch-icon jobsearch-briefcase-1"></i> Offres postulées </a></li>
-                                        <li> <a href="https://marocemploi.net/user-dashboard/?tab=cv-manager"> <i class="jobsearch-icon jobsearch-id-card"></i> Manager de CV </a></li>
                                         <li> <a href="https://marocemploi.net/user-dashboard/?tab=favourite-jobs"> <i class="jobsearch-icon jobsearch-heart"></i> Favorite Jobs </a></li>
                                         <li> <a href="https://marocemploi.net/user-dashboard/?tab=change-password"> <i class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a></li>
                                         <li> <a href="https://marocemploi.net/user-dashboard/?tab=job-alerts"> <i class="jobsearch-icon jobsearch-alarm"></i> Alertes emploi </a></li>
@@ -37,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h5 class="text-dark">General Information :</h5>
+                    <h5 class="text-dark">Informations générales:</h5>
                 </div>
 
                 <div class="col-12 mt-3">
@@ -46,40 +43,40 @@
                             <div class="row mt-4">
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">First Name<span class="text-danger">*</span> :</label>
-                                        <input id="first-name" type="text" name="name" class="form-control resume" placeholder="First Name :">
+                                        <label class="text-muted">Prénom<span class="text-danger">*</span> :</label>
+                                        <input id="prenom" type="text" name="name" class="form-control resume" placeholder="First Name :">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Middle Name<span class="text-danger">*</span> :</label>
-                                        <input id="middle-name" type="text" class="form-control resume" placeholder="Middle Name :">
+                                        <label class="text-muted"><span class="text-danger">*</span> :</label>
+                                        <input id="deuxieme_prenom" type="text" class="form-control resume" placeholder="Middle Name :">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                    <label class="text-muted">Surname<span class="text-danger">*</span> :</label>
-                                        <input id="surname-name" type="text" class="form-control resume" placeholder="Surname :">
+                                    <label class="text-muted">Nom<span class="text-danger">*</span> :</label>
+                                        <input id="nom" type="text" class="form-control resume" placeholder="Surname :">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Date Of Birth<span class="text-danger">*</span> :</label>
-                                        <input id="date-of-birth" type="text" class="form-control resume" placeholder="13-02-1999">
+                                        <label class="text-muted">Date de naissance<span class="text-danger">*</span> :</label>
+                                        <input id="datenaiss" type="date" class="form-control resume" placeholder="13-02-1999">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Sex<span class="text-danger">*</span> :</label>
+                                        <label class="text-muted">Sexe<span class="text-danger">*</span> :</label>
                                         <div class="form-button">
                                             <select class="nice-select rounded">
-                                                <option data-display="sex">Sex</option>
-                                                <option value="1">Male</option>
-                                                <option value="2">Female</option>
+                                                <option data-display="sexe">Sexe</option>
+                                                <option value="homme">Homme</option>
+                                                <option value="femme">Femme</option>
 
                                             </select>
                                         </div>
@@ -88,12 +85,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Marital Status</label>
+                                        <label class="text-muted">Civilité</label>
                                         <div class="form-button">
                                             <select class="nice-select rounded">
-                                                <option data-display="Status">Status</option>
-                                                <option value="1">Unmarried</option>
-                                                <option value="2">Married</option>
+                                                <option data-display="civilité">Civilité</option>
+                                                <option value="Mr ">Monsieur </option>
+                                                <option value="Mme">Madame</option>
+                                                <option value="Mmd">Mademoiselle </option>
                                             </select>
                                         </div>
                                     </div>
@@ -106,7 +104,7 @@
 
             <div class="row mt-5">
                 <div class="col-12">
-                    <h5 class="text-dark">Contact Information :</h5>
+                    <h5 class="text-dark">Informations de contact :</h5>
                 </div>
 
                 <div class="col-12 mt-3">
@@ -115,51 +113,67 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">City</label>
+                                        <label class="text-muted">Ville</label>
                                         <div class="form-button">
                                             <select class="nice-select rounded">
-                                                <option data-display="City">City</option>
-                                                <option value="1">Abilene</option>
-                                                <option value="2">Babbitt</option>
-                                                <option value="3">Cape Coral</option>
-                                                <option value="4">Dallas</option>
-                                                <option value="5">Eloy</option>
+                                                <option data-display="Ville">Ville</option>
+                                                <option value="1">Adrar</option>
+                                                <option value="2">chlef</option>
+                                                <option value="3">Laghouat</option>
+                                                <option value="4">Oum El Bouaghi</option>
+                                                <option value="5">Batna</option>
+                                                <option value="6">Béjaia</option>
+                                                <option value="7">Biskra</option>
+                                                <option value="8">Béchar</option>
+                                                <option value="9">Blida</option>
+                                                <option value="10">Bouira</option>
+                                                <option value="11">Tamanrasset</option>
+                                                <option value="12">Tébessa</option>
+                                                <option value="13">Tlemcen</option>
+                                                <option value="14">Tiaret</option>
+                                                <option value="15">Tizi Ouzou</option>
+                                                <option value="16">Alger</option>
+                                                <option value="17">Djelfa</option>
+                                                <option value="18">jijel</option>
+                                                <option value="19">Sétif</option>
+                                                <option value="20">Saida</option>
+                                                <option value="21">Skikda</option>
+                                                <option value="22">Sidi Bel Abbes</option>
+                                                <option value="23">Annaba</option>
+                                                <option value="24">Guelma</option>
+                                                <option value="25">Constantine</option>
+                                                <option value="26">Médéa</option>
+                                                <option value="27">Mostaganem</option>
+                                                <option value="28">M'Sila</option>
+                                                <option value="29">Mascara</option>
+                                                <option value="30">Ouargla </option>
+                                                <option value="31">Oran</option>
+                                                <option value="32">'El Bayadh</option>
+                                                <option value="33">Illizi</option>
+                                                <option value="34">Bordj Bou Arreridj</option>
+                                                <option value="35">Boumerdès</option>
+                                                <option value="36">El Tarf</option>
+                                                <option value="37">Tindouf</option>
+                                                <option value="38">Tissemsilt</option>
+                                                <option value="39">El Oued </option>
+                                                <option value="40">Khenchela</option>
+                                                <option value="41">Souk Ahras</option>
+                                                <option value="42">Tipaza</option>
+                                                <option value="43">Mila</option>
+                                                <option value="44">Defla</option>
+                                                <option value="45">Naâma</option>
+                                                <option value="46">Aïn Témouchent </option>
+                                                <option value="47">Ghardaïa </option>
+                                                <option value="48">Relizane</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">State</label>
-                                        <div class="form-button">
-                                            <select class="nice-select rounded">
-                                                <option data-display="State">State</option>
-                                                <option value="1">Alabama</option>
-                                                <option value="3">Hawaii</option>
-                                                <option value="4">Maine</option>
-                                                <option value="5">Oregon</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                               
 
-                                <div class="col-md-4">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Country</label>
-                                        <div class="form-button">
-                                            <select class="nice-select rounded">
-                                                <option data-display="Country">Country</option>
-                                                <option value="1">Alabama</option>
-                                                <option value="2">Delaware</option>
-                                                <option value="3">Iowa</option>
-                                                <option value="4">Missouri</option>
-                                                <option value="5">New York</option>
-                                                <option value="6">Utah</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                            
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
@@ -177,8 +191,8 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group app-label">
-                                        <label class="text-muted">Website</label>
-                                        <input id="website" type="url" name="url" class="form-control resume" placeholder="www.example.com">
+                                        <label class="text-muted">LinkedIn</label>
+                                        <input id="linkedin" type="url" name="url" class="form-control resume" placeholder="LinkedIn :">
                                     </div>
                                 </div>
 
@@ -189,8 +203,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
+                    <button  class="btn btn-primary submitBnt" type="submit">enregistrer</button>
+                    </form>
                 </div>
             </div>
 

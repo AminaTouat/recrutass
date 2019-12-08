@@ -10,15 +10,19 @@
     <section class="vh-100" >
         <div class="home-center">
             <div class="home-desc-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6" id="register">
-                            <div class="login_page bg-white shadow rounded p-4">
-                                <div class="text-center">
-                                    <h4 class="mb-4">Sign Up</h4>
-                                </div>
-                                <form class="login-form" method="POST" action="{{ route('register') }}">
-                                    @csrf
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Register') }}</div>
+
+                <div class="card-body">
+                    @isset($url)
+                    <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
+                    @else
+                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    @endisset
+                        @csrf
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group position-relative">
@@ -91,15 +95,15 @@
     <!-- Hero End -->
 
     <!-- javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
 
     <!-- selectize js -->
-    <script src="js/selectize.min.js"></script>
+    <script src="../js/selectize.min.js"></script>
 
-    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
 
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
     @endsection

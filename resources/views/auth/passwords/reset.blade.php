@@ -1,23 +1,12 @@
-@extends('layouts.navbarRegistre')
+@extends('layouts.navpass')
+
 
 @section('content')
-<body>
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Loader -->
 
-    <!-- Hero Start -->
-    <section class="vh-100">
-
-        <div class="home-center">
-            <div class="home-desc-center">
+<header class="masthead">
+<section class="vh-100">
+    <div class="home-center">
+        <div class="home-desc-center">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6">
@@ -74,23 +63,20 @@
                     <!--end row-->
                 </div>
                 <!--end container-->
-            </div>
-        </div>
-    </section>
-    <!--end section-->
-    <!-- Hero End -->
-
-    <!-- javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/plugins.js"></script>
+                </div>
+</div>
+    </div>
+</section>
+</header>
+<script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
 
     <!-- selectize js -->
-    <script src="js/selectize.min.js"></script>
+    <script src="../js/selectize.min.js"></script>
 
-    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
 
-    <script src="js/app.js"></script>
-</body>
+    <script src="../js/app.js"></script>
 @endsection

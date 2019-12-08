@@ -44,7 +44,10 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
+        ],
+        'recruteur' => [
+            'driver' => 'session',
+            'provider' => 'recruteurs',
         ],
     ],
 
@@ -70,7 +73,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        'recruteurs' => [
+            'driver' => 'eloquent',
+            'model' => App\Recruteur::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

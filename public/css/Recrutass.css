@@ -15,7 +15,7 @@
  #mainNav .navbar-brand{color:#161616;font-weight:700;padding:.9rem 0}
  #mainNav .navbar-nav .nav-item:hover{color:fade(white,80%);outline:0;background-color:transparent}
  #mainNav .navbar-nav .nav-item:active,#mainNav .navbar-nav .nav-item:focus{outline:0;background-color:transparent}
- @media (min-width:992px){#mainNav{padding-top:24px;padding-bottom:0;border-bottom:none;background-color:transparent;-webkit-transition:background-color .3s ease-in-out;transition:background-color .3s ease-in-out}
+ #mainNav{padding-top:24px;padding-bottom:0;border-bottom:none;background-color:transparent;-webkit-transition:background-color .3s ease-in-out;transition:background-color .3s ease-in-out}
  #mainNav .navbar-brand{padding:.5rem 0;color:rgba(255,255,255,.5)}
  #mainNav .nav-link{-webkit-transition:none;transition:none;padding:0rem 1.5rem;color:#b2de81 }
  #mainNav .nav-link:hover{color:#67a125}
@@ -28,12 +28,12 @@
  #mainNav.navbar-shrink .nav-link:active{color:#67a125}
  #mainNav.navbar-shrink .nav-link.active{color:#67a125;outline:0;border-bottom:.25rem solid #67a125}
  .masthead{position:relative;width:100%;height:auto;min-height:35rem;padding:15rem 0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.3)),color-stop(75%,rgba(22,22,22,.7)),to(#161616)),url(../img/charge-de-recherche-en-recrutement.jpg);background:linear-gradient(to bottom,rgba(22,22,22,.3) 0,rgba(22,22,22,.7) 75%,#161616 100%),url(../img/charge-de-recherche-en-recrutement.jpg);background-position:center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover}
- .masthead h1{     padding-top: 35%; font-family:'Varela Round';font-size:2.5rem;line-height:2.5rem;letter-spacing:.8rem;background:-webkit-linear-gradient(rgba(247, 238, 238, 0.9),rgba(255,255,255,0));-webkit-text-fill-color:transparent;-webkit-background-clip:text}
+ .masthead h1{padding-top: 35%; font-family:'Varela Round';font-size:2.5rem;line-height:2.5rem;letter-spacing:.8rem;background:-webkit-linear-gradient(rgba(247, 238, 238, 0.9),rgba(255,255,255,0));-webkit-text-fill-color:transparent;-webkit-background-clip:text}
  .masthead h2{max-width:20rem;font-size:1rem}
  @media (min-width:768px){.masthead h1{font-size:4rem;line-height:4rem}}
- @media (min-width:992px){.masthead{height:100vh;padding:0}
+ .masthead{height:100vh;padding:0}
  .masthead h1{font-size:3.5rem;line-height:6.5rem;letter-spacing:.8rem}
- .masthead h2{max-width:30rem;font-size:1.25rem}}
+ .masthead h2{max-width:30rem;font-size:1.25rem}
  .btn{-webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;font-family:'Varela Round';font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
  .btn-primary{background-color:#b2de81}
  .btn-primary:hover{background-color:#67a125}
@@ -65,7 +65,7 @@
  .bg-black{background-color:#161616!important}
  .bg-primary{background-color:rgba(231,166,52,1)!important}
  .text-primary{color:rgba(231,166,52,1)!important}
- footer{padding:5rem 0}}
+ footer{padding:5rem 0}
  .dropdown-menu{
      background-color:white;
  }
@@ -534,7 +534,7 @@
   .jobsearch-column-6 {
      width: 50%; 
   }
-  . @media (min-width: 992px)
+   . @media (min-width: 992px)
   body {
       font-family: Nunito;
       letter-spacing: .0625em;
@@ -572,4 +572,10 @@
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,.08);
   padding: 30px 30px 18px;
   margin-bottom: 30px;
+}
+.inputiD {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
 }

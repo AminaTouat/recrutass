@@ -15,15 +15,19 @@
 
         <div class="home-center">
             <div class="home-desc-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6" id="formulair">
-                            <div class="login-page bg-white shadow rounded p-4">
-                                <div class="text-center">
-                                    <h4 class="mb-4">{{ __('Login') }}</h4>
-                                </div>
-                                <form class="login-form" method="POST" action="{{ route('login') }}">
-                                @csrf    
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
+
+                <div class="card-body">
+                    @isset($url)
+                    <form method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    @else
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    @endisset
+                        @csrf   
                                 <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
@@ -97,16 +101,16 @@
     <!-- Hero End -->
 
     <!-- javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
 
     <!-- selectize js -->
-    <script src="js/selectize.min.js"></script>
+    <script src="../js/selectize.min.js"></script>
 
-    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
 
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 @endsection
