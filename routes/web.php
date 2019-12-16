@@ -64,10 +64,20 @@ Route::get('/Information sur lentreprise', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/login/recruteur', 'Auth\LoginController@showRecruteurLoginForm');
+Route::get('/login', 'Auth\LoginController@showCandidatLoginForm')->name('login');
 Route::get('/register/recruteur', 'Auth\RegisterController@showRecruteurRegisterForm');
+Route::get('/recruteur', 'RecruteurController@index');
+Route::get('/home', 'CandidatController@index');
+Route::get('/edit/{id}','CandidatController@edit');
+
+Route::put('/edit/{id}','ArticleController@update')->name('updateC');
+
+Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
-// Route::view('/home', 'home')->middleware('auth');
-Route::view('/recruteur', 'recruteur');
+Route::post('/home', 'CandidatController@store')->name('updateC');
+Route::post('/recruteur', 'RecruteurController@store')->name('updateR');
+// Route::resource('/candidats','CandidatController');

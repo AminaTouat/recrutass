@@ -20,14 +20,14 @@
                     @isset($url)
                     <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
                     @else
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    <form method="POST" action="{{ route('register2') }}" aria-label="{{ __('Register') }}">
                     @endisset
                         @csrf
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group position-relative">
-                                                <label for="name" >{{ __('Name') }} <span class="text-danger">*</span></label>
-                                                <input  id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Last Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                                <label for="name" >{{ __('Nom') }} <span class="text-danger">*</span></label>
+                                                <input  id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nom" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

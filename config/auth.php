@@ -49,6 +49,11 @@ return [
             'driver' => 'session',
             'provider' => 'recruteurs',
         ],
+        'candidat' => [
+            'driver' => 'session',
+            'provider' => 'candidats',
+        ],
+
     ],
 
     /*
@@ -77,10 +82,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Recruteur::class,
         ],
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'candidats' => [
+            'driver' => 'eloquent',
+            'model' => App\Candidat::class,
+        ],
+       
     ],
 
     /*

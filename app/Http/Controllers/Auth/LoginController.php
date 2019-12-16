@@ -43,6 +43,11 @@ class LoginController extends Controller
     {
         return view('auth.login', ['url' => 'recruteur']);
     }
+    
+    public function showCandidatLoginForm()
+    {
+        return view('auth.login', ['url' => '']);
+    }
 
     public function recruteurLogin(Request $request)
     {

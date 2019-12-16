@@ -14,13 +14,29 @@ class CreateRecruteursTable extends Migration
     public function up()
     {
         Schema::create('recruteurs', function (Blueprint $table) {
+            // $table->increments('id');
+            // $table->string('name');
+            // $table->string('email');
+            // $table->string('password');
+            // $table->boolean('is_super')->default(false);
+            // $table->rememberToken();
+            // $table->timestamps();
             $table->increments('id');
             $table->string('name');
             $table->string('email');
             $table->string('password');
             $table->boolean('is_super')->default(false);
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('sitewebentre')->nullable();
+           $table->string('adresseentre')->nullable();
+           $table->string('telephoneentre')->nullable();
+           $table->string('emailentre')->nullable();
+           $table->string('discriptionentre')->nullable();
+          $table->string('emailrecru')->nullable();
+         $table->string('nomrecru')->nullable();
+        $table->string('prenomrecru')->nullable();
+        $table->integer('telephonerecru')->nullable();
+        $table->rememberToken();
+         $table->timestamps();
         });
     }
 
