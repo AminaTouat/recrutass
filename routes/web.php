@@ -37,7 +37,7 @@ Route::get('/modifier_motdepass', function () {
     return view('changer_pswd');
 });
 Route::get('/cv', function () {
-    return view('cv');
+    return view('candidat.cv');
 });
 Route::get('/offres_publier', function () {
     return view('offres_pub');
@@ -71,13 +71,16 @@ Route::get('/login', 'Auth\LoginController@showCandidatLoginForm')->name('login'
 Route::get('/register/recruteur', 'Auth\RegisterController@showRecruteurRegisterForm');
 Route::get('/recruteur', 'RecruteurController@index');
 Route::get('/home', 'CandidatController@index');
+Route::get('/cv', 'FormationController@index');
 Route::get('/edit/{id}','CandidatController@edit');
 
-Route::put('/edit/{id}','ArticleController@update')->name('updateC');
 
+Route::post('/edit/{id}','CandidatController@update')->name('edit');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
-Route::post('/home', 'CandidatController@store')->name('updateC');
+Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+Route::post('/cv', 'FormationController@store')->name('updateF');
 Route::post('/recruteur', 'RecruteurController@store')->name('updateR');
+Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');
 // Route::resource('/candidats','CandidatController');

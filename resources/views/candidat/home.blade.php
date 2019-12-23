@@ -9,28 +9,30 @@
             <aside class="jobsearch-column-3 jobsearch-typo-wrap">
                 <div class="jobsearch-typo-wrap">
                     <div class="jobsearch-employer-dashboard-nav">
-    
+                       <figure>
+                           <img src="/uploads/avatar/{{ $user->avatar }}"
+                               style="max-width: 132px; border-radius: 50%; margin-right: 25px;">
+                           <form  action="{{route('updateM')}}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
 
-                        <h2><a href="/home">{{ $user->name }}</a></h2> <span
-                            class="jobsearch-dashboard-subtitle"></span></figcaption>
+                            <span> Modifier la photo</span>
+
+                               <input type="file" onchange="this.form.submit()" name="avatar" class="jobsearch-upload">
+                               <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                           </form>
+                           <h2>{{ $user->name }}</h2>
+                       </figure>
 
                         <ul>
 
-                            <li class="active"> <a href="/home"> <i class="jobsearch-icon jobsearch-user"></i> Mon
-                                    profil </a></li>
-                            <li> <a href="cv"> <i class="jobsearch-icon jobsearch-resume"></i> Mon CV </a></li>
-                            <li> <a href="https://marocemploi.net/user-dashboard/?tab=applied-jobs"> <i
-                                        class="jobsearch-icon jobsearch-briefcase-1"></i> Offres postulées </a></li>
-                            <li> <a href="https://marocemploi.net/user-dashboard/?tab=favourite-jobs"> <i
-                                        class="jobsearch-icon jobsearch-heart"></i> Favorite Jobs </a></li>
-                            <li> <a href="https://marocemploi.net/user-dashboard/?tab=change-password"> <i
-                                        class="jobsearch-icon jobsearch-multimedia"></i> Modifier le mot de passe </a>
+                            <li class="active"> <a href="/home"> <i class="fas fa-user"></i> Mon profil </a></li>
+                            <li> <a href="cv"><i class="fas fa-file-alt"></i>Mon CV</a></li>
+                            <li> <a href=""><i class="fas fa-briefcase"></i>  Offres postulées </a></li>
+                            <li> <a href=""><i class="fas fa-heart"></i> Favorite Jobs </a></li>
+                            <li> <a href=""> <i class="fas fa-lock"></i> Modifier le mot de passe </a>
                             </li>
-                            <li> <a href="https://marocemploi.net/user-dashboard/?tab=job-alerts"> <i
-                                        class="jobsearch-icon jobsearch-alarm"></i> Alertes emploi </a></li>
-                            <li> <a href=""> <i class="jobsearch-icon jobsearch-briefcase-1"></i>offres publiées</a>
-                            </li>
-
+                            <li> <a href=""> <i class="fas fa-bell"></i> Alertes emploi </a></li>
 
                         </ul>
                     </div>
@@ -51,7 +53,8 @@
                         <div class="col-12 mt-3">
                             <div class="custom-form p-4 border rounded">
                                 <form action="{{route('updateC')}}" method="post">
-                                        @csrf
+                                    {{ csrf_field() }}
+                                        
                                                 <div class="row mt-4">
                                                     @if($user->prenom!=null)
                                                     <div class="col-md-4">
@@ -60,7 +63,7 @@
                                                             <label for="prenom" class="text-muted">Prénom<span
                                                                     class="text-danger">*</span> :</label>
                                                             <input id="prenom" name="prenom" type="text" class="form-control resume"
-                                                                placeholder="" value="{{$user->prenom}}" disabled="disabled">
+                                                                 value="{{$user->prenom}}" disabled="disabled">
                                                                
                                                         </div>
                                                     </div>
@@ -72,7 +75,7 @@
                                                             <label for="prenom" class="text-muted">Prénom<span
                                                                     class="text-danger">*</span> :</label>
                                                             <input id="prenom" name="prenom" type="text" class="form-control resume"
-                                                                placeholder="" >
+                                                                placeholder="Prénom" >
                                                                
                                                         </div>
                                                     </div>
@@ -82,7 +85,7 @@
                                                             <label for="nom" class="text-muted">Nom<span
                                                                     class="text-danger">*</span> :</label>
                                                             <input id="nom" name="name" type="text" class="form-control resume"
-                                                                placeholder="Surname :" value ="{{$user->name}}" disabled="disabled" >
+                                                                 value ="{{$user->name}}" disabled="disabled" >
                                                         </div>
                                                     </div>
                                            
@@ -92,7 +95,7 @@
                                                             <label for="datenaiss" class="text-muted">Date de naissance<span
                                                                     class="text-danger">*</span> :</label>
                                                             <input id="datenaiss" name="datenaiss" type="date"
-                                                                class="form-control resume" placeholder="13-02-1999" value="{{$user->datenaiss}}" disabled="disabled">
+                                                                class="form-control resume"  value="{{$user->datenaiss}}" disabled="disabled">
                                                         </div>
                                                     </div>
                                                     @else 
@@ -186,101 +189,199 @@
                                         <div class="custom-form p-4 border rounded">
             
                                             <div class="row">
+                                                @if($user->ville!=null)
                                                 <div class="col-md-4">
                                                     <div class="form-group app-label">
                                                         <label class="text-muted">Ville</label>
                                                         <div class="form-button">
-                                                            <select class="nice-select rounded">
-                                                                <option data-display="Ville">Ville</option>
-                                                                <option value="1">Adrar</option>
-                                                                <option value="2">chlef</option>
-                                                                <option value="3">Laghouat</option>
-                                                                <option value="4">Oum El Bouaghi</option>
-                                                                <option value="5">Batna</option>
-                                                                <option value="6">Béjaia</option>
-                                                                <option value="7">Biskra</option>
-                                                                <option value="8">Béchar</option>
-                                                                <option value="9">Blida</option>
-                                                                <option value="10">Bouira</option>
-                                                                <option value="11">Tamanrasset</option>
-                                                                <option value="12">Tébessa</option>
-                                                                <option value="13">Tlemcen</option>
-                                                                <option value="14">Tiaret</option>
-                                                                <option value="15">Tizi Ouzou</option>
-                                                                <option value="16">Alger</option>
-                                                                <option value="17">Djelfa</option>
-                                                                <option value="18">jijel</option>
-                                                                <option value="19">Sétif</option>
-                                                                <option value="20">Saida</option>
-                                                                <option value="21">Skikda</option>
-                                                                <option value="22">Sidi Bel Abbes</option>
-                                                                <option value="23">Annaba</option>
-                                                                <option value="24">Guelma</option>
-                                                                <option value="25">Constantine</option>
-                                                                <option value="26">Médéa</option>
-                                                                <option value="27">Mostaganem</option>
-                                                                <option value="28">M'Sila</option>
-                                                                <option value="29">Mascara</option>
-                                                                <option value="30">Ouargla </option>
-                                                                <option value="31">Oran</option>
-                                                                <option value="32">'El Bayadh</option>
-                                                                <option value="33">Illizi</option>
-                                                                <option value="34">Bordj Bou Arreridj</option>
-                                                                <option value="35">Boumerdès</option>
-                                                                <option value="36">El Tarf</option>
-                                                                <option value="37">Tindouf</option>
-                                                                <option value="38">Tissemsilt</option>
-                                                                <option value="39">El Oued </option>
-                                                                <option value="40">Khenchela</option>
-                                                                <option value="41">Souk Ahras</option>
-                                                                <option value="42">Tipaza</option>
-                                                                <option value="43">Mila</option>
-                                                                <option value="44">Defla</option>
-                                                                <option value="45">Naâma</option>
-                                                                <option value="46">Aïn Témouchent </option>
-                                                                <option value="47">Ghardaïa </option>
-                                                                <option value="48">Relizane</option>
+                                                            <select class="nice-select rounded" name="ville" disabled="disabled">
+                                                                <option data-display="Ville">{{$user->ville}}</option>
+                                                                <option value="Adrar">Adrar</option>
+                                                                <option value="chlef">chlef</option>
+                                                                <option value="Laghouat">Laghouat</option>
+                                                                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                                                                <option value="Batna">Batna</option>
+                                                                <option value="Béjaia">Béjaia</option>
+                                                                <option value="Biskra">Biskra</option>
+                                                                <option value="Béchar">Béchar</option>
+                                                                <option value="Blida">Blida</option>
+                                                                <option value="Bouira">Bouira</option>
+                                                                <option value="Tamanrasset">Tamanrasset</option>
+                                                                <option value="Tébessa">Tébessa</option>
+                                                                <option value="Tlemcen">Tlemcen</option>
+                                                                <option value="Tiaret">Tiaret</option>
+                                                                <option value="Tizi Ouzou">Tizi Ouzou</option>
+                                                                <option value="Alger">Alger</option>
+                                                                <option value="Djelfa">Djelfa</option>
+                                                                <option value="jijel">jijel</option>
+                                                                <option value="Sétif">Sétif</option>
+                                                                <option value="Saida">Saida</option>
+                                                                <option value="Skikda">Skikda</option>
+                                                                <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+                                                                <option value="Annaba">Annaba</option>
+                                                                <option value="Guelma">Guelma</option>
+                                                                <option value="Constantine">Constantine</option>
+                                                                <option value="Médéa">Médéa</option>
+                                                                <option value="Mostaganem">Mostaganem</option>
+                                                                <option value="M'Sila">M'Sila</option>
+                                                                <option value="Mascara">Mascara</option>
+                                                                <option value="Ouargla">Ouargla </option>
+                                                                <option value="Oran">Oran</option>
+                                                                <option value="El Bayadh">'El Bayadh</option>
+                                                                <option value="Illizi">Illizi</option>
+                                                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+                                                                <option value="Boumerdès">Boumerdès</option>
+                                                                <option value="El Tarf">El Tarf</option>
+                                                                <option value="Tindouf">Tindouf</option>
+                                                                <option value="Tissemsilt">Tissemsilt</option>
+                                                                <option value="El Oued">El Oued </option>
+                                                                <option value="Khenchela">Khenchela</option>
+                                                                <option value="Souk Ahras">Souk Ahras</option>
+                                                                <option value="Tipaza">Tipaza</option>
+                                                                <option value="Mila">Mila</option>
+                                                                <option value="Defla">Defla</option>
+                                                                <option value="Naâma">Naâma</option>
+                                                                <option value="Aïn Témouchent">Aïn Témouchent </option>
+                                                                <option value="Ghardaïa">Ghardaïa </option>
+                                                                <option value="Relizane">Relizane</option>
             
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @else 
+
             
+                                                     <div class="col-md-4">
+                                                    <div class="form-group app-label">
+                                                        <label class="text-muted">Ville</label>
+                                                        <div class="form-button">
+                                                            <select class="nice-select rounded" name="ville">
+                                                                <option value="Adrar">Adrar</option>
+                                                                <option value="chlef">chlef</option>
+                                                                <option value="Laghouat">Laghouat</option>
+                                                                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                                                                <option value="Batna">Batna</option>
+                                                                <option value="Béjaia">Béjaia</option>
+                                                                <option value="Biskra">Biskra</option>
+                                                                <option value="Béchar">Béchar</option>
+                                                                <option value="Blida">Blida</option>
+                                                                <option value="Bouira">Bouira</option>
+                                                                <option value="Tamanrasset">Tamanrasset</option>
+                                                                <option value="Tébessa">Tébessa</option>
+                                                                <option value="Tlemcen">Tlemcen</option>
+                                                                <option value="Tiaret">Tiaret</option>
+                                                                <option value="Tizi Ouzou">Tizi Ouzou</option>
+                                                                <option value="Alger">Alger</option>
+                                                                <option value="Djelfa">Djelfa</option>
+                                                                <option value="jijel">jijel</option>
+                                                                <option value="Sétif">Sétif</option>
+                                                                <option value="Saida">Saida</option>
+                                                                <option value="Skikda">Skikda</option>
+                                                                <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+                                                                <option value="Annaba">Annaba</option>
+                                                                <option value="Guelma">Guelma</option>
+                                                                <option value="Constantine">Constantine</option>
+                                                                <option value="Médéa">Médéa</option>
+                                                                <option value="Mostaganem">Mostaganem</option>
+                                                                <option value="M'Sila">M'Sila</option>
+                                                                <option value="Mascara">Mascara</option>
+                                                                <option value="Ouargla">Ouargla </option>
+                                                                <option value="Oran">Oran</option>
+                                                                <option value="El Bayadh">'El Bayadh</option>
+                                                                <option value="Illizi">Illizi</option>
+                                                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+                                                                <option value="Boumerdès">Boumerdès</option>
+                                                                <option value="El Tarf">El Tarf</option>
+                                                                <option value="Tindouf">Tindouf</option>
+                                                                <option value="Tissemsilt">Tissemsilt</option>
+                                                                <option value="El Oued">El Oued </option>
+                                                                <option value="Khenchela">Khenchela</option>
+                                                                <option value="Souk Ahras">Souk Ahras</option>
+                                                                <option value="Tipaza">Tipaza</option>
+                                                                <option value="Mila">Mila</option>
+                                                                <option value="Defla">Defla</option>
+                                                                <option value="Naâma">Naâma</option>
+                                                                <option value="Aïn Témouchent">Aïn Témouchent </option>
+                                                                <option value="Ghardaïa">Ghardaïa </option>
+                                                                <option value="Relizane">Relizane</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endif
             
-            
-            
-            
-                                                <div class="col-md-4">
+                   
+                                                @if($user->phone!=null) 
+                                                 <div class="col-md-4">
+                                                    <div class="form-group app-label">
+                                                        <label class="text-muted" >Phone</label>
+                                                        <input id="phone" type="number" class="form-control resume" name="phone"
+                                                        disabled="disabled" value="{{$user->phone}}">
+                                                    </div>
+                                                </div>
+                                                @else
+                                                 <div class="col-md-4">
                                                     <div class="form-group app-label">
                                                         <label class="text-muted">Phone</label>
-                                                        <input id="phone" type="number" class="form-control resume"
+                                                        <input id="phone" type="number" class="form-control resume" name="phone"
                                                             placeholder="Phone No. :">
                                                     </div>
                                                 </div>
-            
+                                                @endif
+                                                @if($user->emailT!=null)
+                                                <div class="col-md-4">
+                                                    <div class="form-group app-label">
+                                                        <label class="text-muted">{{$user->emailT}}E-mail</label>
+                                                        <input id="e-mail" type="email" name="emailT" class="form-control resume"
+                                                        disabled="disabled" value="{{$user->emailT}}" >
+                                                    </div>
+                                                </div>
+                                                @else
                                                 <div class="col-md-4">
                                                     <div class="form-group app-label">
                                                         <label class="text-muted">E-mail</label>
-                                                        <input id="e-mail" type="email" name="email" class="form-control resume"
+                                                        <input id="e-mail" type="email" name="emailT" class="form-control resume"
                                                             placeholder="Email ID :">
                                                     </div>
                                                 </div>
+                                                @endif
+                                                @if($user->linkedIN!=null)
+                                                <div class="col-md-4">
+                                                    <div class="form-group app-label">
+                                                        <label class="text-muted">LinkedIn</label>
+                                                        <input id="linkedin" type="url" name="linkedIN" class="form-control resume"
+                                                        disabled="disabled" value="{{$user->linkedIN}}">
+                                                    </div>
+                                                </div>
+                                                @else
             
                                                 <div class="col-md-4">
                                                     <div class="form-group app-label">
                                                         <label class="text-muted">LinkedIn</label>
-                                                        <input id="linkedin" type="url" name="url" class="form-control resume"
+                                                        <input id="linkedin" type="url" name="linkedIN" class="form-control resume"
                                                             placeholder="LinkedIn :">
                                                     </div>
                                                 </div>
-            
+                                                @endif
+
+                                                @if($user->adress!=null)
                                                 <div class="col-lg-12">
                                                     <div class="form-group app-label">
                                                         <label>Address :</label>
                                                         <textarea id="address" rows="4" class="form-control resume"
-                                                            placeholder=""></textarea>
+                                                            name="adress">{{$user->adress}}</textarea>
                                                     </div>
                                                 </div>
+                                                @else
+                                                <div class="col-lg-12">
+                                                    <div class="form-group app-label">
+                                                        <label>Address :</label>
+                                                        <textarea id="address" rows="4" class="form-control resume"
+                                                            name="adress"></textarea>
+                                                    </div>
+                                                </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <button class="btn btn-primary submitBnt" type="submit">enregistrer</button>

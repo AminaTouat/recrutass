@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 
 class CandidatController extends Controller
@@ -16,6 +17,20 @@ class CandidatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function update_avatar(Request $request) {
+          	// Handle the user upload of avatar
+    	if($request->hasFile('avatar')){
+    		$avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $path = public_path('/uploads/avatar/'.$filename);
+    		Image::make($avatar->getRealPath())->resize(300, 300)->save($path);
+    		$user = Auth::user();
+    		$user->avatar = $filename;
+    		$user->save();
+    	}
+    	return view('candidat.home', array('user' => Auth::user()) );
+    
+    }
     public function index()
     {
         $user = Auth::user();
@@ -29,7 +44,7 @@ class CandidatController extends Controller
      */
     public function create()
     {
-        return view('');
+        return view('candidat.home');
     }
 
     /**
@@ -43,15 +58,17 @@ class CandidatController extends Controller
         $id = Auth::user()->id;
         $user = User::find($id);
         // $user->name = $request->name;
-        $user->prenom = $request->prenom;
-        $user->datenaiss = $request->datenaiss;
-        $user->civilite = $request->civilite;
-        $user->sexe = $request->sexe;
+        $user->prenom = $request->input('prenom');
+        $user->datenaiss = $request->input('datenaiss');
+        $user->civilite = $request->input('civilite');
+        $user->sexe = $request->input('sexe');
+        $user->address = $request->input('address');
+        $user->linkedIN = $request->input('linkedIN');
+        $user->emailT = $request->input('emailT');
+        $user->phone = $request->input('phone');
+        $user->ville = $request->input('ville');
         $user->save();
         return back()->with( [ 'user' => $user ] );
-        
-
-
     }
 
     /**
@@ -93,8 +110,13 @@ class CandidatController extends Controller
         $user->datenaiss = $request->datenaiss;
         $user->civilite = $request->civilite;
         $user->sexe = $request->sexe;
+        $user->address = $request->address;
+        $user->linkedIN = $request->linkedIN;
+        $user->emailT = $request->emailT;
+        $user->phone = $request->phone;
+        $user->ville = $request->ville;
         $user->save();
-        return redirect('candidat.home');
+        return redirect('/home');
     }
 
     /**

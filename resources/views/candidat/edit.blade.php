@@ -16,7 +16,7 @@
 
                         <div class="col-12 mt-3">
                             <div class="custom-form p-4 border rounded">
-                                <form action="{{route('updateC')}}" method="post">
+                                <form action="{{route('edit',$user->id)}}" method="post">
                                     @csrf
                                     <div class="row mt-4">
 

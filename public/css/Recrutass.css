@@ -451,22 +451,7 @@
   -o-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out
 }
-.jobsearch-employer-dashboard-nav .fa-lock {
-  position: absolute;
-  background-color: #fb353f;
-  color: #fff;
-  padding: 12px 0 0;
-  font-size: 24px;
-  text-align: center;
-  margin: 0;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50px
-}
-.jobsearch-employer-dashboard-nav li:hover a .fa-lock {
-  color: #fff
-}
+
 
 .jobsearch-employer-dashboard-nav ul li.profile-del-btnlink a {
   background-color: #fb353f;
@@ -583,4 +568,16 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
+}
+.modal-dialog{
+  background-color: white;
+}
+#create_record{
+  border-radius: 14.25rem;
+  padding: 12px;
+  float: right;
+}
+.sirius h3 {
+    line-height: 33px;
+    font-size: 22px;
 }
