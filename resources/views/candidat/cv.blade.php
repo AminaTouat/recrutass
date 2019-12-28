@@ -8,13 +8,13 @@
             <aside class="jobsearch-column-3 jobsearch-typo-wrap">
                 <div class="jobsearch-typo-wrap">
                     <div class="jobsearch-employer-dashboard-nav">
-                        <figure> 
+                        <figure>
                             <img src="/uploads/avatar/{{ Auth::user()->avatar }}"
-                               style="max-width: 132px; border-radius: 50%; margin-right: 25px;">
-                               <h2>{{ $user->name }}</h2>
-                           
+                                style="max-width: 132px; border-radius: 50%; margin-right: 25px;">
+                            <h2>{{ $user->name }}</h2>
+
                         </figure>
-                        
+
                         <ul>
 
                             <li> <a href="/home"> <i class="fas fa-user"></i> Mon profil </a></li>
@@ -41,97 +41,102 @@
                                 {{ csrf_field() }}
                                 <div class="custom-form p-4 border rounded">
                                     <div class="row mt-4">
-                                       
-                                            <div class="col-md-4">
-                                                <div class="form-group app-label">
-                                                    <label class="text-muted"> <b><i
-                                                                class="fas fa-graduation-cap"></i>FORMATION</b> <span
-                                                            class="text-danger">*</span>:</label>
 
-                                                </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <a class="text-muted" data-toggle="collapse" href="#collapseExample"> <b><i class="fas fa-graduation-cap"></i>FORMATION</b> <span
+                                                        class="text-danger">*</span>:</a>
+
                                             </div>
-                                            <div class="col-md-8">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                    data-target="#exampleModal" name="create_record"
-                                                    id="create_record">Ajouter une formation </button>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal" name="create_record"
+                                                id="create_record">Ajouter une formation </button>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="collapseExample">
 
-                                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                    name="exampleModal" role="dialog"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <span id="form_result"></span>
-                                                                <form action="{{route('updateF')}}" method="POST">
-                                                                    @csrf
-                                                                    <div class="form-group">
-
-                                                                        <label for="recipient-name"
-                                                                            class="col-form-label">Titre <span
-                                                                                class="text-danger">*</span>:</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="titre" id="titre">
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <label for="recipient-name"
-                                                                                class="col-form-label">Année <span
-                                                                                    class="text-danger">*</span>:</label>
-                                                                            <input type="text" class="form-control"
-                                                                                name="annee" id="annee">
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <label for="recipient-name"
-                                                                                class="col-form-label">Établissement
-                                                                                <span
-                                                                                    class="text-danger">*</span>:</label>
-                                                                            <input type="text" class="form-control"
-                                                                                name="etablissement" id="etablissement">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="message-text"
-                                                                            class="col-form-label">Description <span
-                                                                                class="text-danger">*</span>: </label>
-                                                                        <textarea class="form-control"
-                                                                            name="description"
-                                                                            id="description"></textarea>
-                                                                    </div>
+                                        <div class="row">
+                                            @foreach ($formations as $one)
+                                            <div class="col-lg-4">
+                                                
+                                                <h6>{{$one->titre}}</h6>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <a id="modifier" href={{url('editFormation/'.$one->id)}}>Modifier <i class="fas fa-pen"></i></a>
+                                                
+                                            </div>
+                                            @endforeach
+                                        </div>
                                        
-                                        {{-- <div class="form-group">
-                                                                      <input type="hidden" name="action" id="action" value="Add">
-                                                                      <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add">
-                                                                  
-                                                                    </div> --}}
+                                    </div>
+                                </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary submitBnt" type="submit">Ajouter</button>
+                            
+                            
+                           
                         </div>
                     </div>
                 </div>
+            </section>
         </div>
     </div>
 </div>
-</div>
-</form>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" name="exampleModal"
+role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <form action="{{route('updateF')}}"  method="POST">
+        {{ csrf_field() }}
+        <div class="modal-body">
+            <span id="form_result"></span>
+                <div class="form-group">
+
+                    <label for="recipient-name"
+                        class="col-form-label">Titre <span
+                            class="text-danger">*</span>:</label>
+                    <input type="text" class="form-control" name="titre" id="titre" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="recipient-name"
+                            class="col-form-label">Année <span
+                                class="text-danger">*</span>:</label>
+                        <input type="month" class="form-control" name="annee" id="annee" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="recipient-name"
+                            class="col-form-label">Établissement
+                            <span class="text-danger">*</span>:</label>
+                        <input type="text" class="form-control" name="etablissement" id="etablissement" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message-text"
+                        class="col-form-label">Description <span
+                            class="text-danger">*</span>: </label>
+                    <textarea class="form-control" name="description" id="description" required></textarea>
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary submitBnt"
+                type="submit">Ajouter</button>
+        </div>
+    </form>
+    </div>
 </div>
 </div>
 
-</div>
-
-</section>
 
 
-</div>
 
-</div>
 
-</div>
+@endsection

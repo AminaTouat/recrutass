@@ -11,8 +11,9 @@ class CvController extends Controller
      public function store(Request $request)
     {
         $id = Auth::user()->id;
-        $user = new Cv();
-      $user->candidat_id=$id;
+        $user = Cv::find($id);
+        
+        $user->titre = $request->input('titre');
         $user->save();
         return redirect('/cv',['user' => $user]); 
     }

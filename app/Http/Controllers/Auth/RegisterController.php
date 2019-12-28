@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Cv;
 
 class RegisterController extends Controller
 {
@@ -67,14 +68,20 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    
     protected function createCandidat(Request $request)
     {
         $this->validator($request->all())->validate();
-        User::create([
+        $user =  User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+
         ]);
+      
+        $cv = new Cv;
+        $cv->candidat_id = $user->id;
+        $cv->save();
         return redirect()->intended('login');
     }
     protected function createRecruteur(Request $request)

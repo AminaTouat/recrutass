@@ -6,6 +6,8 @@ use App\Formation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\User;
+use DataTables;
 class FormationController extends Controller
 {
     /**
@@ -16,8 +18,10 @@ class FormationController extends Controller
     public function index(Request $request)
     {
        
+        
             $user = Auth::user();
-            return view('candidat.cv', ['user' => $user]);
+            $formations = $user->cv->formation;
+            return view('candidat.cv', ['user'=> $user ,'formations' =>$formations]);
     }
 
     /**
@@ -39,87 +43,33 @@ class FormationController extends Controller
     public function store(Request $request)
     {
 
-        $user = new Formation();
-        $user->titre = $request->input('titre');
-        $user->annee = $request->input('annee');
-        $user->etablissement = $request->input('etablissement');
-        
-        // if($request->description){
-        //     $user->description = $request->input('titre');
+        $user = Auth::user();
+        $formation = new Formation;
+        $formation->titre = $request->input('titre');
+        $formation->annee = $request->input('annee');
+        $formation->etablissement = $request->input('etablissement');
+        $formation->description = $request->input('description');
 
-        // }
-        $user->save();
-        return redirect('/cv',['user' => $user]); 
+        $formation->cv_id = $user->cv->id;
+        $formation->save();
+        return redirect('/cv')->with(['user' => $user]);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Sample_data  $sample_data
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Sample_data $sample_data)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Sample_data  $sample_data
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        if(request()->ajax())
-        {
-            $data = Sample_data::findOrFail($id);
-            return response()->json(['result' => $data]);
-        }
+        $formations = User::find($id);
+            return view('candidat.editFormation', ['formations'=> $formations]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sample_data  $sample_data
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Sample_data $sample_data)
+    public function update(Request $request, $id)
     {
-        $rules = array(
-            'first_name'        =>  'required',
-            'last_name'         =>  'required'
-        );
+        // $user = Auth::user();
+        // $id = $user->cv->formation->id;
+        $formations = User::find($id);
+        $formation->titre = $request->input('titre');
+        $formation->annee = $request->input('annee');
+        $formation->etablissement = $request->input('etablissement');
+        $formation->description = $request->input('description');
+        $formation->save();
+        return redirect('/cv');
 
-        $error = Validator::make($request->all(), $rules);
-
-        if($error->fails())
-        {
-            return response()->json(['errors' => $error->errors()->all()]);
-        }
-
-        $form_data = array(
-            'first_name'    =>  $request->first_name,
-            'last_name'     =>  $request->last_name
-        );
-
-        Sample_data::whereId($request->hidden_id)->update($form_data);
-
-        return response()->json(['success' => 'Data is successfully updated']);
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Sample_data  $sample_data
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $data = Sample_data::findOrFail($id);
-        $data->delete();
     }
 }
-
