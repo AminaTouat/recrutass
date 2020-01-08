@@ -72,16 +72,18 @@ Route::get('/register/recruteur', 'Auth\RegisterController@showRecruteurRegister
 Route::get('/recruteur', 'RecruteurController@index');
 Route::get('/home', 'CandidatController@index');
 Route::get('/cv', 'FormationController@index');
-Route::get('/edit/{id}','CandidatController@edit');
+// Route::get('/home/{id}','CandidatController@edit');
 Route::get('/editFormation/{id}','FormationController@edit');
 
 
-Route::post('/editFormation/{id}','FormationController@update')->name('edit');
+Route::post('/editFormation/{id}','FormationController@update');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
-Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+// Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+Route::post('/home/form/{id}', 'CandidatController@update')->name('edit');
 Route::post('/cv/formation/add', 'FormationController@store')->name('updateF');
+Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
 Route::post('/cv/formation', 'CvController@store')->name('updateFF');
 Route::post('/recruteur', 'RecruteurController@store')->name('updateR');
 Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');

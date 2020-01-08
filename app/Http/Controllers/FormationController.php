@@ -21,7 +21,8 @@ class FormationController extends Controller
         
             $user = Auth::user();
             $formations = $user->cv->formation;
-            return view('candidat.cv', ['user'=> $user ,'formations' =>$formations]);
+            $competences = $user->cv->competence;
+            return view('candidat.cv', ['user'=> $user ,'formations' =>$formations,'competences' =>$competences]);
     }
 
     /**
@@ -56,14 +57,14 @@ class FormationController extends Controller
     }
     public function edit($id)
     {
-        $formations = User::find($id);
+        $formations = Auth::user()->cv->formation->find($id);
             return view('candidat.editFormation', ['formations'=> $formations]);
     }
     public function update(Request $request, $id)
     {
         // $user = Auth::user();
         // $id = $user->cv->formation->id;
-        $formations = User::find($id);
+        $formation = Auth::user()->cv->formation->find($id);
         $formation->titre = $request->input('titre');
         $formation->annee = $request->input('annee');
         $formation->etablissement = $request->input('etablissement');
