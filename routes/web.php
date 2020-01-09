@@ -86,6 +86,9 @@ Route::post('/home/form/{id}', 'CandidatController@update')->name('edit');
 Route::post('/cv/formation/add', 'FormationController@store')->name('updateF');
 Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
 Route::post('/cv/formation', 'CvController@store')->name('updateFF');
-Route::post('/recruteur', 'RecruteurController@store')->name('updateR');
 Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');
+Route::post('/recruteur/formr', 'RecruteurController@store')->name('updateR');
+Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1');
+Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
+
 // Route::resource('/candidats','CandidatController');
