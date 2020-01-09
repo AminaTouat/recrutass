@@ -1460,6 +1460,17 @@ textarea.error::-webkit-input-placeholder {
     background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%);
     background: radial-gradient(ellipse at left, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%)
 }
+.content .url:after {
+    content: '';
+    position: absolute;
+    left: -60px;
+    bottom: -15px;
+    width: 95%;
+    height: 1px;
+    background: -moz-radial-gradient(left, ellipse cover, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%);
+    background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(ellipse at left, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%)
+}
 
 .info-list ul li {
     display: inline-block;
@@ -10321,3 +10332,16 @@ screen and (max-height:300px) {
   .form-control{
       font-size: 12px;
   }
+  #profil{
+float: right;
+  }
+  .btn{-webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
+ .btn-primary{background-color:#b2de81}
+ .btn-primary:hover{background-color:#67a125}
+ .btn-primary:focus{background-color:#b2de81;color:#fff}
+ .btn-primary:active{background-color:#67a125!important}
+ .btn-primary.disabled{
+  color: #fff;
+  background-color: #b2de81 !important;
+  border-color: #b2de81 !important;
+}

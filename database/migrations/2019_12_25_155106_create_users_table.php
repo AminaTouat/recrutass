@@ -24,6 +24,9 @@ class CreateUsersTable extends Migration
             $table->string('civilite')->nullable();
             $table->string('address')->nullable();
             $table->string('linkedIN')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('github')->nullable();
             $table->string('emailT')->nullable();
             $table->string('phone')->nullable();
             $table->string('ville')->nullable();

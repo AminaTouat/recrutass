@@ -48,7 +48,8 @@
                                                     class="form-control resume" value="{{$user->datenaiss}}">
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <div class="row mt-4">
                                         <div class="col-md-4">
                                             <div class="form-group app-label">
                                                 <label class="text-muted">Sexe<span
@@ -80,13 +81,57 @@
                                         </div>
 
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                            
+                                                <label  class="text-muted"> Facebook<span
+                                                        class="text-danger">*</span> :</label>
+                                                <input id="facebook" name="facebook" type="url" class="form-control resume" value="{{$user->facebook}}">
+                                              
+        
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                            
+                                                <label  class="text-muted">twitter<span
+                                                        class="text-danger">*</span> :</label>
+                                                <input id="twitter" name="twitter" type="url" class="form-control resume" value="{{$user->twitter}}">
+                                              
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                            
+                                                <label  class="text-muted"> Github<span
+                                                        class="text-danger">*</span> :</label>
+                                                <input id="github" name="github" type="url" class="form-control resume" value="{{$user->github}}">
+                                              
+        
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                            
+                                                <label  class="text-muted">LinkedIn<span
+                                                        class="text-danger">*</span> :</label>
+                                                <input id="linkedin" name="linkedin" type="url" class="form-control resume" value="{{$user->linkedin}}">
+                                              
+        
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <button class="btn btn-primary submitBnt" type="submit">enregistrer</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    
+
 
 
                 </div>

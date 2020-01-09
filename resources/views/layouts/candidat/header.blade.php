@@ -74,11 +74,10 @@
         <div class="subtitle">Web Developer</div>
         <!-- profile socials -->
         <div class="social">
-            <a target="_blank" href="https://web.facebook.com/j.al0mari"><span class="fab fa-facebook"></span></a>
-            <a target="_blank" href="https://twitter.com/jalal_alomari"><span class="fab fa-twitter"></span></a>
-            <a target="_blank" href="https://www.linkedin.com/in/jalalalomari/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://github.com/jalomari"><span class="fab fa-github"></span></a>
-            <a target="_blank" href="https://stackoverflow.com/users/10695104/%d8%ac%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d8%b1%d9%8a"><span class="fab fa-stack-overflow"></span></a>
+            <a target="_blank" href="{{$user->facebook}}"><span class="fab fa-facebook"></span></a>
+            <a target="_blank" href="{{$user->twitter}}"><span class="fab fa-twitter"></span></a>
+            <a target="_blank" href="{{$user->linkedIN}}"><i class="fab fa-linkedin-in"></i></a>
+            <a target="_blank" href="{{$user->github}}"><span class="fab fa-github"></span></a>
         </div>
         <!-- profile buttons -->
         <div class="lnks">
