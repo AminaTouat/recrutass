@@ -1332,6 +1332,32 @@ textarea.error::-webkit-input-placeholder {
     -o-transition: visibility 1s linear, opacity .5s linear
 }
 
+
+.card-inner1 {
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 10%;
+    top: 15px;
+    width: 200%;
+    height: 570px;
+    background: #fff;
+    transform-origin: center left;
+    visibility: visible;
+    z-index: 8;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    transition: visibility 1s linear, opacity .5s linear;
+    -moz-transition: visibility 1s linear, opacity .5s linear;
+    -webkit-transition: visibility 1s linear, opacity .5s linear;
+    -o-transition: visibility 1s linear, opacity .5s linear
+}
+
+
+
+
 .card-inner.animated {
     opacity: 1;
     visibility: visible;

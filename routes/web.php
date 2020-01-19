@@ -62,6 +62,11 @@ Route::get('/Les offres dune entreprises', function () {
 Route::get('/Information sur lentreprise', function () {
     return view('informationSurlEntreprise');
 });
+Route::get('/condidatss',function()
+{
+$user = DB::table('users')->get();
+return view('recruteur/affichecondidat');
+});
 Auth::routes();
 
 
@@ -75,8 +80,13 @@ Route::get('/contact', 'CandidatController@contact');
 Route::get('/cv', 'FormationController@index');
 Route::get('/edit/{id}','CandidatController@edit');
 // Route::get('/editFormation/{id}','FormationController@edit');
+Route::get('/edit/{id}','RecruteurController@edit');
 
-
+Route::get('/offres/create','OffreController@create')->name('offres.create');
+Route::post('/offres','OffreController@store')->name('offres.store');
+Route::get('/offres/index','OffreController@index')->name('recruteur.indexo');
+Route::get('/offres/edit/{id}','OffreController@edit')->name('recruteur.edito');
+Route::post('/offres/edit/{id}', 'OffreController@update')->name('offrUpdate');
 // Route::post('/editFormation/{id}','FormationController@update');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
@@ -87,8 +97,11 @@ Route::post('/cv/formation/add', 'FormationController@store')->name('updateF');
 Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
 Route::post('/cv/formation', 'CvController@store')->name('updateFF');
 Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');
+
+
 Route::post('/recruteur/formr', 'RecruteurController@store')->name('updateR');
 Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1');
 Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
 
+Route::resource('offres','OffreController');
 // Route::resource('/candidats','CandidatController');

@@ -22,21 +22,21 @@
                 <div class="top-menu">
                     <ul>
                         <li class="active">
-                            <a href="/home">
+                            <a href="/recruteur">
                                 <span class="icon ion-person"></span>
-                                <span class="link">About</span>
+                                <span class="link">profile</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/cv">
+                            <a href="/offre">
                                 <span class="icon ion-android-list"></span>
-                                <span class="link">Resume</span>
+                                <span class="link">Offre</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/contact">
+                            <a href="/condidatss">
                                 <span class="icon ion-paintbrush"></span>
-                                <span class="link">Works</span>
+                                <span class="link">Cadidats</span>
                             </a>
                         </li>
                         <li>
@@ -77,10 +77,12 @@
 					-->
                     <div class="content about">
                         <!-- title -->
-                        <div class="title">About Me</div>
+                        <div class="title">profile</div>
+                        
                         <!-- content -->
                         <form action="{{route('updateR')}}" method="post">
                             {{ csrf_field() }}
+                            <h3 class="text-center">informations about me</h3>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group app-label">
@@ -121,22 +123,45 @@
                                 <div class="clear"></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                               
+                               
+
+
+
+
+                            <div class="col-md-6">
                                     <div class="form-group app-label">
-                                        @if($user->linkedIN!=null)
-                                        <label for="linkedIN" class="text-muted">Date de naissance<span
-                                                class="text-danger">*</span> :</label>
-                                        <input id="linkedIN" name="linkedIN" type="date" class="form-control resume"
-                                            placeholder="13-02-1999" value="{{$user->linkedIN}}" disabled>
-                                        @else
-                                        <label for="linkedIN" class="text-muted">Date de naissance<span
-                                                class="text-danger">*</span> :</label>
-                                        <input id="linkedIN" name="linkedIN" type="date" class="form-control resume"
-                                            placeholder="linkedIN" required>
-                                        @endif
+                                       
+                                        @if($user->emailrecru!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="emailrecru" class="text-muted">email recruteur:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->emailrecru}}" id="emailrecru" name="emailrecru"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="emailrecru" class="text-muted">email recruteur:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="emailrecru" name="emailrecru" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="email recruteur"required>
+
+                                </div>
+                                    @endif
 
                                     </div>
                                 </div>
+                                
+
+
+
+
+
+
                                 <div class="col-md-3">
                                     <div class="form-group app-label">
                                         @if($user->Sexe!=null)
@@ -161,10 +186,11 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group app-label">
-                                        @if($user->>Civilite!=null)
+                                        @if($user->Civilite!=null)
                                         <label class="text-muted">Civilite<span class="text-danger">*</span>:</label>
                                         <div style="font-size: 12px;">
-                                            <select class="nice-select rounded" name="Civilite" id="Civilite" disabled>
+                                            <select class="nice-select rounded" name="Civilite" 
+                                            id="Civilite" disabled>
                                                 <option>{{$user->Civilite}} </option>
                                             </select>
                                         </div>
@@ -182,10 +208,169 @@
                                 </div>
                                 <div class="clear"></div>
                             </div>
+                          
                     </div>
+
+
+
+
+
+
+                    <h3 class="text-center">information about our company</h3>
+
+                    <div class="row">
+                    <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                       
+                                        @if($user->nomrecru!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="nomrecru" class="text-muted">nom de la sociètè:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->nomrecru}}" id="nomrecru" name="nomrecru"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="nomrecru" class="text-muted">nom de la sociètè:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="nomrecru" name="nomrecru" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="nom de la sociètè"required>
+
+                                </div>
+                                    @endif
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                             
+            <img src="" class="rounded-circle w-100">
+        
+                                </div>
+
+
+                                <div class="clear"></div>
+                            </div>
+
+
+                            <div class="row">
+                               
+                            <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                       
+                                        @if($user->emailentre!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="emailentre" class="text-muted">email de la sociètè:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->emailentre}}" id="emailentre" name="emailentre"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="emailentre" class="text-muted">email de la sociètè:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="emailentre" name="emailentre" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="email de la sociètè"required>
+
+                                </div>
+                                    @endif
+
+                                    </div>
+                                </div>
+                                
+
+
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                       
+                                        @if($user->adresseentre!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="adresseentre" class="text-muted">l'adresse de la sociètè:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->adresseentre}}" id="adresseentre" name="adresseentre"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="adresseentre" class="text-muted">l'adresse de la sociètè:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="adresseentre" name="adresseentre" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="l'adresse de la sociètè"required>
+
+                                </div>
+                                    @endif
+
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                    </div>
+                    
+                   
+                  <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="col-md-6">
+                                 <div class="form-group app-label">
+                                       
+                                        @if($user->telephoneentre!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="telephoneentre" class="text-muted">numéro de la sociètè:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->telephoneentre}}" id="telephoneentre" name="telephoneentre"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="telephoneentre" class="text-muted">numéro de la sociètè:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="telephoneentre" name="telephoneentre" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="numéro de la sociètè"required>
+
+                                     </div>
+                                    @endif
+
+                                </div>
+                   </div>
+                   <div class="col-md-6">
+                   <div class="form-group app-label">
+  <label for="descriptionentre">description sur la sociètè:</label>
+  <textarea class="form-control" rows="1" id="descriptionentre"></textarea>
+</div>
+</div>
+<div class="clear"></div>
+                  </div>
                     @if($user->linkedIN==null && $user->prenomrecru==null && 
                     $user->Sexe==null && $user->Civilite==null)
                     <div class="content services">
+                    <h3 class="text-center">social networks</h3>
                         <div class="title"></div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -208,15 +393,37 @@
 
                                     </div>
                                 </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                    
+                                        <label  class="text-muted">linkedIN<span
+                                                class="text-danger">*</span> :</label>
+                                        <input id="linkedIN" name="linkedIN" type="url" class="form-control resume" placeholder="https://twitter.com/">
+                                      
+
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                    
+                                        <label  class="text-muted">site de la sociètè:<span
+                                                class="text-danger">*</span> :</label>
+                                        <input id="sitewebentre" name="sitewebentre" type="url" class="form-control resume" placeholder="https://site.com/">
+                                      
+
+                                    </div>
+                                </div>
 
                                 <div class="clear"></div>
                             </div>
                            
                             @endif
-                            @if($user->prenomrecru && $user->name && $user->linkedIN && $user->Sexe && $user->Civilite )
-                            <a href={{url('edit/'.$user->id)}} class="btn btn-primary submitBnt" type="submit" id="profil">mettre a jour</a>
+                            @if($user->prenomrecru && $user->name && $user->Sexe && $user->Civilite )
+                            <a href={{url('edit/'.$user->id)}} class="btn btn-primary submitBnt" type="submit" id="profil1">mettre a jour</a>
                             @else
-                            <button class="btn btn-primary submitBnt" type="submit" id="profil">Enregistre</button>
+                            <button class="btn btn-primary submitBnt" type="submit" id="profil1">Enregistre</button>
                             @endif
                             </form>
                         
