@@ -64,7 +64,7 @@
                     </ul>
                 </div>
             </header>
-            @extends('layouts.recruteur.headero')
+            @extends('layouts.recruteur.header')
             @section('content')
 
             <!-- 
@@ -79,7 +79,7 @@
                         <!-- title -->
                         <div class="title">Offres</div>
                         <!-- content -->
-						<form action="{{route('offrUpdate'.$offre->id)}}" method="post">
+						<form action="{{url('/offres/edit/'.$offre->id) }}" method="post">
                             {{ csrf_field() }}
                           
                     </div>
@@ -108,7 +108,7 @@
         </div>
     @endif
   
-    <form action="{{ route('offre.update',$offre->id) }}" method="POST">
+    <form action="{{url('/offres/edit/'.$offre->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -278,7 +278,7 @@
    
     </form>
     
-    
+    @endsection  
     <script src="../vcard/js/scripts.min.js"></script>
 </body>
 

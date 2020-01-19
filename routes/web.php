@@ -86,7 +86,7 @@ Route::get('/offres/create','OffreController@create')->name('offres.create');
 Route::post('/offres','OffreController@store')->name('offres.store');
 Route::get('/offres/index','OffreController@index')->name('recruteur.indexo');
 Route::get('/offres/edit/{id}','OffreController@edit')->name('recruteur.edito');
-Route::post('/offres/edit/{id}', 'OffreController@update')->name('offrUpdate');
+//Route::post('/offres/edit/{id}', 'OffreController@update');
 // Route::post('/editFormation/{id}','FormationController@update');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');

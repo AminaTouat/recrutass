@@ -66,9 +66,9 @@
                     </ul>
                 </div>
             </header>
-            @extends('layouts.recruteur.headero')
+            @extends('layouts.recruteur.header')
             @section('content')
-
+            
             <!-- 
 				Card - About
 			-->
@@ -118,13 +118,15 @@
             <td>{{ ++$i }}</td>
             <td><a href="{{ route('offres.show',$offre->id) }}">{{ $offre->intitule }}</a></td>
             <td>{{ $offre->description }}</td>
-            <td>  <small>Written on {{$offre->created_at}}</small></td>
+            <td>  <small>Written on {{$offre->created_at}}
+            {{App\Offre::find($offre->id)->recruteur->name}}
+            </small></td>
         
             <td>
                 <form action="{{ route('offres.destroy',$offre->id) }}" method="POST">
    
-                    <a class="btn btn-primary" href="{{ route('offres.edit',$offre->id) }}">Edit</a>
-   
+                    <a class="btn btn-primary" href="{{url('/offres/edit/'.$offre->id) }}">Edit</a>
+                    
                     @csrf
                     @method('DELETE')
       
@@ -138,6 +140,7 @@
   
     {!! $offres->links() !!}
       
+    @endsection
 
 
 

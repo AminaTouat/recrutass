@@ -64,7 +64,7 @@
                     </ul>
                 </div>
             </header>
-            @extends('layouts.recruteur.headero')
+            @extends('layouts.recruteur.header')
             @section('content')
 
             <!-- 
@@ -297,7 +297,7 @@
             <!--
                 jQuery Scripts
             -->
-
+@endsection
             <script src="../vcard/js/scripts.min.js"></script>
 </body>
 

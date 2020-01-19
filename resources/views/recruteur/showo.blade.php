@@ -64,7 +64,7 @@
                     </ul>
                 </div>
             </header>
-            @extends('layouts.recruteur.headero')
+            @extends('layouts.recruteur.header')
             @section('content')
 
             <!-- 
@@ -167,9 +167,9 @@
             </div>
             <div class="form-group">
                 <strong>logo entreprise:</strong>
-                {{ $offre->image_logo }}
+                <img src="{{ asset('upload/logo/'.$offre->image_logo) }}">
             </div>
-    
+    @endsection
     <script src="../vcard/js/scripts.min.js"></script>
 </body>
 

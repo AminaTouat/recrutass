@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use App\Offre;
 
 class OffreController extends Controller
@@ -15,14 +17,14 @@ class OffreController extends Controller
         $user = Auth::guard('recruteur')->user();
         $offres = Offre::where('recruteur_id', $user->id)->orderBy('created_at','desc')->paginate(5);
         //$offres = Offre::orderBy('created_at','desc')->paginate(5);
-        return view('recruteur.indexo',compact('offres'))->with('i',(request()->input('page',1)-1)*5);
+        return view('recruteur.indexo',compact('offres'),['user' => $user])->with('i',(request()->input('page',1)-1)*5);
     }
    
     public function create(){
         			
 			
         $user = Auth::guard('recruteur')->user();
-        return view('recruteur.offre');
+        return view('recruteur.offre',['user' => $user]);
     }
     public function store(Request $request){
        
@@ -84,8 +86,8 @@ class OffreController extends Controller
                        
         }
                      function show(Offre $offre)
-                        {
-                            return view('recruteur.showo',compact('offre'));
+                        {$user = Auth::guard('recruteur')->user();
+                            return view('recruteur.showo',compact('offre'),['user' => $user]);
                         }
                     
 
@@ -93,7 +95,8 @@ class OffreController extends Controller
                         {
                             
                            //$offre = Offre::find($id);
-                           return view('recruteur.edito',compact('offre'));
+                           $user = Auth::guard('recruteur')->user();
+                           return view('recruteur.edito',compact('offre'),['user' => $user]);
                         }
 
                         function update(Request $request, Offre $offre)
