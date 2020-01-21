@@ -10297,6 +10297,12 @@ screen and (max-height:300px) {
 .modal-dialog{
     background-color: white;
   }
+  .modal{
+      position: absolute;
+  }
+  /* .modal-backdrop {
+    background-color: transparent;
+ } */
   #create_record ,#create_record:active ,#create_record:focus ,#create_record:hover  {
     background-color:transparent; 
     border-color:transparent!important;    
@@ -10320,4 +10326,9 @@ screen and (max-height:300px) {
   }
   .form-control{
       font-size: 12px;
+  }
+  #deletF{
+  padding-bottom: 39px;
+    padding-left: 26px;
+    border-bottom: none;
   }

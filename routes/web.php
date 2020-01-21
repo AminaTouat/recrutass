@@ -71,20 +71,25 @@ Route::get('/login', 'Auth\LoginController@showCandidatLoginForm')->name('login'
 Route::get('/register/recruteur', 'Auth\RegisterController@showRecruteurRegisterForm');
 Route::get('/recruteur', 'RecruteurController@index');
 Route::get('/home', 'CandidatController@index');
+Route::get('/contact', 'CandidatController@contact');
 Route::get('/cv', 'FormationController@index');
-// Route::get('/home/{id}','CandidatController@edit');
-Route::get('/editFormation/{id}','FormationController@edit');
+Route::get('/edit/{id}','CandidatController@edit');
+Route::get('/editFormation','FormationController@edit');
 
 
-Route::post('/editFormation/{id}','FormationController@update');
+Route::put('/editFormation/{id}','FormationController@update');
+Route::post('/formationadd', 'FormationController@store')->name('format');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
-// Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+Route::post('/home/form1', 'CandidatController@store')->name('updateC');
 Route::post('/home/form/{id}', 'CandidatController@update')->name('edit');
-Route::post('/cv/formation/add', 'FormationController@store')->name('updateF');
 Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
 Route::post('/cv/formation', 'CvController@store')->name('updateFF');
-Route::post('/recruteur', 'RecruteurController@store')->name('updateR');
 Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');
-// Route::resource('/candidats','CandidatController');
+Route::post('/recruteur/formr', 'RecruteurController@store')->name('updateR');
+Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1');
+Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
+
+
+Route::delete('/editFormation/{id}','FormationController@destroy');

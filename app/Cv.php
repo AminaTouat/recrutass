@@ -17,4 +17,8 @@ class Cv extends Model
     {
         return $this->hasMany('App\Formation');
     }
+    public function competence()
+    {
+        return $this->hasMany('App\Competence');
+    }
 }

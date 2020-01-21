@@ -36,6 +36,16 @@ class CandidatController extends Controller
         $user = Auth::user();
         return view('candidat.home', ['user' => $user]);
     }
+    public function header()
+    {
+        $user = Auth::user();
+        return view('layouts.candidat.header', ['user' => $user]);
+    }
+    public function contact()
+    {
+        $user = Auth::user();
+        return view('candidat.contact', ['user' => $user]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -57,13 +67,16 @@ class CandidatController extends Controller
     { 
         $id = Auth::user()->id;
         $user = User::find($id);
-        // $user->name = $request->name;
+        $user->name = $request->name;
         $user->prenom = $request->input('prenom');
         $user->datenaiss = $request->input('datenaiss');
         $user->civilite = $request->input('civilite');
         $user->sexe = $request->input('sexe');
         $user->address = $request->input('address');
         $user->linkedIN = $request->input('linkedIN');
+        $user->facebook = $request->input('facebook');
+        $user->twitter = $request->input('twitter');
+        $user->github = $request->input('github');
         $user->emailT = $request->input('emailT');
         $user->phone = $request->input('phone');
         $user->ville = $request->input('ville');
@@ -105,7 +118,7 @@ class CandidatController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::find($id);
-        // $user->name = $request->name;
+        $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->datenaiss = $request->datenaiss;
         $user->civilite = $request->civilite;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="shortcut icon" href="img/logo.png">
-  <title>Profile recruteur</title>
+  <title>{{ Auth::guard('recruteur')->user()->name }}</title>
   <!-- Bootstrap core CSS -->
   <link href="vendor/jquery/jquery.js" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

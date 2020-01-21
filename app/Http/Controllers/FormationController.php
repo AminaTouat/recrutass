@@ -46,10 +46,16 @@ class FormationController extends Controller
 
         $user = Auth::user();
         $formation = new Formation;
-        $formation->titre = $request->input('titre');
-        $formation->annee = $request->input('annee');
-        $formation->etablissement = $request->input('etablissement');
-        $formation->description = $request->input('description');
+        $formation->Titre = $request->input('Titre');
+        $formation->Description = $request->input('Description');
+        $formation->Entreprise = $request->input('Entreprise');
+        $formation->Date_debut = $request->input('Date_debut');
+        $formation->Date_fin = $request->input('Date_fin');
+        $formation->Lieu = $request->input('Lieu');
+        $formation->Type_entreprise = $request->input('Type_entreprise');
+        $formation->Secteur = $request->input('Secteur');
+        $formation->Fonction = $request->input('Fonction');
+        $formation->Niveau = $request->input('Niveau');
 
         $formation->cv_id = $user->cv->id;
         $formation->save();
@@ -65,12 +71,24 @@ class FormationController extends Controller
         // $user = Auth::user();
         // $id = $user->cv->formation->id;
         $formation = Auth::user()->cv->formation->find($id);
-        $formation->titre = $request->input('titre');
-        $formation->annee = $request->input('annee');
-        $formation->etablissement = $request->input('etablissement');
-        $formation->description = $request->input('description');
+        $formation->Titre = $request->input('Titre');
+        $formation->Description = $request->input('Description');
+        $formation->Entreprise = $request->input('Entreprise');
+        $formation->Date_debut = $request->input('Date_debut');
+        $formation->Date_fin = $request->input('Date_fin');
+        $formation->Lieu = $request->input('Lieu');
+        $formation->Type_entreprise = $request->input('Type_entreprise');
+        $formation->Secteur = $request->input('Secteur');
+        $formation->Fonction = $request->input('Fonction');
+        $formation->Niveau = $request->input('Niveau');
         $formation->save();
         return redirect('/cv');
 
     }
+    public function destroy($id){
+        $formation=Formation::find($id);
+        $formation->delete();
+        return redirect('/cv');
+      }
+  
 }

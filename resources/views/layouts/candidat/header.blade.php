@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--
 		Basic
@@ -24,15 +25,6 @@
     <link rel="stylesheet" href="../vcard/css/styles.min.css" />
     <link rel="stylesheet" href="../vcard/css/template-colors/green.css" />
     <link href="../vendor/jquery/jquery.js" rel="stylesheet">
-    
-    <!--[if lt IE 9]>
-	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-    <!--
-		Favicons
-	-->
-    {{-- <link rel="shortcut icon" href="images/favicons/favicon.ico"> --}}
 
 </head>
 
@@ -74,11 +66,8 @@
         <div class="subtitle">Web Developer</div>
         <!-- profile socials -->
         <div class="social">
-            <a target="_blank" href="https://web.facebook.com/j.al0mari"><span class="fab fa-facebook"></span></a>
-            <a target="_blank" href="https://twitter.com/jalal_alomari"><span class="fab fa-twitter"></span></a>
-            <a target="_blank" href="https://www.linkedin.com/in/jalalalomari/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://github.com/jalomari"><span class="fab fa-github"></span></a>
-            <a target="_blank" href="https://stackoverflow.com/users/10695104/%d8%ac%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d8%b1%d9%8a"><span class="fab fa-stack-overflow"></span></a>
+          <a target="_blank" href="{{$user->linkedIN}}"><i class="fab fa-linkedin-in"></i></a>
+           <a target="_blank" href="{{$user->github}}"><span class="fab fa-github"></span></a>
         </div>
         <!-- profile buttons -->
         <div class="lnks">
@@ -98,3 +87,6 @@
 
   <!-- Plugin JavaScript -->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  

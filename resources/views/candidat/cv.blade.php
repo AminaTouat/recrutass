@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#contacts-card">
+                            <a href="/contact">
                                 <span class="icon ion-at"></span>
                                 <span class="link">Contact</span>
                             </a>
@@ -93,8 +93,9 @@
                                         </div>
                                         <div class="col col-d-3">
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal" name="create_record"
-                                            id="create_record"><div class="icon"><i class="ion ion-plus"></i></div></button>  
+                                                data-target="#exampleModal" name="create_record" id="create_record">
+                                                <div class="icon"><i class="ion ion-plus"></i></div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -102,28 +103,38 @@
 
                                     @foreach ($formations as $one)
                                     <div class="resume-item border-line-h active">
-                                        <div class="row">
-                                            <div class="col col-d-3">
-                                                <div class=" date">{{$one->annee}}</div>
+                                        <form action="{{url('editFormation/'.$one->id)}}" method="POST">
+                                            <div class="row">
+                                                <div class="col col-d-3">
+                                                    <div class=" date">{{$one->Date_debut}}</div>
+                                                </div>
+
+                                                <div class="col col-d-5">
+                                                    <a href="#" data-toggle="modal"
+                                                        data-target="#modaledit<?= $one->id?>" data-backdrop="false">
+                                                        <i class="fa fa-edit" id="modifie<?= $one->id?>"></i>
+                                                    </a>
+
+                                                    {{csrf_field()}}
+                                                    {{method_field('DELETE')}}
+                                                    <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
+
+                                                </div>
                                             </div>
-                                            <div class="col col-d-5">
-                                                <a  href="#"  data-toggle="modal" data-target="#modaledit">
-                                                   <i class="fa fa-edit" id="modifie<?= $one->id?>"></i>
-                                                </a>
-                                                <a href="" >
-                                                    <i class="fa fa-trash" id="supp"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                            <div class="name">{{$one->titre}}</div>
-                                            <div class="company">Wingssoft Co.</div>
-                                    <p>
-                                        {{$one->description}}.
-                                    </p>
+
+                                            <div class="name">{{$one->Titre}}</div>
+                                            <div class="company">{{$one->Lieu}}</div>
+                                            <p>
+                                                {{$one->Description}}.
+                                            </p>
+                                        </form>
+
+
+                                    </div>
+                                    @include('modal.modalEditE')
+                                    @endforeach
                                 </div>
-                                @endforeach
                             </div>
-                        </div>
                         <!-- education -->
                         <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
                             <div class="resume-title border-line-h">
@@ -403,170 +414,15 @@
         <!--
 				Card - Contacts
 			-->
-        <div class="card-inner contacts" id="contacts-card">
-            <div class="card-wrap">
-                <!--
-						Conacts Info
-					-->
-                <div class="content contacts">
-                    <!-- title -->
-                    <div class="title">Get in Touch</div>
-                    <!-- content -->
-                    <div class="row">
-                        <div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-
-                            <div class="info-list">
-                                <ul>
-                                    <li><strong>Address . . . . .</strong> Amman, Jordan</li>
-                                    <li><strong>Phone . . . . .</strong> +962 790247336</li>
-                                    <li><strong>Email . .</strong> info@jalalomari.com</li>
-                                    <li><strong>Company . . . . . . .</strong> Menaitech</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <!--
-						Contact Form
-					-->
-                <div class="content contacts">
-                    <!-- title -->
-                    <div class="title">Contact Form</div>
-                    <!-- content -->
-                    <div class="row">
-                        <div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-                            <div class="contact_form">
-                                <form id="cform" method="post">
-                                    <div class="row">
-                                        <div class="col col-d-6 col-t-6 col-m-12">
-                                            <div class="group-val">
-                                                <input type="text" name="name" placeholder="Full Name" />
-                                            </div>
-                                        </div>
-                                        <div class="col col-d-6 col-t-6 col-m-12">
-                                            <div class="group-val">
-                                                <input type="text" name="email" placeholder="Email Address" />
-                                            </div>
-                                        </div>
-                                        <div class="col col-d-12 col-t-12 col-m-12">
-                                            <div class="group-val">
-                                                <textarea name="message" placeholder="Your Message"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="align-left">
-                                        <a href="#" class="button" onclick="$('#cform').submit(); return false;">
-                                            <span class="text">Send Message</span>
-                                            <span class="arrow"></span>
-                                        </a>
-                                    </div>
-                                </form>
-                                <div class="alert-success">
-                                    <p>Thanks, your message is sent successfully.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        
     </div>
 
     <!--
     
         Modal d'experience
 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" name="exampleModal" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="{{route('updateF')}}" method="POST">
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <span id="form_result"></span>
-                    <div class="form-group">
+@include('modal.modalExprience');
 
-                        <label for="recipient-name" class="col-form-label">Titre <span
-                                class="text-danger">*</span>:</label>
-                        <input type="text" class="form-control" name="titre" id="titre" required>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Année <span
-                                    class="text-danger">*</span>:</label>
-                            <input type="month" class="form-control" name="annee" id="annee" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Établissement
-                                <span class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="etablissement" id="etablissement" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Description <span class="text-danger">*</span>:
-                        </label>
-                        <textarea class="form-control" name="description" id="description" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary submitBnt" type="submit">Ajouter</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--modal-->
-<div class="modal fade" id="modaledit" tabindex="-1" name="modaledit" role="dialog"aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {{-- <form action={{route('edit',$formations->id)}} method="POST"> --}}
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <span id="form_result"></span>
-                    <div class="form-group">
-
-                        <label for="recipient-name" class="col-form-label">Titre <span
-                                class="text-danger">*</span>:</label>
-                        {{-- <input type="text" class="form-control" name="titre" id="titre" value="{{$formations->titre}}"> --}}
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Année <span
-                                    class="text-danger">*</span>:</label>
-                            <input type="month" class="form-control" name="annee" id="annee" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Établissement
-                                <span class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="etablissement" id="etablissement" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Description <span class="text-danger">*</span>:
-                        </label>
-                        <textarea class="form-control" name="description" id="description" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary submitBnt" type="submit">Ajouter</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
                                             
 

@@ -15,10 +15,16 @@ class CreateFormationsTable extends Migration
     {
         Schema::create('formations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titre')->nullable();
+            $table->string('TitreFormation')->nullable();
             $table->string('etablissement')->nullable();
-            $table->string('description')->nullable();
-            $table->string('annee')->nullable();
+            $table->string('Description')->nullable();
+            $table->string('Date_debut')->nullable();
+            $table->string('Date_fin')->nullable();
+            $table->string('Lieu')->nullable();
+            $table->string('Type_etablissement')->nullable();
+            $table->string('Niveau')->nullable();
+
+
 
             $table->unsignedBigInteger('cv_id');
             $table->foreign('cv_id')

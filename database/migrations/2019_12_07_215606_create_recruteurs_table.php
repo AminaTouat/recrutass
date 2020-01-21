@@ -34,6 +34,12 @@ class CreateRecruteursTable extends Migration
           $table->string('emailrecru')->nullable();
          $table->string('nomrecru')->nullable();
         $table->string('prenomrecru')->nullable();
+        $table->string('Sexe')->nullable();
+        $table->string('Civilite')->nullable();
+        $table->string('linkedIN')->nullable();
+        $table->string('facebook')->nullable();
+        $table->string('twitter')->nullable();
+        $table->string('avatar')->default('default.jpg');
         $table->integer('telephonerecru')->nullable();
         $table->rememberToken();
          $table->timestamps();
