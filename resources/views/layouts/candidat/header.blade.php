@@ -66,8 +66,10 @@
         <div class="subtitle">Web Developer</div>
         <!-- profile socials -->
         <div class="social">
-          <a target="_blank" href="{{$user->linkedIN}}"><i class="fab fa-linkedin-in"></i></a>
-           <a target="_blank" href="{{$user->github}}"><span class="fab fa-github"></span></a>
+            <a target="_blank" href="{{$user->facebook}}"><span class="fab fa-facebook"></span></a>
+            <a target="_blank" href="{{$user->twitter}}"><span class="fab fa-twitter"></span></a>
+            <a target="_blank" href="{{$user->linkedIN}}"><i class="fab fa-linkedin-in"></i></a>
+            <a target="_blank" href="{{$user->github}}"><span class="fab fa-github"></span></a>
         </div>
         <!-- profile buttons -->
         <div class="lnks">

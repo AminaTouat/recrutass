@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Recruteur;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 class RecruteurController extends Controller
 {
@@ -19,19 +21,22 @@ class RecruteurController extends Controller
       $user->avatar = $filename;
       $user->save();
   }
+  
   return view('recruteur.recruteur', array('user' => Auth::guard('recruteur')->user()) );
 
+}
+
+public function index()
+{ 
+    $user_id = Auth::guard('recruteur')->user()->id;
+    $user = Recruteur::find($user_id);
+    return view('recruteur.recruteur', ['user' => $user]);
 }
 public function header()
     {
         $user = Auth::guard('recruteur')->user();
         return view('layouts.recruteur.header', ['user' => $user]);
     }
-    public function index()
-{
-    $user = Auth::guard('recruteur')->user();
-    return view('recruteur.recruteur', ['user' => $user]);
-}
     public function create()
     {
         return view('recruteur.recruteur');
@@ -39,6 +44,8 @@ public function header()
 
 public function store(Request $request)
 { 
+
+    
     $id = Auth::guard('recruteur')->user()->id;
     $user = Recruteur::find($id);
     $user->name = $request->name;
@@ -51,16 +58,33 @@ public function store(Request $request)
     $user->prenomrecru = $request->prenomrecru;
     $user->emailrecru = $request->emailrecru;
     $user->telephonerecru = $request->telephonerecru;
-    $user->Ville = $request->Ville;
     $user->Sexe = $request->Sexe;
     $user->Linkedin = $request->Linkedin;
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
-    $user->etatentre = $request->etatentre;
+    if($request->hasFile('logoo'))
+    {
+ 
+        $file = $request->file('logoo');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . "." . $extension;
+        $file->move('upload/logoo/', $filename);
+        $offre->logoo = $filename;
+        $offre->save();
+    } else {
+        return $request;
+        $offre->logoo = '';
+        // $user->name = request('name');
+        // $user->email = request('email');
+        // $user->save();
+        // return view('User.Profile');
+    }
+   
     
     $user->save();
     return back()->with( [ 'user' => $user ] );
+    
 }
 public function edit($id)
 {
@@ -72,7 +96,7 @@ public function update(Request $request, $id)
  
     $id = Auth::guard('recruteur')->user()->id;
     $user = Recruteur::find($id);
-    // $user->name = $request->name;
+     $user->name = $request->name;
 
     $user->adresseentre = $request->adresseentre;
     $user->emailentre = $request->emailentre;
@@ -83,15 +107,13 @@ public function update(Request $request, $id)
     $user->prenomrecru = $request->prenomrecru;
     $user->emailrecru = $request->emailrecru;
     $user->telephonerecru = $request->telephonerecru;
-    $user->Ville = $request->Ville;
     $user->Sexe = $request->Sexe;
     $user->Linkedin = $request->Linkedin;
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
-    $user->etatentre = $request->etatentre;
     
     $user->save();
-    return redirect('/recruteur');
+    return redirect('/recruteur');}
 }
-}
+?>

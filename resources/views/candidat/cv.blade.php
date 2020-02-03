@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#works-card">
+                            <a href="#contact">
                                 <span class="icon ion-paintbrush"></span>
                                 <span class="link">Works</span>
                             </a>
@@ -411,12 +411,16 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+        
+=======
         <!--
 				Card - Contacts
 			-->
         
     </div>
 
+>>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
     <!--
     
         Modal d'experience

@@ -17,13 +17,13 @@
     <!--
 		Load Fonts
     -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="../releases/v5-0-9/css/all.css">
+    <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('../releases/v5-0-9/css/all.css')}}">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../vcard/css/styles.min.css" />
-    <link rel="stylesheet" href="../vcard/css/template-colors/green.css" />
-    <link href="../vendor/jquery/jquery.js" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('../vcard/css/styles.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('../vcard/css/template-colors/green.css')}}" />
+    <link href="{{ asset('../vendor/jquery/jquery.js" rel="stylesheet')}}">
     
     <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -32,7 +32,7 @@
     <!--
 		Favicons
 	-->
-    {{-- <link rel="shortcut icon" href="images/favicons/favicon.ico"> --}}
+    {{-- <link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico')}}"> --}}
 
 </head>
 
@@ -48,13 +48,14 @@
     <!--
         Profile
     -->
+    
     <div class="profile">
         <!-- profile image -->
-        <div class="slide" style="background-image: url(img/bg.jpg);"></div>
+        <div class="slide" style="{{ asset('background-image: url(img/bg.jpg);')}}"></div>
         <!-- profile photo -->
         <div class="image">
             <img src="/uploads/avatar/{{ Auth::guard('recruteur')->user()->avatar }}" />
-            <form  action="{{route('updateRR')}}" method="post" enctype="multipart/form-data">
+            <form  action="{{route('updateMm')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
     
                 <label for="file" class="label-file" onchange="this.form.submit()">
@@ -74,16 +75,15 @@
         <div class="subtitle">Web Developer</div>
         <!-- profile socials -->
         <div class="social">
-            <a target="_blank" href="https://web.facebook.com/j.al0mari"><span class="fab fa-facebook"></span></a>
-            <a target="_blank" href="https://twitter.com/jalal_alomari"><span class="fab fa-twitter"></span></a>
-            <a target="_blank" href="https://www.linkedin.com/in/jalalalomari/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://github.com/jalomari"><span class="fab fa-github"></span></a>
-            <a target="_blank" href="https://stackoverflow.com/users/10695104/%d8%ac%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d8%b1%d9%8a"><span class="fab fa-stack-overflow"></span></a>
+            <a target="_blank" href="{{$user->facebook}}"><span class="fab fa-facebook"></span></a>
+            <a target="_blank" href="{{$user->twitter}}"><span class="fab fa-twitter"></span></a>
+            <a target="_blank" href="{{$user->linkedIN}}"><i class="fab fa-linkedin-in"></i></a>
+            <a target="_blank" href="{{$user->github}}"><span class="fab fa-github"></span></a>
         </div>
         <!-- profile buttons -->
         <div class="lnks">
-            <a href="vcard/Jalal_CV.pdf" class="lnk">
-                <span class="text">Download CV</span>
+            <a href="{{ route('recruteur.indexo') }}" class="lnk">
+                <span class="text">publier une offre</span>
                 <span class="ion ion-archive"></span>
             </a>
             <a href="#" class="lnk discover">
@@ -94,7 +94,7 @@
     </div>
 </div>
 @yield('content')
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('../vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{ asset('../vendor/jquery-easing/jquery.easing.min.js')}}"></script>

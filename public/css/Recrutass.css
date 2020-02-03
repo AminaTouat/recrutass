@@ -80,7 +80,8 @@
  .dropdown-item:focus,.dropdown-item:hover{
     color: #67a125; 
  }
- 
+
+
  a{
      color: black;
  }
@@ -354,6 +355,22 @@
 }
 .jobsearch-employer-list-btn:hover {
   color: #fff
+}
+
+.item{
+	
+	padding-left: 15px;
+}
+.info_div{
+	width : 60%;
+}
+.img_side{
+	width : 18%;
+	margin: 20px 3% 20px 6%;
+	float: right;
+	
+		display: table-cell;
+	height: 50px;
 }
 
 .jobsearch-employer-list .jobsearch-table-layer {

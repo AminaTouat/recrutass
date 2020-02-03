@@ -15,7 +15,19 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%
 }
-
+.item{
+	
+	padding-left: 15px;
+}
+.info_div{
+	width : 40%;
+}
+.img_side{
+	width : 28%;
+	margin: 20px 3% 20px 6%;
+	float: right;
+	height: 50px;
+}
 .page {
     position: absolute;
     overflow: hidden;
@@ -1332,6 +1344,48 @@ textarea.error::-webkit-input-placeholder {
     -o-transition: visibility 1s linear, opacity .5s linear
 }
 
+
+.rounded-circle {
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.rounded-top {
+  min-width: 10px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+
+
+.card-inner1 {
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 10%;
+    top: 15px;
+    width: 200%;
+    height: 570px;
+    background: #fff;
+    transform-origin: center left;
+    visibility: visible;
+    z-index: 8;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    transition: visibility 1s linear, opacity .5s linear;
+    -moz-transition: visibility 1s linear, opacity .5s linear;
+    -webkit-transition: visibility 1s linear, opacity .5s linear;
+    -o-transition: visibility 1s linear, opacity .5s linear
+}
+
+
+
+
 .card-inner.animated {
     opacity: 1;
     visibility: visible;
@@ -1450,6 +1504,17 @@ textarea.error::-webkit-input-placeholder {
 }
 
 .content .title:after {
+    content: '';
+    position: absolute;
+    left: -60px;
+    bottom: -15px;
+    width: 95%;
+    height: 1px;
+    background: -moz-radial-gradient(left, ellipse cover, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%);
+    background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(ellipse at left, rgba(197, 202, 213, .7) 0, rgba(255, 255, 255, 0) 70%)
+}
+.content .url:after {
     content: '';
     position: absolute;
     left: -60px;
@@ -10327,8 +10392,24 @@ screen and (max-height:300px) {
   .form-control{
       font-size: 12px;
   }
+<<<<<<< HEAD
+  #profil{
+float: right;
+  }
+  .btn{-webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
+ .btn-primary{background-color:#b2de81}
+ .btn-primary:hover{background-color:#67a125}
+ .btn-primary:focus{background-color:#b2de81;color:#fff}
+ .btn-primary:active{background-color:#67a125!important}
+ .btn-primary.disabled{
+  color: #fff;
+  background-color: #b2de81 !important;
+  border-color: #b2de81 !important;
+}
+=======
   #deletF{
   padding-bottom: 39px;
     padding-left: 26px;
     border-bottom: none;
   }
+>>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
