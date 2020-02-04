@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Offre;
 use App\Comment;
+use App\User;
 class CommentController extends Controller
 {
     public function store(Request $request, Post $post)

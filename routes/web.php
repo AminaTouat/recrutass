@@ -67,6 +67,10 @@ Route::get('/condidatss',function()
 $user = DB::table('users')->get();
 return view('recruteur/affichecondidat');
 });
+Route::get('/profilefrontrecru', function () {
+    return view('profilefrontrecru');
+});
+
 Auth::routes();
 
 
@@ -83,6 +87,7 @@ Route::get('/editFormation/{id}','FormationController@edit');
 Route::get('/editExperience/{id}','ExperienceController@edit');
 Route::get('/editCV/{id}','CvController@edit');
 Route::get('/edit/{id}','RecruteurController@edit');
+
 
 Route::get('/offres/create','OffreController@create')->name('offres.create');
 Route::post('/offres','OffreController@store')->name('offres.store');
@@ -107,10 +112,15 @@ Route::post('/Competadd','CompetenceController@store')->name('formatC');
 Route::post('/recruteur/formr', 'RecruteurController@store')->name('updateR');
 Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1');
 Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
+//Route::get('/recruteur/chartLine','ChartController@viewChartLine1')->name('recruteur.chartLine');
+Route::get('chartLine/{annee}', 'ChartController@index');
+Route::get('/recruteur/chartLine/year',['uses'=>'ChartController@viewChartLine1','as'=>'chart']);
 
 
 Route::resource('offres','OffreController');
+Route::get('/', 'WebsiteController@index1');
 
+Route::get('/profilefrontrecru/{name}', 'WebsiteController@showOffre1')->name('showoffre1'); 
 Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/candid', 'AffichecandController@index')->name('afiche');
 Route::get('/listeoffre/{intitule}', 'WebsiteController@showOffre')->name('showoffre'); 

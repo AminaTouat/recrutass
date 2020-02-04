@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
 @extends('../layouts.navbarRecruteur')
 @section('content4')
 
@@ -34,17 +23,10 @@
                                         <div class="col-md-4">
                                             <div class="form-group app-label">
 
-<<<<<<< HEAD
                                                 <label for="prenomrecru" class="text-muted">Prénom<span
                                                         class="text-danger">*</span> :</label>
                                                 <input id="prenomrecru" name="prenomrecru" type="text" class="form-control resume"
                                                     value="{{$user->prenomrecru}}">
-=======
-                                                <label for="prenom" class="text-muted">Prénom<span
-                                                        class="text-danger">*</span> :</label>
-                                                <input id="prenomrecru" name="prenomrecru" type="text" class="form-control resume"
-                                                    value="{{$user->prenomrecru">
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
 
                                             </div>
                                         </div>
@@ -58,8 +40,6 @@
                                             </div>
                                         </div>
 
-<<<<<<< HEAD
-                                       
                                     </div>
                                    
                       <div class="row mt-4">
@@ -74,17 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-=======
-                                      
-
-                                        <div class="col-md-4">
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                             <div class="form-group app-label">
-                                                <label class="text-muted">Sexe<span
-                                                        class="text-danger">*</span>:</label>
-                                                <div class="form-button">
-                                                    <select class="nice-select rounded" name="Sexe" id="Sexe">
-                                                        <option data-display="Sexe">{{$user->Sexe}}</option>
                                                         <option value="homme">Homme</option>
                                                         <option value="femme">Femme</option>
 
@@ -93,7 +63,6 @@
                                             </div>
                                         </div>
 
-<<<<<<< HEAD
                                         <div class="col-md-3">
                                             <div class="form-group app-label">
                                                 <label class="text-muted">Civilite<span
@@ -101,15 +70,6 @@
                                                 <div class="form-button">
                                                     <select class="nice-select rounded" name="Civilite" id="Civilite">
                                                         <option data-display="Civilite">{{$user->Civilite}}</option>
-=======
-                                        <div class="col-md-4">
-                                            <div class="form-group app-label">
-                                                <label class="text-muted">Civilité<span
-                                                        class="text-danger">*</span>:</label>
-                                                <div class="form-button">
-                                                    <select class="nice-select rounded" name="Civilité" id="Civilité">
-                                                        <option data-display="civilité">{{$user->Civilité}}</option>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                                         <option value="Mr ">Monsieur </option>
                                                         <option value="Mme">Madame</option>
                                                         <option value="Mmd">Mademoiselle </option>
@@ -118,7 +78,6 @@
                                             </div>
                                         </div>
 
-<<<<<<< HEAD
 
                                         <h3 class="text-center">information about our company</h3>
                                         <div class="row mt-4">
@@ -168,7 +127,13 @@
                             </div>
                         </div>
 
-
+                        <div class="col-md-6">
+                            <div class="form-group app-label">
+                          <label for="ville">ville:</label>
+                            <textarea class="form-control" rows="1" id="ville"></textarea>
+                              </div>
+                            </div>
+                        </div>
                         <h3 class="text-center">social networks</h3>
 
                                     <div class="row">
@@ -215,22 +180,14 @@
                                     </div>
                                 </div>
                                         </div>
-=======
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                     </div>
 
                                     <button class="btn btn-primary submitBnt" type="submit">enregistrer</button>
                                 </form>
                             </div>
-<<<<<<< HEAD
                     
                     </div>
 
-=======
-                        </div>
-                    </div>
-                    
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
 
 
                 </div>

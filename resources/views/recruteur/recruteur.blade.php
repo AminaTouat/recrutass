@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
 <body>
     <div class="page">
 
@@ -30,7 +24,6 @@
                         <li class="active">
                             <a href="/recruteur">
                                 <span class="icon ion-person"></span>
-<<<<<<< HEAD
                                 <span class="link">profile</span>
                             </a>
                         </li>
@@ -44,35 +37,16 @@
                             <a href="{{ route('afiche') }}">
                                 <span class="icon ion-paintbrush"></span>
                                 <span class="link">Cadidats</span>
-=======
-                                <span class="link">About</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/cv">
-                                <span class="icon ion-android-list"></span>
-                                <span class="link">Resume</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#works-card">
-                                <span class="icon ion-paintbrush"></span>
-                                <span class="link">Works</span>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#blog-card">
+                            <a href="/recruteur/chartLine/year">
                                 <span class="icon ion-chatbox-working"></span>
-                                <span class="link">Blog</span>
+                                <span class="link">statistque (offre par an)</span>
                             </a>
                         </li>
                         <li>
-<<<<<<< HEAD
-                            <a href="/contact">
-=======
-                            <a href="#contacts-card">
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
+                            <a href="/">
                                 <span class="icon ion-at"></span>
                                 <span class="link">Contact</span>
                             </a>
@@ -96,6 +70,7 @@
             <!-- 
 				Card - About
 			-->
+    
             <div class="card-inner animated active" id="about-card">
                 <div class="card-wrap">
                     <!-- 
@@ -103,8 +78,8 @@
 					-->
                     <div class="content about">
                         <!-- title -->
-<<<<<<< HEAD
                         <div class="title">profile</div>
+
                         
                         <!-- content -->
                         <form action="{{route('updateR')}}" method="post">
@@ -143,29 +118,6 @@
                                             :</label>
                                         <input id="name" name="name" type="text" class="form-control resume"
                                             value="{{$user->name}}" >
-=======
-                        <div class="title">About Me</div>
-                        <!-- content -->
-                        <form action="{{route('updateR',$user->id)}}" method="post">
-                            {{ csrf_field() }}
-                            <div class="row">
-                                <div class="col-md-6">
-                     
-                                    <div class="form-group app-label">
-
-                                         <label for="prenomrecru" class="text-muted">Prénom<span class="text-danger">*</span>:</label>
-                                        <input id="prenomrecru" name="prenomrecru" type="text"  class="form-control resume"
-                                               placeholder="Prénom"required>
-
-                                </div>
-                                   
-                                <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                        <label for="nom" class="text-muted">Nom<span class="text-danger">*</span>
-                                            :</label>
-                                        <input id="nom" name="name" type="text" class="form-control resume"
-                                            value="{{$user->name}}" disabled="disabled">
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                     </div>
                                 </div>
 
@@ -173,7 +125,6 @@
                                 <div class="clear"></div>
                             </div>
                             <div class="row">
-<<<<<<< HEAD
                                
                                
 
@@ -226,22 +177,11 @@
                                         <label class="text-muted">Sexe<span class="text-danger">*</span>:</label>
                                         <div style="font-size: 12px;">
                                             <select class="nice-select rounded" name="Sexe" required>
-=======
-                             
-                           
-                                <div class="col-md-3">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Sexe<span class="text-danger">*</span>:</label>
-                                        <div style="font-size: 12px;">
-                                            <select class="nice-select rounded"  name="Sexe" id="Sexe" required>
-                                                <option data-display="sexe">Sexe</option>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                                 <option value="homme">Homme</option>
                                                 <option value="femme">Femme</option>
 
                                             </select>
                                         </div>
-<<<<<<< HEAD
                                         @endif
                                         
                                     </div>
@@ -260,23 +200,11 @@
                                         <label class="text-muted">Civilite<span class="text-danger">*</span>:</label>
                                         <div style="font-size: 12px;">
                                             <select class="nice-select rounded" name="Civilite" id="Civilite">
-=======
-                                    </div>
-                                </div>
-                             
-                                <div class="col-md-3">
-                                    <div class="form-group app-label">
-                                        <label class="text-muted">Civilité<span class="text-danger">*</span>:</label>
-                                        <div style="font-size: 12px;">
-                                            <select class="nice-select rounded"  name="Civilité" id="Civilité" required>
-                                                <option data-display="civilité">Civilité</option>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                                                 <option value="Mr ">Monsieur </option>
                                                 <option value="Mme">Madame</option>
                                                 <option value="Mmd">Mademoiselle </option>
                                             </select>
                                         </div>
-<<<<<<< HEAD
                                         @endif
                                     </div>
                                 </div>
@@ -445,7 +373,36 @@
 </div>
 </div>
 
+
                   </div>
+                  <div class="row">
+                               
+                            <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                       
+                                        @if($user->ville!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="ville" class="text-muted">ville:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->ville}}" id="ville" name="ville"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="ville" class="text-muted">ville:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="ville" name="ville" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="ville de la sociètè"required>
+
+                                </div>
+                                    @endif
+
+                                    </div>
+                                </div></div>
                     @if($user->linkedIN==null && $user->prenomrecru==null && 
                     $user->Sexe==null && $user->Civilite==null)
                     <div class="content services">
@@ -506,16 +463,6 @@
                             @endif
                             </form>
                         
-=======
-                                    </div>
-                                </div>
-                               
-                                <div class="clear"></div>
-                            </div>
-                
-                            <button class="btn btn-primary submitBnt" type="submit">enregistrer</button>
-                        </form>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
                     </div>
 
 
@@ -529,8 +476,4 @@
             <script src="../vcard/js/scripts.min.js"></script>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
