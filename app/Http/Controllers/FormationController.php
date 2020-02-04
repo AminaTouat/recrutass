@@ -22,7 +22,9 @@ class FormationController extends Controller
             $user = Auth::user();
             $formations = $user->cv->formation;
             $competences = $user->cv->competence;
-            return view('candidat.cv', ['user'=> $user ,'formations' =>$formations,'competences' =>$competences]);
+            $experiences = $user->cv->experience;
+            $cv = $user->cv;
+            return view('candidat.cv', ['user'=> $user ,'formations' =>$formations,'competences' =>$competences , 'experiences' =>$experiences , 'cv' =>$cv ]);
     }
 
     /**
@@ -46,15 +48,13 @@ class FormationController extends Controller
 
         $user = Auth::user();
         $formation = new Formation;
-        $formation->Titre = $request->input('Titre');
+        $formation->TitreFormation = $request->input('TitreFormation');
         $formation->Description = $request->input('Description');
-        $formation->Entreprise = $request->input('Entreprise');
+        $formation->etablissement = $request->input('etablissement');
         $formation->Date_debut = $request->input('Date_debut');
         $formation->Date_fin = $request->input('Date_fin');
         $formation->Lieu = $request->input('Lieu');
-        $formation->Type_entreprise = $request->input('Type_entreprise');
-        $formation->Secteur = $request->input('Secteur');
-        $formation->Fonction = $request->input('Fonction');
+        $formation->Type_etablissement = $request->input('Type_etablissement');
         $formation->Niveau = $request->input('Niveau');
 
         $formation->cv_id = $user->cv->id;
@@ -71,15 +71,13 @@ class FormationController extends Controller
         // $user = Auth::user();
         // $id = $user->cv->formation->id;
         $formation = Auth::user()->cv->formation->find($id);
-        $formation->Titre = $request->input('Titre');
+        $formation->TitreFormation = $request->input('TitreFormation');
         $formation->Description = $request->input('Description');
-        $formation->Entreprise = $request->input('Entreprise');
+        $formation->etablissement = $request->input('etablissement');
         $formation->Date_debut = $request->input('Date_debut');
         $formation->Date_fin = $request->input('Date_fin');
         $formation->Lieu = $request->input('Lieu');
-        $formation->Type_entreprise = $request->input('Type_entreprise');
-        $formation->Secteur = $request->input('Secteur');
-        $formation->Fonction = $request->input('Fonction');
+        $formation->Type_etablissement = $request->input('Type_etablissement');
         $formation->Niveau = $request->input('Niveau');
         $formation->save();
         return redirect('/cv');

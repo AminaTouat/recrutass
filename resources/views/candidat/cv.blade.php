@@ -72,7 +72,6 @@
             <!--
 				Card - Resume
             -->
-                
             <div class="card-inner animated active" id="resume-card">
                 <div class="card-wrap">
                     <!--
@@ -80,6 +79,20 @@
 					-->
                     <div class="content resume">
                         <!-- title -->
+                        @if ($cv->titre==null) 
+                        <form action="{{url('editCV/'.$cv->id)}}" method="POST">
+                            <input type="hidden" name="_method" value="PUT">
+                            {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col col-d-6">
+                                <input type="text" name="titre" id="titre" placeholder="titre CV ">
+                            </div>
+                            <div class="col col-d-6">
+                                <button class="btn btn-primary submitBnt" type="submit">create</button>
+                            </div>
+                        </div>
+                        </form>
+                        @else
                         <div class="title">Resume</div>
                         <!-- content -->
                         <div class="row">
@@ -89,7 +102,7 @@
                                     <div class="row">
                                         <div class="col col-d-9">
                                             <div class="icon"><i class="ion ion-briefcase"></i></div>
-                                            <div class="name">Experience</div>
+                                            <div class="name">Diplômes et formations</div>
                                         </div>
                                         <div class="col col-d-3">
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -122,7 +135,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="name">{{$one->Titre}}</div>
+                                            <div class="name">{{$one->TitreFormation}}</div>
                                             <div class="company">{{$one->Lieu}}</div>
                                             <p>
                                                 {{$one->Description}}.
@@ -131,45 +144,60 @@
 
 
                                     </div>
-                                    @include('modal.modalEditE')
+                                    @include('modal.modalEditF')
                                     @endforeach
                                 </div>
                             </div>
-                        <!-- education -->
+                        <!-- Expériences -->
                         <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
                             <div class="resume-title border-line-h">
                                 <div class="row">
                                     <div class="col col-d-9">
                                         <div class="icon"><i class="ion ion-university"></i></div>
-                                        <div class="name">Education</div>
+                                        <div class="name">Expériences</div>
                                     </div>
                                     <div class="col col-d-3">
-                                     <div class="icon"><i class="ion ion-plus"></i></div>
-                                        <!--********************--->
-                                        
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#modalE" name="create_record" id="create_record">
+                                        <div class="icon"><i class="ion ion-plus"></i></div>
+                                    </button>
+                                     
                                     </div>
-                                </div>
-                                
-                                
+                                </div>  
                             </div>
                             <div class="resume-items">
-                                <div class="resume-item border-line-h">
-                                    <div class="date">2007-2011</div>
-                                    <div class="name">Yarmouk University</div>
-                                    <div class="company">Irbid</div>
-                                    <p>
-                                        Bachelor's Degree in Computer Science, Yarmouk University ,IT college.
-                                    </p>
+                                @foreach ($experiences as $exp)
+                                <div class="resume-item border-line-h active">
+                                    <form action="{{url('editExperience/'.$exp->id)}}" method="POST">
+                                        <div class="row">
+                                            <div class="col col-d-3">
+                                                <div class=" date">{{$exp->Date_debut}}</div>
+                                            </div>
+
+                                            <div class="col col-d-5">
+                                                <a href="#" data-toggle="modal"
+                                                    data-target="#modaleditE<?= $exp->id?>" data-backdrop="false">
+                                                    <i class="fa fa-edit" id="modifie<?= $exp->id?>"></i>
+                                                </a>
+
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="name">{{$exp->Titre}}</div>
+                                        <div class="company">{{$one->Lieu}}</div>
+                                        <p>
+                                            {{$exp->Description}}.
+                                        </p>
+                                    </form>
+
+
                                 </div>
-                                <div class="resume-item border-line-h">
-                                    <div class="date">2016</div>
-                                    <div class="name">Zend Certificate</div>
-                                    <div class="company">Amman</div>
-                                    <p>
-                                        Zend Certified Engineer. <a target="_blank"
-                                            href="https://www.zend.com/en/yellow-pages/ZEND029302">ZEND029302</a>
-                                    </p>
-                                </div>
+                                @include('modal.modalEditE')
+                                @endforeach
 
                             </div>
                         </div>
@@ -186,9 +214,44 @@
                     <div class="row">
                         <!-- skill item -->
                         <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+                            <div class="resume-title border-line-h">
+                                <div class="row">
+                                    <div class="col col-d-9">
+                                        <div class="icon"><i class="ion ion-university"></i></div>
+                                        <div class="name">Compétences</div>
+                                    </div>
+                                    <div class="col col-d-3">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#modalC" name="create_record" id="create_record">
+                                        <div class="icon"><i class="ion ion-plus"></i></div>
+                                    </button>
+                                     
+                                    </div>
+                                </div>  
+                            </div>
                             <div class="skills-list">
-
-                                <input type="submit" name="" id="">
+                                <ul>
+                                    @foreach ($competences as $comp)                                        
+                                    <li class="border-line-h">
+                                        <div class="row">
+                                            <div class="col col-d-9">
+                                        <div class="name">{{$comp->titre}}</div>
+                                        <div class="progress">
+                                            <div class="percentage" style="width:{{$comp->pourcentage}};"></div>
+                                        </div>
+                                        </div>
+                                        <form action="{{url('comp/'.$comp->id)}}" method="POST">
+                                        <div class="col col-d-3">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
+                                        </div>
+                                        </form>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                
                             </div>
                         </div>
                         <!-- skill item -->
@@ -244,6 +307,7 @@
                                 </ul>
                             </div>
                         </div>
+                        @endif
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -411,21 +475,22 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        
-=======
         <!--
 				Card - Contacts
 			-->
         
     </div>
 
->>>>>>> deb640d7cf19806f57808c8d09a3b7c72bc2fed5
     <!--
     
-        Modal d'experience
+        Modal d'Formation
 -->
+@include('modal.modalFormation');
+<!-- Modal Experience -->
 @include('modal.modalExprience');
+<!-- Modal Competence -->
+@include('modal.modalCompetence');
+
 
 
                                             
@@ -434,8 +499,8 @@
     <!--
 		jQuery Scripts
 	-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vcard/js/scripts.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vcard/js/scripts.min.js"></script>
 </body>
 
 </html>

@@ -21,4 +21,8 @@ class Cv extends Model
     {
         return $this->hasMany('App\Competence');
     }
+    public function experience()
+    {
+        return $this->hasMany('App\Experience');
+    }
 }

@@ -44,18 +44,18 @@ class ExperienceController extends Controller
         $user = Auth::user();
         $experience = new Experience;
         $experience->Titre = $request->input('Titre');
-        $formation->Description = $request->input('Description');
-        $formation->Entreprise = $request->input('Entreprise');
-        $formation->Date_debut = $request->input('Date_debut');
-        $formation->Date_fin = $request->input('Date_fin');
-        $formation->Lieu = $request->input('Lieu');
-        $formation->Type_entreprise = $request->input('Type_entreprise');
-        $formation->Secteur = $request->input('Secteur');
-        $formation->Fonction = $request->input('Fonction');
-        $formation->Niveau = $request->input('Niveau');
+        $experience->Description = $request->input('Description');
+        $experience->Entreprise = $request->input('Entreprise');
+        $experience->Date_debut = $request->input('Date_debut');
+        $experience->Date_fin = $request->input('Date_fin');
+        $experience->Lieu = $request->input('Lieu');
+        $experience->Type_entreprise = $request->input('Type_entreprise');
+        $experience->Secteur = $request->input('Secteur');
+        $experience->Fonction = $request->input('Fonction');
+        $experience->Niveau = $request->input('Niveau');
 
-        $formation->cv_id = $user->cv->id;
-        $formation->save();
+        $experience->cv_id = $user->cv->id;
+        $experience->save();
         return redirect('/cv')->with(['user' => $user]);
     }
 
@@ -78,8 +78,8 @@ class ExperienceController extends Controller
      */
     public function edit($id)
     {
-        $formations = Auth::user()->cv->formation->find($id);
-            return view('candidat.editFormation', ['formations'=> $formations]);
+        $experiences = Auth::user()->cv->experience->find($id);
+            return view('candidat.editexperience', ['experiences'=> $experiences]);
     }
 
     /**
@@ -93,18 +93,18 @@ class ExperienceController extends Controller
     {
              // $user = Auth::user();
         // $id = $user->cv->formation->id;
-        $formation = Auth::user()->cv->formation->find($id);
-        $formation->Titre = $request->input('Titre');
-        $formation->Description = $request->input('Description');
-        $formation->Entreprise = $request->input('Entreprise');
-        $formation->Date_debut = $request->input('Date_debut');
-        $formation->Date_fin = $request->input('Date_fin');
-        $formation->Lieu = $request->input('Lieu');
-        $formation->Type_entreprise = $request->input('Type_entreprise');
-        $formation->Secteur = $request->input('Secteur');
-        $formation->Fonction = $request->input('Fonction');
-        $formation->Niveau = $request->input('Niveau');
-        $formation->save();
+        $experience = Auth::user()->cv->experience->find($id);
+        $experience->Titre = $request->input('Titre');
+        $experience->Description = $request->input('Description');
+        $experience->Entreprise = $request->input('Entreprise');
+        $experience->Date_debut = $request->input('Date_debut');
+        $experience->Date_fin = $request->input('Date_fin');
+        $experience->Lieu = $request->input('Lieu');
+        $experience->Type_entreprise = $request->input('Type_entreprise');
+        $experience->Secteur = $request->input('Secteur');
+        $experience->Fonction = $request->input('Fonction');
+        $experience->Niveau = $request->input('Niveau');
+        $experience->save();
         return redirect('/cv');
     }
 
@@ -116,9 +116,9 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        $formation=Formation::find($id);
-        $formation->delete();
+        $experience=Experience::find($id);
+        $experience->delete();
         return redirect('/cv');
       }
     }
-}
+

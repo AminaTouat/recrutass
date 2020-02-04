@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\User;
 
-class CompetenceContrroller extends Controller
+class CompetenceController extends Controller
 {
     
     public function store(Request $request)
@@ -20,7 +20,12 @@ class CompetenceContrroller extends Controller
         $competence->pourcentage = $request->input('pourcentage');
         $competence->cv_id = $user->cv->id;
         $competence->save();
-       
+        return redirect('/cv');
 
 }
+public function destroy($id){
+    $competence=Competence::find($id);
+    $competence->delete();
+    return redirect('/cv');
+  }
 }

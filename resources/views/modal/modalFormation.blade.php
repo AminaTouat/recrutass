@@ -1,28 +1,29 @@
 
-<div class="modal fade" id="modalE" tabindex="-1" name="modalE" role="dialog"
-    aria-labelledby="modalELabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" name="exampleModal" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                
-                <h4 class="modal-title" id="modelHeading">Nouvelle expérience</h4>
+                <h4 class="modal-title" id="modelHeading">Nouvelle Formation</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('formatE')}}" method="POST">
+            <form action="{{route('format')}}" method="POST">
                 {{ csrf_field() }}
+            
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Titre <span
+                            <label for="recipient-name" class="col-form-label">Titre de la formation <span
                                     class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="Titre" id="Titre" required>
+                            <input type="text" class="form-control" name="TitreFormation" id="TitreFormation" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Nom de l'entreprise
+                            <label for="recipient-name" class="col-form-label">Nom de l'établissement 
                                 <span class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="Entreprise" id="Entreprise" required>
+                            <input type="text" class="form-control" name="etablissement" id="etablissement" required>
                         </div>
                     </div>
                     <div class="row">
@@ -51,26 +52,14 @@
                             <input type="text" class="form-control" name="Lieu" id="Lieu" >
                         </div>
                         <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Type d'entreprise<span
+                            <label for="recipient-name" class="col-form-label">Type d'établissement<span
                                     class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="Type_entreprise" id="Type_entreprise" >
+                            <input type="text" class="form-control" name="Type_etablissement" id="Type_etablissement" >
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Secteur d'activité <span
-                                    class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="Secteur" id="Secteur" >
-                        </div>
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Métier<span
-                                    class="text-danger">*</span>:</label>
-                            <input type="text" class="form-control" name="Fonction" id="Fonction" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="recipient-name" class="col-form-label">Niveau de poste <span
+                            <label for="recipient-name" class="col-form-label">Niveau d'études<span
                                     class="text-danger">*</span>:</label>
                             <input type="text" class="form-control" name="Niveau" id="Niveau" >
                         </div>
