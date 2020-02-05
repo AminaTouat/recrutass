@@ -79,8 +79,15 @@ Route::get('/recruteur', 'RecruteurController@index');
 Route::get('/home', 'CandidatController@index');
 Route::get('/contact', 'CandidatController@contact');
 Route::get('/cv', 'FormationController@index');
+<<<<<<< HEAD
 Route::get('/edit/{id}','CandidatController@edit');
 // Route::get('/editFormation/{id}','FormationController@edit');
+=======
+Route::get('/postuler/{id}','PostulantController@index');
+Route::get('/editFormation/{id}','FormationController@edit');
+Route::get('/editExperience/{id}','ExperienceController@edit');
+Route::get('/editCV/{id}','CvController@edit');
+>>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59
 Route::get('/edit/{id}','RecruteurController@edit');
 Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/offres/create','OffreController@create')->name('offres.create');
@@ -93,6 +100,7 @@ Route::post('/register', 'Auth\RegisterController@createCandidat')->name('regist
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
 Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+Route::put('/postuler/{id}', 'PostulantController@store');
 Route::post('/home/form/{id}', 'CandidatController@update')->name('edit');
 Route::post('/cv/formation/add', 'FormationController@store')->name('updateF');
 Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
@@ -106,4 +114,18 @@ Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1'
 Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
 
 Route::resource('offres','OffreController');
+<<<<<<< HEAD
 // Route::resource('/candidats','CandidatController');
+=======
+
+Route::get('/listeoffre', 'WebsiteController@index')->name('index');
+Route::get('/candid', 'AffichecandController@index')->name('afiche');
+Route::get('/listeoffre/{id}', 'WebsiteController@showOffre')->name('showoffre'); 
+Route::post('/listeoffre/{offre}/comments', 'CommentController@store')->name('comments.store');
+
+Route::delete('/editFormation/{id}','FormationController@destroy');
+Route::delete('/editExperience/{id}','ExperienceController@destroy');
+Route::delete('/comp/{id}','CompetenceController@destroy');
+// Route::resource('/candidats','CandidatController');
+?>
+>>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59

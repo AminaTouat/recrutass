@@ -440,4 +440,8 @@
             <script src="../vcard/js/scripts.min.js"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59
