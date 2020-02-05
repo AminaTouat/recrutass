@@ -42,10 +42,10 @@
                 <div class="rounded border jobs-wrap">
                     @if (count($offres)>0)
                     @foreach($offres as $offre)
-                    <a href="{{url('li/'.$offre->id)}}" class="job-item d-block d-md-flex align-items-center  border-bottom fulltime">
-              <div class="company-logo blank-logo text-center text-md-left pl-3">
+                    <a href="{{url('index'.$offre->id)}}" class="job-item d-block d-md-flex align-items-center  border-bottom fulltime">
+              <!-- <div class="company-logo blank-logo text-center text-md-left pl-3">
                 <img src="{{asset('images/company_logo_blank.png')}}" alt="Image" class="img-fluid mx-auto">
-              </div>
+              </div> -->
               <div class="job-details h-100">
                 <div class="p-3 align-self-center">
                   <h3>{{$offre->intitule}}</h3>

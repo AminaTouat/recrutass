@@ -20,7 +20,7 @@ class LiveSearchController extends Controller
             ->Where ('lieutravail','LIKE','%'.$search.'%')
             ->paginate(5);
         }
-        return view ('live_search', compact(offres));
+        return view ('live_search', ['offres'=>$offres]);
 
     }
     

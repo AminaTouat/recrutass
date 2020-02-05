@@ -82,7 +82,7 @@ Route::get('/cv', 'FormationController@index');
 Route::get('/edit/{id}','CandidatController@edit');
 // Route::get('/editFormation/{id}','FormationController@edit');
 Route::get('/edit/{id}','RecruteurController@edit');
-
+Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/offres/create','OffreController@create')->name('offres.create');
 Route::post('/offres','OffreController@store')->name('offres.store');
 Route::get('/offres/index','OffreController@index')->name('recruteur.indexo');
