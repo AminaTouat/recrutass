@@ -11,16 +11,14 @@
                                 <div class="blog position-relative overflow-hidden shadow rounded">
                                
                                     <div class="position-relative overflow-hidden">
-                                    <img class="img-fluid rounded-top" src="{{ asset('upload/logo/'.$offre->image_logo) }}"style="margin-left:60px" >
+                                    <img class="img-fluid rounded-top" src="{{ asset('../upload/logo/'.$offre->image_logo) }}"style="margin-left:60px" >
                                         <div class="overlay rounded-top bg-dark"></div>
-   
                                     </div>
                                     <div class="content p-4">
-                                        <h4><a href="{{route('showoffre', ['intitule' => $offre->intitule])}}" class="title text-dark">{{$offre->intitule}}</a></h4>
+                                        <h4><a href="{{route('showoffre', ['id' => $offre->id])}}" class="title text-dark">{{$offre->intitule}}</a></h4>
                                         <p class="text-muted">{{$offre->description}}</p>
-                                        <a href="{{route('showoffre', ['intitule' => $offre->intitule])}}" class="text-dark readmore">Read more <i class="mdi mdi-chevron-right"></i></a>
-                                      
-        <button type="button" class="btn btn-primary" style="margin-left:60px">Postulé</button>
+                                        <a href="{{route('showoffre', ['id' => $offre->id])}}" class="text-dark readmore">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href={{url('postuler/'.$offre->id)}} class="btn btn-primary " type="submit" style="margin-left:60px">Postulé</a>
                             </div>
                                     <div class="author">
                                         <p class=" mb-0"><i class="mdi mdi-account text-light"></i>by {{App\Offre::find($offre->id)->recruteur->name}}  <small>{{$offre->created_at->diffForHumans()}}</small> <a href="javascript:void(0)" class="text user"></a></p>

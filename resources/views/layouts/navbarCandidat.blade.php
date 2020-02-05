@@ -27,16 +27,19 @@
   Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a  class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../img/logo.png" alt="logo Autoscuola"></a>
+      <a  class="navbar-brand js-scroll-trigger" href={{url('/')}}><img src="../img/logo.png" alt="logo Autoscuola"></a>
     
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-    
-          <li><a  class="nav-link js-scroll-trigger"  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" id="seconnecter"><span class="glyphicon glyphicon-seconnecter" ></span>Déconnection</a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-        </li>
+          <li class="dropdown nav-item active">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{asset('../uploads/avatar/'.Auth::user()->avatar)}}" alt="user" class="mx-auto d-block shadow border rounded-circle" height="90"/></a>
+              <div class="dropdown-menu">
+                <a  class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                  Déconnection</a>
+                <form  id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                              @csrf
+                                          </form>
+            </li>
         </ul>
       </div>
     </div>

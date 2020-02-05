@@ -78,7 +78,7 @@ Route::get('/recruteur', 'RecruteurController@index');
 Route::get('/home', 'CandidatController@index');
 Route::get('/contact', 'CandidatController@contact');
 Route::get('/cv', 'FormationController@index');
-Route::get('/editCandidat/{id}','CandidatController@edit');
+Route::get('/postuler/{id}','PostulantController@index');
 Route::get('/editFormation/{id}','FormationController@edit');
 Route::get('/editExperience/{id}','ExperienceController@edit');
 Route::get('/editCV/{id}','CvController@edit');
@@ -96,6 +96,7 @@ Route::post('/register', 'Auth\RegisterController@createCandidat')->name('regist
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
 Route::post('/register/recruteur', 'Auth\RegisterController@createRecruteur');
 Route::post('/home/form1', 'CandidatController@store')->name('updateC');
+Route::put('/postuler/{id}', 'PostulantController@store');
 Route::post('/home/form/{id}', 'CandidatController@update')->name('edit');
 Route::post('/cv/competence/add', 'CompetenceContrroller@store')->name('');
 Route::post('/cv/formation', 'CvController@store')->name('updateFF');
@@ -113,7 +114,7 @@ Route::resource('offres','OffreController');
 
 Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/candid', 'AffichecandController@index')->name('afiche');
-Route::get('/listeoffre/{intitule}', 'WebsiteController@showOffre')->name('showoffre'); 
+Route::get('/listeoffre/{id}', 'WebsiteController@showOffre')->name('showoffre'); 
 Route::post('/listeoffre/{offre}/comments', 'CommentController@store')->name('comments.store');
 
 Route::delete('/editFormation/{id}','FormationController@destroy');
