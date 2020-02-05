@@ -16,7 +16,7 @@
 
                         <div class="col-12 mt-3">
                             <div class="custom-form p-4 border rounded">
-                                <form action="{{route('editr',$user->id)}}" method="post">
+                                <form action="{{route('edit1',$user->id)}}" method="post">
                                     @csrf
                                     <div class="row mt-4">
 
@@ -42,8 +42,19 @@
 
                                        
                                     </div>
-                                    <div class="row mt-4">
-                                        <div class="col-md-4">
+                                   
+                      <div class="row mt-4">
+
+                                <div class="col-md-6">
+                                  <div class="form-group app-label">
+                                          <div class="form-group app-label">
+                                                     <label for="emailrecru" class="text-muted">Email recruteur:<span class="text-danger">*</span>:</label>
+                                                     <input value="{{$user->emailrecru}}" id="emailrecru" name="emailrecru"type="text"
+                                          class="form-control resume">
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
                                             <div class="form-group app-label">
                                                 <label class="text-muted">Sexe<span
                                                         class="text-danger">*</span>:</label>
@@ -58,7 +69,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group app-label">
                                                 <label class="text-muted">Civilite<span
                                                         class="text-danger">*</span>:</label>
@@ -73,7 +84,58 @@
                                             </div>
                                         </div>
 
+
+                                        <h3 class="text-center">Detail de l'entreprise</h3>
+                                        <div class="row mt-4">
+                                        <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label for="nomrecru" class="text-muted">Nom de l'entreprise:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->nomrecru}}" id="nomrecru" name="nomrecru"type="text"
+                                          class="form-control resume">
+
                                     </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                         <img src="" class="rounded-circle w-100">
+                                </div>
+                       </div>
+                       <div class="row mt-4">
+
+                       <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                     <label for="emailentre" class="text-muted">Email de l'entreprise:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->emailentre}}" id="emailentre" name="emailentre"type="text"
+                                         class="form-control resume">
+                                    </div>
+                       </div>
+                       <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label for="adresseentre" class="text-muted">l'adresse de l'entreprise:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->adresseentre}}" id="adresseentre" name="adresseentre"type="text"
+                                         class="form-control resume">
+
+                                    </div>
+                        </div>
+                        </div>
+                        <div class="row mt-4">
+                        <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label for="telephoneentre" class="text-muted">Numéro de téléphone de l'entreprise':<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->telephoneentre}}" id="telephoneentre" name="telephoneentre"type="text"
+                                        class="form-control resume">
+                                    </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group app-label">
+                          <label for="descriptionentre">Description sur l'entreprise:</label>
+                            <textarea class="form-control" rows="1" id="descriptionentre"></textarea>
+                              </div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="text-center">Réseaux sociaux</h3>
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group app-label">
@@ -88,7 +150,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group app-label">
                                             
-                                                <label  class="text-muted">twitter<span
+                                                <label  class="text-muted">Twitter<span
                                                         class="text-danger">*</span> :</label>
                                                 <input id="twitter" name="twitter" type="url" class="form-control resume" value="{{$user->twitter}}">
                                               
@@ -96,7 +158,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+<div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group app-label">
                                             
@@ -107,12 +169,23 @@
         
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                    
+                                        <label  class="text-muted">Site de l'entreprise':<span
+                                                class="text-danger">*</span> :</label>
+                                        <input id="sitewebentre" name="sitewebentre" type="url" class="form-control resume" value="{{$user->sitewebentre}} placeholder="https://site.com/">
+                                      
+
+                                    </div>
+                                </div>
+                                        </div>
                                     </div>
 
-                                    <button class="btn btn-primary submitBnt" type="submit">enregistrer</button>
+                                    <button class="btn btn-primary submitBnt" type="submit">Enregistrer</button>
                                 </form>
                             </div>
-                        </div>
+                    
                     </div>
 
 

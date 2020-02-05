@@ -1248,17 +1248,17 @@
     },
     {
         "name": "league/commonmark",
-        "version": "1.2.0",
-        "version_normalized": "1.2.0.0",
+        "version": "1.2.2",
+        "version_normalized": "1.2.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/thephpleague/commonmark.git",
-            "reference": "2533c389fd2a7573d4f7be279b1c33cf941c8dfc"
+            "reference": "34cf4ddb3892c715ae785c880e6691d839cff88d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2533c389fd2a7573d4f7be279b1c33cf941c8dfc",
-            "reference": "2533c389fd2a7573d4f7be279b1c33cf941c8dfc",
+            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/34cf4ddb3892c715ae785c880e6691d839cff88d",
+            "reference": "34cf4ddb3892c715ae785c880e6691d839cff88d",
             "shasum": ""
         },
         "require": {
@@ -1283,7 +1283,7 @@
         "suggest": {
             "league/commonmark-extras": "Library of useful extensions including smart punctuation"
         },
-        "time": "2020-01-09T22:41:09+00:00",
+        "time": "2020-01-16T01:18:13+00:00",
         "bin": [
             "bin/commonmark"
         ],

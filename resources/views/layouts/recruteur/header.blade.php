@@ -48,6 +48,7 @@
     <!--
         Profile
     -->
+    
     <div class="profile">
         <!-- profile image -->
         <div class="slide" style="background-image: url(img/bg.jpg);"></div>
@@ -81,8 +82,8 @@
         </div>
         <!-- profile buttons -->
         <div class="lnks">
-            <a href="vcard/Jalal_CV.pdf" class="lnk">
-                <span class="text">postuler une offre</span>
+            <a href="{{ route('recruteur.indexo') }}" class="lnk">
+                <span class="text">publier une offre</span>
                 <span class="ion ion-archive"></span>
             </a>
             <a href="#" class="lnk discover">
