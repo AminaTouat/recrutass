@@ -29,7 +29,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/offre">
+                            <a href="{{ route('recruteur.indexo') }}">
                                 <span class="icon ion-android-list"></span>
                                 <span class="link">Offre</span>
                             </a>
@@ -41,9 +41,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#blog-card">
+                            <a href="/recruteur/chartLine/year">
                                 <span class="icon ion-chatbox-working"></span>
-                                <span class="link">Blog</span>
+                                <span class="link">statistque (offre par an)</span>
                             </a>
                         </li>
                         <li>
@@ -137,6 +137,7 @@
        
         @endforeach
     </table>
+
   
     {!! $offres->links() !!}
       

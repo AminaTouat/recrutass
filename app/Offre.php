@@ -17,4 +17,14 @@ class Offre extends Model
     {
         return $this->belongsTo('App\Recruteur');
     }
+<<<<<<< HEAD
+=======
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+  
+>>>>>>> statistique
 }

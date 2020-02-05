@@ -39,7 +39,6 @@
                                     <h6>
                                       travaille chez {{$recruteurs->nomrecru}}
                                     </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Recruteur</a>
@@ -112,7 +111,7 @@
                                                 <label>logo</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src=""/>
+                                                <img src="{{ asset('uploadss/logoo/'.$recruteurs->logoo) }}"/>
                                             </div>
                                         </div>
                                         <div class="row">

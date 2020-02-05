@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/offre">
+                            <a href="{{ route('recruteur.indexo') }}">
                                 <span class="icon ion-android-list"></span>
                                 <span class="link">Offre</span>
                             </a>
@@ -78,8 +78,13 @@
                     <div class="content about">
                         <!-- title -->
                         <div class="title">profile</div>
+<<<<<<< HEAD
                         
                         <!-- content -->
+=======
+
+             <!-- content -->
+>>>>>>> statistique
                         <form action="{{route('updateR')}}" method="post">
                             {{ csrf_field() }}
                             <h3 class="text-center">informations about me</h3>
@@ -246,8 +251,19 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+<<<<<<< HEAD
                              
             <img src="" class="rounded-circle w-100">
+=======
+                                <label for="logoo" class="text-muted">logo de la sociètè:</label>                  
+                                <div class="custom-file">
+                                      
+            <input type="file" class="custom-file-input" name="logoo" id="logoo">
+            
+            <label class="custom-file-label">choose file:</label>
+            <!-- <form  action="{{route('updateR')}}" method="post"> -->
+        </div>
+>>>>>>> statistique
         
                                 </div>
 

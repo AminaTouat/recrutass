@@ -68,6 +68,13 @@ Route::get('/condidatss',function()
 $user = DB::table('users')->get();
 return view('recruteur/affichecondidat');
 });
+<<<<<<< HEAD
+=======
+// Route::get('/profilefrontrecru', function () {
+//     return view('profilefrontrecru');
+// });
+
+>>>>>>> statistique
 Auth::routes();
 
 
@@ -80,6 +87,7 @@ Route::get('/home', 'CandidatController@index');
 Route::get('/contact', 'CandidatController@contact');
 Route::get('/cv', 'FormationController@index');
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/edit/{id}','CandidatController@edit');
 // Route::get('/editFormation/{id}','FormationController@edit');
 =======
@@ -88,13 +96,22 @@ Route::get('/editFormation/{id}','FormationController@edit');
 Route::get('/editExperience/{id}','ExperienceController@edit');
 Route::get('/editCV/{id}','CvController@edit');
 >>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59
+=======
+Route::get('/edit/{id}','CandidatController@edit');
+// Route::get('/editFormation/{id}','FormationController@edit');
+>>>>>>> statistique
 Route::get('/edit/{id}','RecruteurController@edit');
 Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/offres/create','OffreController@create')->name('offres.create');
 Route::post('/offres','OffreController@store')->name('offres.store');
 Route::get('/offres/index','OffreController@index')->name('recruteur.indexo');
+<<<<<<< HEAD
 Route::get('/offres/edit/{id}','OffreController@edit')->name('recruteur.edito');
 //Route::post('/offres/edit/{id}', 'OffreController@update');
+=======
+ Route::get('/offres/edit/{id}','OffreController@edit')->name('recruteur.edito');
+Route::PUT('/offres/update/{id}', 'OffreController@update');
+>>>>>>> statistique
 // Route::post('/editFormation/{id}','FormationController@update');
 Route::post('/register', 'Auth\RegisterController@createCandidat')->name('register2');
 Route::post('/login/recruteur', 'Auth\LoginController@recruteurLogin');
@@ -108,7 +125,10 @@ Route::post('/cv/formation', 'CvController@store')->name('updateFF');
 Route::post('/home/form2', 'CandidatController@update_avatar')->name('updateM');
 
 
+<<<<<<< HEAD
 Route::get('/offreSearch/live_search', 'LiveSearchController@allJobs')->name('live_search');
+=======
+>>>>>>> statistique
 Route::post('/recruteur/formr', 'RecruteurController@store')->name('updateR');
 Route::post('/recruteur/formr/{id}', 'RecruteurController@update')->name('edit1');
 Route::post('/recruteur/formr1', 'RecruteurController@update_avatar')->name('updateMm');
@@ -118,14 +138,16 @@ Route::resource('offres','OffreController');
 // Route::resource('/candidats','CandidatController');
 =======
 
+<<<<<<< HEAD
+=======
+
+Route::get('/profilefrontrecru/{name}', 'WebsiteController@showOffre1')->name('showoffre1'); 
+>>>>>>> statistique
 Route::get('/listeoffre', 'WebsiteController@index')->name('index');
 Route::get('/candid', 'AffichecandController@index')->name('afiche');
 Route::get('/listeoffre/{id}', 'WebsiteController@showOffre')->name('showoffre'); 
 Route::post('/listeoffre/{offre}/comments', 'CommentController@store')->name('comments.store');
 
-Route::delete('/editFormation/{id}','FormationController@destroy');
-Route::delete('/editExperience/{id}','ExperienceController@destroy');
-Route::delete('/comp/{id}','CompetenceController@destroy');
 // Route::resource('/candidats','CandidatController');
 ?>
 >>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59

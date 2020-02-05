@@ -133,8 +133,19 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
 
                         <h3 class="text-center">Réseaux sociaux</h3>
+=======
+                        <div class="col-md-6">
+                            <div class="form-group app-label">
+                          <label for="ville">ville:</label>
+                          <input class="form-control resume" value="{{$user->ville}}"  rows="1" type="text" name="ville" id="ville">
+                              </div>
+                            </div>
+                        </div>
+                        <h3 class="text-center">social networks</h3>
+>>>>>>> statistique
 
                                     <div class="row">
                                         <div class="col-md-6">

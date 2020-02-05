@@ -61,7 +61,7 @@ class OffreController extends Controller
         $offre->prix = $request->input('prix');
         if($request->hasFile('image_logo'))
         {
-     
+     //bssh cho img logo ta3 recruteur rani dayra koma hadik request ybali 3liha ?
             $file = $request->file('image_logo');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . "." . $extension;
@@ -99,7 +99,7 @@ class OffreController extends Controller
                            return view('recruteur.edito',compact('offre'),['user' => $user]);
                         }
 
-                        function update(Request $request, Offre $offre)
+                        function update(Request $request, $id)
                         {
                             
                             $request->validate([
@@ -116,10 +116,12 @@ class OffreController extends Controller
                                 'niveau' => 'required',
                                 'prix' => 'required',
                             ]);
-                      
+                            $offre = Offre::find($id);
+
                             $offre->update($request->all());
-                      
-                            return redirect()->route('recruteur.indexo')
+                            $offre->save();
+
+                            return redirect('/offres/index')
                                             ->with('success','offre updated successfully');
                         }
                      function destroy(Offre $offre)

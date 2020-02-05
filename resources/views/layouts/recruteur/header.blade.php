@@ -54,7 +54,7 @@
         <div class="slide" style="background-image: url(img/bg.jpg);"></div>
         <!-- profile photo -->
         <div class="image">
-            <img src="/uploads/avatar/{{ Auth::guard('recruteur')->user()->avatar }}" />
+            <img src="/uploads/logoo/{{ Auth::guard('recruteur')->user()->avatar }}" />
             <form  action="{{route('updateMm')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
     

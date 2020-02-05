@@ -10,6 +10,10 @@ class WebsiteController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
+=======
+        
+>>>>>>> statistique
         return view('listeDesEntreprises')->with('offres' , Offre::all());
     }
     public function showOffre($id)

@@ -4,6 +4,7 @@
     
         <div class="container">
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-lg-12">
                     <div class="text-sm-center">
                         <img src="images/featured-job/img-3.png" alt="" class="img-fluid mx-md-auto d-block">
@@ -16,6 +17,104 @@
                             <li class="list-inline-item">
                                 <p class="text-success mb-0"><i class="mdi mdi-bookmark-check mdi-18px mr-2"></i>Verified</p>
                             </li>
+=======
+            
+                <div class="col-lg-12 mt-4 pt-2">
+                    <h4>détaile d'offre  {{$offres->intitule}}:</h4>
+                    <div class="rounded border p-4 mt-3">
+                    <div class="img_side ">
+     <img style="height:120px" src="{{asset('upload/logo/'.$offres->image_logo)}}" />
+     <div class="row" style="padding-left: 15px;">
+    <a href="#"> <small>by {{App\Offre::find($offres->id)->recruteur->name}}</small></a>
+    
+					</div>
+                        </div>
+              <div class="info_div">
+                       <div class="item">
+                    <strong>
+                                                Offre d'emploi :                                             </strong>
+                    <span itemprop="title">    {{$offres->intitule}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                                                Type de contrat :                                             </strong>
+                    <span itemprop="title">    {{$offres->Type}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                                                Durée de contrat :                                             </strong>
+                    <span itemprop="title">    {{$offres->duréemploi}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                                                domaine de contrat :                                             </strong>
+                    <span itemprop="title">    {{$offres->domaine}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Localisation :                                            </strong>
+                    <span itemprop="title">    {{$offres->lieutravail}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Année d'expérience requise  :                                             </strong>
+                    <span itemprop="title">    {{$offres->annéeExperience}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Compétence requise  :                                             </strong>
+                    <span itemprop="title">    {{$offres->compétence}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Formation requise  :                                             </strong>
+                    <span itemprop="title">    {{$offres->niveau}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Salaire  :                                             </strong>
+                    <span itemprop="title">    {{$offres->prix}}                </span>
+                </div>
+                <div class="item">
+                    <strong>
+                    Date de fin de la demande des candidats  :                                             </strong>
+                    <span itemprop="title">    {{$offres->datefin}}                </span>
+                </div >
+                <div class="item"><label><strong>description:</strong></label>
+                        <p class="text-muted"><i class="mdi mdi-check text-success"></i> {{$offres->description}}</p>
+                  
+                      </div>
+                </div>
+                <small><br/>il ya : {{$offres->created_at->diffForHumans()}}  par l'entreprise :{{App\Offre::find($offres->id)->recruteur->nomrecru}}</small>
+                       
+                        </div>
+                   
+                      <button type="button" class="btn btn-primary" style="margin-left:970px">Postulé</button>
+              
+                </div>
+            
+            </div>
+         
+            <div class="col-lg-9 col-md-8">
+            <div class="section-title text-center mb-4 pb-2">
+            <h4 class="title title-line pb-5">candidats ayant postulé</h4>
+            </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                <div class="employers-list position-relative pb-3 pt-3 pl-2 pr-2 border rounded">
+                    <img src="images/employers/img-1.jpg" alt="" class="mx-auto d-block shadow border rounded-circle" height="90">
+                    <div class="grid-list-desc text-center mt-3">
+                        <h5 class="mb-2"><a href="#" class="text-dark name">Kyle Jones</a></h5>
+                        <p class="text-muted mb-0">Web Delveloper</p>
+                        <p class="text-muted mb-0"><i class="mdi mdi-map-marker mr-2"></i>419 Lakeland Terrace Detroit, MI 48226</p>
+                        <ul class="employers-icons list-inline mb-1">
+                            <li class="list-inline-item"><a href="#" class="text-success"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-success"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-success"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-success"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-success"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item badge badge-success text-white">4.9</li>
+>>>>>>> statistique
                         </ul>
 
                         <ul class="list-inline mb-2">
