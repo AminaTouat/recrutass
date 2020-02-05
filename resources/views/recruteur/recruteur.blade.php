@@ -40,13 +40,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#blog-card">
+                            <a href="/recruteur/chartLine/year">
                                 <span class="icon ion-chatbox-working"></span>
-                                <span class="link">Blog</span>
+                                <span class="link">statistque (offre par an)</span>
                             </a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="/contact">
+=======
+                            <a href="/">
+>>>>>>> 500ecb4c0b1514e33cf48a0334e3626fd186db51
                                 <span class="icon ion-at"></span>
                                 <span class="link">Contact</span>
                             </a>
@@ -70,6 +74,7 @@
             <!-- 
 				Card - About
 			-->
+    
             <div class="card-inner animated active" id="about-card">
                 <div class="card-wrap">
                     <!-- 
@@ -78,6 +83,7 @@
                     <div class="content about">
                         <!-- title -->
                         <div class="title">profile</div>
+
                         
                         <!-- content -->
                         <form action="{{route('updateR')}}" method="post">
@@ -371,7 +377,36 @@
 </div>
 </div>
 
+
                   </div>
+                  <div class="row">
+                               
+                            <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                       
+                                        @if($user->ville!=null)
+                                    <div class="form-group app-label">
+
+                                        <label for="ville" class="text-muted">ville:<span class="text-danger">*</span>:</label>
+                                        <input value="{{$user->ville}}" id="ville" name="ville"type="text"
+                                         disabled="disabled" class="form-control resume"
+                                           >
+
+                                    </div>
+                                    @else
+                                    <div class="form-group app-label">
+
+                                         <label for="ville" class="text-muted">ville:<span
+                                          class="text-danger">*</span>:</label>
+                                        <input id="ville" name="ville" 
+                                        type="text"  class="form-control resume"
+                                               placeholder="ville de la sociètè"required>
+
+                                </div>
+                                    @endif
+
+                                    </div>
+                                </div></div>
                     @if($user->linkedIN==null && $user->prenomrecru==null && 
                     $user->Sexe==null && $user->Civilite==null)
                     <div class="content services">

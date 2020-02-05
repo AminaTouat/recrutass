@@ -21,7 +21,8 @@ class OffreController extends Controller
     }
    
     public function create(){
-        			
+                    
+        
 			
         $user = Auth::guard('recruteur')->user();
         return view('recruteur.offre',['user' => $user]);

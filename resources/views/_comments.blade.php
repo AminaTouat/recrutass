@@ -1,10 +1,10 @@
 <div class="container">
-    @foreach($comments as $comment)
+    @foreach($offres as $comment)
         <p>{{ $comment->content }}</p>
         <p class="text-info text-right ">{{ $comment->user->name }}</p>
         <hr>
     @endforeach
-    {{ $comments->links() }}
+    {{ $offres->links() }}
 
     @guest
         <p class="text-center text-muted">You need to login if you want to comment post</p>

@@ -34,6 +34,7 @@
           <li class="dropdown nav-item active">
               <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{asset('../uploads/avatar/'.Auth::user()->avatar)}}" alt="user" class="mx-auto d-block shadow border rounded-circle" height="90"/></a>
               <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
                 <a  class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                   Déconnection</a>
                 <form  id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

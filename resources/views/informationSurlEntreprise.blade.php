@@ -11,7 +11,10 @@
                     <div class="rounded border p-4 mt-3">
                     <div class="img_side ">
      <img style="height:120px" src="{{asset('upload/logo/'.$offres->image_logo)}}" />
-					
+     <div class="row" style="padding-left: 15px;">
+    <a href="#"> <small>by {{App\Offre::find($offres->id)->recruteur->name}}</small></a>
+    
+					</div>
                         </div>
               <div class="info_div">
                        <div class="item">
@@ -63,11 +66,8 @@
                     <strong>
                     Date de fin de la demande des candidats  :                                             </strong>
                     <span itemprop="title">    {{$offres->datefin}}                </span>
-                </div>
-              
-                </div>
-                
-                        <div><label><strong>description:</strong></label>
+                </div >
+                <div class="item"><label><strong>description:</strong></label>
                         <p class="text-muted"><i class="mdi mdi-check text-success"></i> {{$offres->description}}</p>
                   
                       </div>

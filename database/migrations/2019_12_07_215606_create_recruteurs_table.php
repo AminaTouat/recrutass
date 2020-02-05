@@ -40,6 +40,8 @@ class CreateRecruteursTable extends Migration
         $table->string('facebook')->nullable();
         $table->string('twitter')->nullable();
         $table->string('logoo')->nullable();
+        $table->string('ville')->nullable();
+
         $table->string('avatar')->default('default.jpg');
         $table->integer('telephonerecru')->nullable();
         $table->rememberToken();

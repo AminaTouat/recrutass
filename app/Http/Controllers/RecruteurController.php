@@ -63,6 +63,8 @@ public function store(Request $request)
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
+    $user->ville = $request->ville;
+    $user->logoo = $request->logoo;
     if($request->hasFile('logoo'))
     {
  
@@ -72,14 +74,7 @@ public function store(Request $request)
         $file->move('upload/logoo/', $filename);
         $offre->logoo = $filename;
         $offre->save();
-    } else {
-        return $request;
-        $offre->logoo = '';
-        // $user->name = request('name');
-        // $user->email = request('email');
-        // $user->save();
-        // return view('User.Profile');
-    }
+    } 
    
     
     $user->save();
@@ -112,6 +107,8 @@ public function update(Request $request, $id)
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
+    $user->ville = $request->ville;
+
     
     $user->save();
     return redirect('/recruteur');}

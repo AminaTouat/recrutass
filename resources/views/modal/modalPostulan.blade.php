@@ -45,9 +45,10 @@
                                     required>
                             </div>
                         </div>
-                        <div class="row">
-                            <button id="btnregistre" type="submit" class="btn btn-primary w-50"
-                            id="btnregistre">{{ __('Postulé') }}</button>
+                        <div class="row" style="padding-top: 15px">
+                            <div class="col-md-12">
+                                <a id="btnregistre" type="submit" class="btn btn-primary " style="float: right" id="btnregistre">{{ __('Postulé') }}</a>
+                            </div>
                         </div>
                         
                                 </form>
