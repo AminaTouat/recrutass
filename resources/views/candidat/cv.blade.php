@@ -72,6 +72,7 @@
             <!--
 				Card - Resume
             -->
+                
             <div class="card-inner animated active" id="resume-card">
                 <div class="card-wrap">
                     <!--
@@ -79,20 +80,6 @@
 					-->
                     <div class="content resume">
                         <!-- title -->
-                        @if ($cv->titre==null) 
-                        <form action="{{url('editCV/'.$cv->id)}}" method="POST">
-                            <input type="hidden" name="_method" value="PUT">
-                            {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col col-d-6">
-                                <input type="text" name="titre" id="titre" placeholder="titre CV ">
-                            </div>
-                            <div class="col col-d-6">
-                                <button class="btn btn-primary submitBnt" type="submit">create</button>
-                            </div>
-                        </div>
-                        </form>
-                        @else
                         <div class="title">Resume</div>
                         <!-- content -->
                         <div class="row">
@@ -102,13 +89,12 @@
                                     <div class="row">
                                         <div class="col col-d-9">
                                             <div class="icon"><i class="ion ion-briefcase"></i></div>
-                                            <div class="name">Diplômes et formations</div>
+                                            <div class="name">Experience</div>
                                         </div>
                                         <div class="col col-d-3">
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#exampleModal" name="create_record" id="create_record">
-                                                <div class="icon"><i class="ion ion-plus"></i></div>
-                                            </button>
+                                            data-target="#exampleModal" name="create_record"
+                                            id="create_record"><div class="icon"><i class="ion ion-plus"></i></div></button>  
                                         </div>
                                     </div>
                                 </div>
@@ -116,88 +102,63 @@
 
                                     @foreach ($formations as $one)
                                     <div class="resume-item border-line-h active">
-                                        <form action="{{url('editFormation/'.$one->id)}}" method="POST">
-                                            <div class="row">
-                                                <div class="col col-d-3">
-                                                    <div class=" date">{{$one->Date_debut}}</div>
-                                                </div>
-
-                                                <div class="col col-d-5">
-                                                    <a href="#" data-toggle="modal"
-                                                        data-target="#modaledit<?= $one->id?>" data-backdrop="false">
-                                                        <i class="fa fa-edit" id="modifie<?= $one->id?>"></i>
-                                                    </a>
-
-                                                    {{csrf_field()}}
-                                                    {{method_field('DELETE')}}
-                                                    <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
-
-                                                </div>
+                                        <div class="row">
+                                            <div class="col col-d-3">
+                                                <div class=" date">{{$one->annee}}</div>
                                             </div>
-
-                                            <div class="name">{{$one->TitreFormation}}</div>
-                                            <div class="company">{{$one->Lieu}}</div>
-                                            <p>
-                                                {{$one->Description}}.
-                                            </p>
-                                        </form>
-
-
-                                    </div>
-                                    @include('modal.modalEditF')
-                                    @endforeach
+                                            <div class="col col-d-5">
+                                                <a  href="#"  data-toggle="modal" data-target="#modaledit">
+                                                   <i class="fa fa-edit" id="modifie<?= $one->id?>"></i>
+                                                </a>
+                                                <a href="" >
+                                                    <i class="fa fa-trash" id="supp"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                            <div class="name">{{$one->titre}}</div>
+                                            <div class="company">Wingssoft Co.</div>
+                                    <p>
+                                        {{$one->description}}.
+                                    </p>
                                 </div>
+                                @endforeach
                             </div>
-                        <!-- Expériences -->
+                        </div>
+                        <!-- education -->
                         <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
                             <div class="resume-title border-line-h">
                                 <div class="row">
                                     <div class="col col-d-9">
                                         <div class="icon"><i class="ion ion-university"></i></div>
-                                        <div class="name">Expériences</div>
+                                        <div class="name">Education</div>
                                     </div>
                                     <div class="col col-d-3">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#modalE" name="create_record" id="create_record">
-                                        <div class="icon"><i class="ion ion-plus"></i></div>
-                                    </button>
-                                     
+                                     <div class="icon"><i class="ion ion-plus"></i></div>
+                                        <!--********************--->
+                                        
                                     </div>
-                                </div>  
+                                </div>
+                                
+                                
                             </div>
                             <div class="resume-items">
-                                @foreach ($experiences as $exp)
-                                <div class="resume-item border-line-h active">
-                                    <form action="{{url('editExperience/'.$exp->id)}}" method="POST">
-                                        <div class="row">
-                                            <div class="col col-d-3">
-                                                <div class=" date">{{$exp->Date_debut}}</div>
-                                            </div>
-
-                                            <div class="col col-d-5">
-                                                <a href="#" data-toggle="modal"
-                                                    data-target="#modaleditE<?= $exp->id?>" data-backdrop="false">
-                                                    <i class="fa fa-edit" id="modifie<?= $exp->id?>"></i>
-                                                </a>
-
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="name">{{$exp->Titre}}</div>
-                                        <div class="company">{{$one->Lieu}}</div>
-                                        <p>
-                                            {{$exp->Description}}.
-                                        </p>
-                                    </form>
-
-
+                                <div class="resume-item border-line-h">
+                                    <div class="date">2007-2011</div>
+                                    <div class="name">Yarmouk University</div>
+                                    <div class="company">Irbid</div>
+                                    <p>
+                                        Bachelor's Degree in Computer Science, Yarmouk University ,IT college.
+                                    </p>
                                 </div>
-                                @include('modal.modalEditE')
-                                @endforeach
+                                <div class="resume-item border-line-h">
+                                    <div class="date">2016</div>
+                                    <div class="name">Zend Certificate</div>
+                                    <div class="company">Amman</div>
+                                    <p>
+                                        Zend Certified Engineer. <a target="_blank"
+                                            href="https://www.zend.com/en/yellow-pages/ZEND029302">ZEND029302</a>
+                                    </p>
+                                </div>
 
                             </div>
                         </div>
@@ -214,44 +175,9 @@
                     <div class="row">
                         <!-- skill item -->
                         <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-                            <div class="resume-title border-line-h">
-                                <div class="row">
-                                    <div class="col col-d-9">
-                                        <div class="icon"><i class="ion ion-university"></i></div>
-                                        <div class="name">Compétences</div>
-                                    </div>
-                                    <div class="col col-d-3">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#modalC" name="create_record" id="create_record">
-                                        <div class="icon"><i class="ion ion-plus"></i></div>
-                                    </button>
-                                     
-                                    </div>
-                                </div>  
-                            </div>
                             <div class="skills-list">
-                                <ul>
-                                    @foreach ($competences as $comp)                                        
-                                    <li class="border-line-h">
-                                        <div class="row">
-                                            <div class="col col-d-9">
-                                        <div class="name">{{$comp->titre}}</div>
-                                        <div class="progress">
-                                            <div class="percentage" style="width:{{$comp->pourcentage}};"></div>
-                                        </div>
-                                        </div>
-                                        <form action="{{url('comp/'.$comp->id)}}" method="POST">
-                                        <div class="col col-d-3">
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
-                                            <button type="submit" id="deletF"><i class="fa fa-trash" id="supp"></i></button>
-                                        </div>
-                                        </form>
-                                        </div>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                                
+
+                                <input type="submit" name="" id="">
                             </div>
                         </div>
                         <!-- skill item -->
@@ -307,7 +233,6 @@
                                 </ul>
                             </div>
                         </div>
-                        @endif
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -475,23 +400,99 @@
                 </div>
             </div>
         </div>
-        <!--
-				Card - Contacts
-			-->
         
-    </div>
-
     <!--
     
-        Modal d'Formation
+        Modal d'experience
 -->
-@include('modal.modalFormation');
-<!-- Modal Experience -->
-@include('modal.modalExprience');
-<!-- Modal Competence -->
-@include('modal.modalCompetence');
+<div class="modal fade" id="exampleModal" tabindex="-1" name="exampleModal" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('updateF')}}" method="POST">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <div class="form-group">
 
+                        <label for="recipient-name" class="col-form-label">Titre <span
+                                class="text-danger">*</span>:</label>
+                        <input type="text" class="form-control" name="titre" id="titre" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label">Année <span
+                                    class="text-danger">*</span>:</label>
+                            <input type="month" class="form-control" name="annee" id="annee" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label">Établissement
+                                <span class="text-danger">*</span>:</label>
+                            <input type="text" class="form-control" name="etablissement" id="etablissement" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Description <span class="text-danger">*</span>:
+                        </label>
+                        <textarea class="form-control" name="description" id="description" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary submitBnt" type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="modaledit" tabindex="-1" name="modaledit" role="dialog"aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{-- <form action={{route('edit',$formations->id)}} method="POST"> --}}
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <div class="form-group">
 
+                        <label for="recipient-name" class="col-form-label">Titre <span
+                                class="text-danger">*</span>:</label>
+                        {{-- <input type="text" class="form-control" name="titre" id="titre" value="{{$formations->titre}}"> --}}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label">Année <span
+                                    class="text-danger">*</span>:</label>
+                            <input type="month" class="form-control" name="annee" id="annee" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label">Établissement
+                                <span class="text-danger">*</span>:</label>
+                            <input type="text" class="form-control" name="etablissement" id="etablissement" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Description <span class="text-danger">*</span>:
+                        </label>
+                        <textarea class="form-control" name="description" id="description" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary submitBnt" type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
                                             
 
@@ -499,8 +500,8 @@
     <!--
 		jQuery Scripts
 	-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vcard/js/scripts.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vcard/js/scripts.min.js"></script>
 </body>
 
 </html>

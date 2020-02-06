@@ -28,29 +28,33 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/offre">
+                            <a href="{{ route('recruteur.indexo') }}">
                                 <span class="icon ion-android-list"></span>
                                 <span class="link">Offre</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('afiche') }}">
+                            <a href="/condidatss">
                                 <span class="icon ion-paintbrush"></span>
                                 <span class="link">Cadidats</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/recruteur/chartLine/year">
+                            <a href="#blog-card">
                                 <span class="icon ion-chatbox-working"></span>
-                                <span class="link">statistque (offre par an)</span>
+                                <span class="link">Blog</span>
                             </a>
                         </li>
                         <li>
+<<<<<<< HEAD
 <<<<<<< HEAD
                             <a href="/contact">
 =======
                             <a href="/">
 >>>>>>> 500ecb4c0b1514e33cf48a0334e3626fd186db51
+=======
+                            <a href="/contact">
+>>>>>>> 5f2eb1b1a2ac319e92137fd5c6693bb415487418
                                 <span class="icon ion-at"></span>
                                 <span class="link">Contact</span>
                             </a>
@@ -74,7 +78,6 @@
             <!-- 
 				Card - About
 			-->
-    
             <div class="card-inner animated active" id="about-card">
                 <div class="card-wrap">
                     <!-- 
@@ -83,9 +86,13 @@
                     <div class="content about">
                         <!-- title -->
                         <div class="title">profile</div>
-
+<<<<<<< HEAD
                         
                         <!-- content -->
+=======
+
+             <!-- content -->
+>>>>>>> statistique
                         <form action="{{route('updateR')}}" method="post">
                             {{ csrf_field() }}
                             <h3 class="text-center">informations about me</h3>
@@ -252,14 +259,19 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+<<<<<<< HEAD
+                             
+            <img src="" class="rounded-circle w-100">
+=======
                                 <label for="logoo" class="text-muted">logo de la sociètè:</label>                  
                                 <div class="custom-file">
                                       
             <input type="file" class="custom-file-input" name="logoo" id="logoo">
             
             <label class="custom-file-label">choose file:</label>
-            
+            <!-- <form  action="{{route('updateR')}}" method="post"> -->
         </div>
+>>>>>>> statistique
         
                                 </div>
 
@@ -331,7 +343,8 @@
                                 <div class="clear"></div>
                     </div>
                     
-                  
+                   
+                  <div class="row">
 
 
 
@@ -339,7 +352,7 @@
 
 
 
-<div class="row">
+
 
 
 
@@ -376,37 +389,8 @@
   <textarea class="form-control" rows="1" id="descriptionentre"></textarea>
 </div>
 </div>
-
-
+<div class="clear"></div>
                   </div>
-                  <div class="row">
-                               
-                            <div class="col-md-6">
-                                    <div class="form-group app-label">
-                                       
-                                        @if($user->ville!=null)
-                                    <div class="form-group app-label">
-
-                                        <label for="ville" class="text-muted">ville:<span class="text-danger">*</span>:</label>
-                                        <input value="{{$user->ville}}" id="ville" name="ville"type="text"
-                                         disabled="disabled" class="form-control resume"
-                                           >
-
-                                    </div>
-                                    @else
-                                    <div class="form-group app-label">
-
-                                         <label for="ville" class="text-muted">ville:<span
-                                          class="text-danger">*</span>:</label>
-                                        <input id="ville" name="ville" 
-                                        type="text"  class="form-control resume"
-                                               placeholder="ville de la sociètè"required>
-
-                                </div>
-                                    @endif
-
-                                    </div>
-                                </div></div>
                     @if($user->linkedIN==null && $user->prenomrecru==null && 
                     $user->Sexe==null && $user->Civilite==null)
                     <div class="content services">
@@ -480,4 +464,8 @@
             <script src="../vcard/js/scripts.min.js"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b16f5555377372c24ab0a78bc92a3df929d6cf59

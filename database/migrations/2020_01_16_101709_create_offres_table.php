@@ -33,7 +33,6 @@ class CreateOffresTable extends Migration
             $table->unsignedInteger('recruteur_id')->nullable();
             $table->foreign('recruteur_id')->references('id')->on('recruteurs');
             $table->timestamps();
-            
          
         });
     }

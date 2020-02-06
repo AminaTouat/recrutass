@@ -15,7 +15,7 @@ class RecruteurController extends Controller
   if($request->hasFile('avatar')){
       $avatar = $request->file('avatar');
       $filename = time() . '.' . $avatar->getClientOriginalExtension();
-      $path = public_path('/uploads/avatar/'.$filename);
+      $path = public_path('/uploads/logoo/'.$filename);
       Image::make($avatar->getRealPath())->resize(300, 300)->save($path);
       $user = Auth::guard('recruteur')->user();
       $user->avatar = $filename;
@@ -37,6 +37,7 @@ public function header()
         $user = Auth::guard('recruteur')->user();
         return view('layouts.recruteur.header', ['user' => $user]);
     }
+
     public function create()
     {
         return view('recruteur.recruteur');
@@ -44,8 +45,6 @@ public function header()
 
 public function store(Request $request)
 { 
-
-    
     $id = Auth::guard('recruteur')->user()->id;
     $user = Recruteur::find($id);
     $user->name = $request->name;
@@ -63,6 +62,8 @@ public function store(Request $request)
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
+<<<<<<< HEAD
+=======
     $user->ville = $request->ville;
     $user->logoo = $request->logoo;
     if($request->hasFile('logoo'))
@@ -71,15 +72,23 @@ public function store(Request $request)
         $file = $request->file('logoo');
         $extension = $file->getClientOriginalExtension();
         $filename = time() . "." . $extension;
-        $file->move('upload/logoo/', $filename);
-        $offre->logoo = $filename;
-        $offre->save();
+        $file->move('uploads/logoo/', $filename);
+        $user->logoo = $filename;
+        $user->save();
     } 
+    else {
+        return $request;
+        $user->logoo = '';
+        // $user->name = request('name');
+        // $user->email = request('email');
+        // $user->save();
+        // return view('User.Profile');
+    }
+>>>>>>> statistique
    
     
     $user->save();
     return back()->with( [ 'user' => $user ] );
-    
 }
 public function edit($id)
 {
@@ -107,10 +116,7 @@ public function update(Request $request, $id)
     $user->twitter = $request->twitter;
     $user->facebook = $request->facebook;
     $user->Civilite = $request->Civilite;
-    $user->ville = $request->ville;
-
     
     $user->save();
     return redirect('/recruteur');}
 }
-?>

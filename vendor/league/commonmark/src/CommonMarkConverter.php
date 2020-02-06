@@ -24,7 +24,7 @@ class CommonMarkConverter extends Converter
      *
      * This might be a typical `x.y.z` version, or `x.y-dev`.
      */
-    public const VERSION = '1.2.1';
+    public const VERSION = '1.2.2';
 
     /** @var EnvironmentInterface */
     protected $environment;
@@ -58,4 +58,3 @@ class CommonMarkConverter extends Converter
         return $this->environment;
     }
 }
-?>

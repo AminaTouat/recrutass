@@ -24,7 +24,7 @@
                         <li class="active">
                             <a href="/recruteur">
                                 <span class="icon ion-person"></span>
-                                <span class="link">profile</span>
+                                <span class="link">Profile</span>
                             </a>
                         </li>
                         <li>
@@ -108,10 +108,11 @@
         </div>
     @endif
   
-    <form action="{{url('/offres/edit/'.$offre->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-   
+    <form action="{{url('offres/update/'.$offre->id) }}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    {{csrf_field()}}
+    
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">

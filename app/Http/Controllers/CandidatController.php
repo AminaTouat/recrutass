@@ -34,14 +34,12 @@ class CandidatController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $cv = $user->cv;
-        return view('candidat.home', ['user' => $user , 'cv' => $cv]);
+        return view('candidat.home', ['user' => $user]);
     }
     public function header()
     {
         $user = Auth::user();
-        $cv = $user->cv;
-        return view('layouts.candidat.header', ['user' => $user , 'cv' => $cv]);
+        return view('layouts.candidat.header', ['user' => $user]);
     }
     public function contact()
     {
@@ -76,6 +74,8 @@ class CandidatController extends Controller
         $user->sexe = $request->input('sexe');
         $user->address = $request->input('address');
         $user->linkedIN = $request->input('linkedIN');
+        $user->facebook = $request->input('facebook');
+        $user->twitter = $request->input('twitter');
         $user->github = $request->input('github');
         $user->emailT = $request->input('emailT');
         $user->phone = $request->input('phone');

@@ -9,6 +9,27 @@
           <h2 class="section-heading text-uppercase">Entreprises à la Une</h2>
         </div>
       </div>
+<<<<<<< HEAD
+      <div class="row text-center">
+        <div class="col-lg-2">
+          <img src="img/renault.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+        </div>
+        <div class="col-lg-2">
+          <img src="img/step-confort-logo.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+        </div>
+        <div class="col-lg-2">
+          <img src="img/intaj.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+           </div>
+        <div class="col-lg-2">
+          <img src="img/BDS.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+           </div>
+           <div class="col-lg-2">
+             <a href="pages/read-mail.html">
+            <img src="img/Distribution,-Commerce.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}">
+          </a>
+          </div>
+        </div>
+=======
       <div class="row">
       @foreach ($recruteurs as $recruteur)
       <div class="col-lg-4 col-md-6 mb-4 pb-2">
@@ -16,13 +37,16 @@
                                
                                     <div class="position-relative overflow-hidden">
                                    
-  <a href="{{route('showoffre1', ['name' => $recruteur->name])}}"> <img class="img-fluid rounded-top" src="{{ asset('upload/logoo/'.$recruteur->logoo) }}"style="margin-left:60px" >
-                                     </a>   <div class="overlay rounded-top bg-dark"></div>
+  <a href="{{route('showoffre1', ['name' => $recruteur->name])}}"> <img class="img-fluid rounded-top" src="{{ asset('../uploads/logoo/'.$recruteur->logoo) }}"style="margin-left:60px" >
+                                    </a>  
+                                    <p> <small>{{$recruteur->intitule}}</small></p>
+                                     <div class="overlay rounded-top bg-dark"></div>
    
                                     </div>
                                     </div>
         @endforeach
       </div>
+>>>>>>> statistique
       </div>
        
     </div>
@@ -35,6 +59,7 @@
         </div>
       </div>
       <div class="row">
+      
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">

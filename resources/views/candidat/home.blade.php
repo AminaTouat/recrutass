@@ -180,6 +180,30 @@
                                 <div class="col-md-6">
                                     <div class="form-group app-label">
                                     
+                                        <label  class="text-muted"> Facebook<span
+                                                class="text-danger">*</span> :</label>
+                                        <input id="facebook" name="facebook" type="url" class="form-control resume"placeholder="https://web.facebook.com/">
+                                      
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                    
+                                        <label  class="text-muted">twitter<span
+                                                class="text-danger">*</span> :</label>
+                                        <input id="twitter" name="twitter" type="url" class="form-control resume" placeholder="https://twitter.com/">
+                                      
+
+                                    </div>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                    
                                         <label  class="text-muted"> Github<span
                                                 class="text-danger">*</span> :</label>
                                         <input id="github" name="github" type="url" class="form-control resume" placeholder="https://github.com/">
@@ -202,7 +226,7 @@
                             </div>
                             @endif
                             @if($user->prenom && $user->name && $user->datenaiss && $user->sexe && $user->civilite )
-                            <a href={{url('editCandidat/'.$user->id)}} class="btn btn-primary submitBnt" type="submit" id="profil">mettre a jour</a>
+                            <a href={{url('edit/'.$user->id)}} class="btn btn-primary submitBnt" type="submit" id="profil">mettre a jour</a>
                             @else
                             <button class="btn btn-primary submitBnt" type="submit" id="profil">Enregistre</button>
                             @endif
@@ -213,7 +237,6 @@
 
                 </div>
             </div>
-            
             @endsection
             <!--
                 jQuery Scripts

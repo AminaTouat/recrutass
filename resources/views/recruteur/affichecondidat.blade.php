@@ -3,7 +3,7 @@
 
         <!-- background -->
         <div class="background gradient">
-        <ul class="bg-bubbles">
+            <ul class="bg-bubbles">
                 <li></li>
                 <li></li>
                 <li></li>
@@ -34,9 +34,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('afiche') }}">
+                            <a href="/contact">
                                 <span class="icon ion-paintbrush"></span>
-                                <span class="link">Cadidats</span>
+                                <span class="link">Works</span>
                             </a>
                         </li>
                         <li>
@@ -64,33 +64,49 @@
                     </ul>
                 </div>
             </header>
-            @extends('layouts.recruteur.header')
+            @extends('layouts.recruteur.headero')
             @section('content')
+
+            <!-- 
+				Card - About
+			-->
             <div class="card-inner animated active" id="about-card">
-                <div class="card-wrap">
+            <div class="card-wrap">
                     <!-- 
 						About 
 					-->
                     <div class="content about">
-        <div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
-        
-							
-						</div>
-						<div class="list-group">
-                        <h2 class="title">liste des candidats</h2>
-							<ul>
-                                    @foreach ($users as $user1)
-                                    <li class="list-group-item"> <img class="rounded-circle"  src="{{ asset('/uploads/avatar/'.$user1->avatar) }}"><a href="#">{{$user1->name}}</a> <small>habite à {{$user1->ville}}</small></li>
-                                    @endforeach
-							</ul>
-						</div>
-			
-					</div></div>
-					</div>
+                    @foreach($errors as $user)
+                    <li>
+                    <a href="{{ url("user/user->id") }}">{{$user->name}}</a>
+                    </li>
+                    @endforeach
+                    </div>
+                    <h1>candidats</h1>
+    @if(count($errors) > 0)
+        @foreach($errors as $user)
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <img style="width:100%" src="">
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        <h3><a href="/users/{{$user->id}}">{{$errors->name}}</a></h3>
+                        <small>Written on {{$user->created_at}} </small>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @else
+        <p>No posts found</p>
+    @endif
+                    </div>
+            </div>
+            @endsection
             <!--
                 jQuery Scripts
             -->
-@endsection
+
             <script src="../vcard/js/scripts.min.js"></script>
 </body>
 

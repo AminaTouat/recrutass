@@ -17,13 +17,13 @@
     <!--
 		Load Fonts
     -->
-    <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('../releases/v5-0-9/css/all.css')}}">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="../releases/v5-0-9/css/all.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('../vcard/css/styles.min.css')}}" />
-    <link rel="stylesheet" href="{{ asset('../vcard/css/template-colors/green.css')}}" />
-    <link href="{{ asset('../vendor/jquery/jquery.js" rel="stylesheet')}}">
+    <link rel="stylesheet" href="../vcard/css/styles.min.css" />
+    <link rel="stylesheet" href="../vcard/css/template-colors/green.css" />
+    <link href="../vendor/jquery/jquery.js" rel="stylesheet">
     
     <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -32,7 +32,7 @@
     <!--
 		Favicons
 	-->
-    {{-- <link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico')}}"> --}}
+    {{-- <link rel="shortcut icon" href="images/favicons/favicon.ico"> --}}
 
 </head>
 
@@ -51,10 +51,10 @@
     
     <div class="profile">
         <!-- profile image -->
-        <div class="slide" style="{{ asset('background-image: url(img/bg.jpg);')}}"></div>
+        <div class="slide" style="background-image: url(img/bg.jpg);"></div>
         <!-- profile photo -->
         <div class="image">
-            <img src="/uploads/avatar/{{ Auth::guard('recruteur')->user()->avatar }}" />
+            <img src="/uploads/logoo/{{ Auth::guard('recruteur')->user()->avatar }}" />
             <form  action="{{route('updateMm')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
     
@@ -94,7 +94,7 @@
     </div>
 </div>
 @yield('content')
-<script src="{{ asset('../vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="{{ asset('../vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>

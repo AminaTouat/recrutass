@@ -17,15 +17,4 @@ class CvController extends Controller
         $user->save();
         return redirect('/cv',['user' => $user]); 
     }
-    public function edit($id)
-    {
-        $cv = Auth::user()->cv->find($id);
-    }
-    public function update(Request $request, $id){
-        $cv = Auth::user()->cv->find($id);
-        $cv->Titre = $request->input('titre');
-        $cv->save();
-        return redirect('/cv');
-      
-    }
 }

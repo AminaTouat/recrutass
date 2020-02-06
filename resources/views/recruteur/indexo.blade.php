@@ -25,11 +25,11 @@
                         <li class="active">
                             <a href="/recruteur">
                                 <span class="icon ion-person"></span>
-                                <span class="link">profile</span>
+                                <span class="link">Profile</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/offre">
+                            <a href="{{ route('recruteur.indexo') }}">
                                 <span class="icon ion-android-list"></span>
                                 <span class="link">Offre</span>
                             </a>
@@ -41,9 +41,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#blog-card">
+                            <a href="/recruteur/chartLine/year">
                                 <span class="icon ion-chatbox-working"></span>
-                                <span class="link">Blog</span>
+                                <span class="link">statistque (offre par an)</span>
                             </a>
                         </li>
                         <li>
@@ -123,7 +123,7 @@
             </small></td>
         
             <td>
-                <form action="{{ route('offres.destroy',['offre' => $offre->id]) }}" method="POST">
+                <form action="{{ route('offres.destroy',$offre->id) }}" method="POST">
    
                     <a class="btn btn-primary" href="{{url('/offres/edit/'.$offre->id) }}">Edit</a>
                     
@@ -137,6 +137,7 @@
        
         @endforeach
     </table>
+
   
     {!! $offres->links() !!}
       

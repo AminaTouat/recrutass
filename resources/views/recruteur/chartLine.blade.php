@@ -1,5 +1,12 @@
 
-
+    
+     <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('../releases/v5-0-9/css/all.css')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('../vcard/css/styles.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('../vcard/css/template-colors/green.css')}}" />
+    <link href="{{ asset('../vendor/jquery/jquery.js" rel="stylesheet')}}">
     <script src="{{asset('https://code.highcharts.com/highcharts.js')}}"></script>
      
 
@@ -16,23 +23,24 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Chart</h4>
+                <div class="row">
+                    <div class="col-md-5">
+                
+                        <h4>LineChart</h4>
                     </div>
-                    <div class="col-md-7 align-self-center text-right">
-                        <div class="d-flex justify-content-end align-items-center">
+                    <div class="col-md-7">
+                      
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Accueil</a></li>
-                                <li class="breadcrumb-item active">LineChart</li>
+                                <li><a href="javascript:void(0)">Accueil</a></li>
+                              
                             </ol>
+                        
                             
-                        </div>
+            
                     </div>
                 </div>
 
-
-                <div class="panel panel-default">
+                <div class="card-inner1 animated active">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-9">
@@ -57,8 +65,11 @@
         <br>
         <br>
         <div id="container" style="height: 400px; min-width: 600px"></div>
-       
+        <div class="pull-right">
+              <button>  <a class="btn btn-primary" href="{{ route('recruteur.indexo') }}"> Back</a><button>
+            </div>
 </div>
+
 
 
 
@@ -117,3 +128,4 @@
 });
 </script>
     </div></div></div></div> 
+</body>
